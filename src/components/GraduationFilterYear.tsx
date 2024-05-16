@@ -1,5 +1,6 @@
 import React from 'react'
 
+// A component for filtering photos based on year of graduation
 const GraduationFilterYear = () => {
   return (
     <select className="form-select" onChange={(event) => console.log(event.target.value)}>
