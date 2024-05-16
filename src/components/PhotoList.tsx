@@ -15,7 +15,12 @@ const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
       <img
         src={path}
         alt={`${first_name} ${last_name}`}
-        style={{ width: "200px", height: "200px", objectFit: "cover" }}
+        style={{
+          width: "200px",
+          height: "200px",
+          objectFit: "cover",
+          margin: "1rem",
+        }}
       />
       <p style={{ textAlign: "center" }}>
         {first_name} {last_name}
