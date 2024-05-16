@@ -9,7 +9,6 @@ const GraduationFilterYear = () => {
         className="form-select mb-3"
         onChange={(event) => {
           setYear(event.target.value);
-          console.log(event.target.value);
         }}
       >
         <option value="" disabled>
