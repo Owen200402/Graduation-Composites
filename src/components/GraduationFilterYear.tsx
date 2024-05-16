@@ -12,9 +12,11 @@ const GraduationFilterYear = () => {
           console.log(event.target.value);
         }}
       >
-        <option value=""></option>
+        <option value="" disabled>
+          Select Year of Graduation
+        </option>
         <option value="1970">1970</option>
-        <option value="2023">2023</option>
+        <option value="2022">2022</option>
       </select>
       <h2>Graduation Class of {year}</h2>
     </>
