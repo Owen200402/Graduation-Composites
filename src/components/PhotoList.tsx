@@ -1,4 +1,12 @@
 import React from "react";
+import styled from "styled-components";
+
+const Image = styled.img`
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 0.8rem;
+`;
 
 interface Props {
   id: number;
@@ -12,16 +20,7 @@ interface Props {
 const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
   return (
     <div>
-      <img
-        src={path}
-        alt={`${first_name} ${last_name}`}
-        style={{
-          width: "200px",
-          height: "200px",
-          objectFit: "cover",
-          margin: "1rem",
-        }}
-      />
+      <Image src={path} alt={`${first_name} ${last_name}`} />
       <p style={{ textAlign: "center" }}>
         {first_name} {last_name}
       </p>
