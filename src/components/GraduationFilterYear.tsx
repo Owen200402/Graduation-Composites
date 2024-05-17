@@ -27,7 +27,7 @@ const GraduationFilterYear = ({ onSelect }: Props) => {
           Select Year of Graduation
         </option>
         <option value={1930}>1930</option>
-        <option value={2022}>2022</option>
+        <option value={1937}>1937</option>
       </select>
     </>
   );
