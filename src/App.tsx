@@ -20,7 +20,7 @@ function App() {
   const [photos, setPhotos] = useState(photoData);
   const photosToBeDisplayed = photos;
 
-  const [selectedYear, setSelectedfYear] = useState(1970);
+  const [selectedYear, setSelectedfYear] = useState(1930);
 
   return (
     <>

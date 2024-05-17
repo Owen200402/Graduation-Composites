@@ -12,7 +12,7 @@ interface Props {
 
 // A component for filtering photos based on year of graduation
 const GraduationFilterYear = ({ onSelect }: Props) => {
-  const [year, setYear] = useState(1970);
+  const [year, setYear] = useState(1930);
   return (
     <>
       <select
@@ -26,7 +26,7 @@ const GraduationFilterYear = ({ onSelect }: Props) => {
         <option value="" disabled>
           Select Year of Graduation
         </option>
-        <option value={1970}>1970</option>
+        <option value={1930}>1930</option>
         <option value={2022}>2022</option>
       </select>
     </>
