@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "./App.css";
 import GraduationFilterAlpha from "./components/GraduationFilterAlpha";
-import GraduationFilterYear from "./components/GraduationFilterYear";
+import GraduationFilterYear from "./components/GraduationFilterYearWithTitle";
 import PhotoList from "./components/PhotoList";
 import { photoData } from "./components/photoData";
 import styled from "styled-components";
 
+// CSS in JS
 const PhotoContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -15,7 +16,6 @@ const PhotoContainer = styled.div`
 
 // The parent that has states and allows change to be reflected to components
 function App() {
-  // Photos State for graduating students
   const [photos, setPhotos] = useState(photoData);
   const photosToBeDisplayed = photos;
 
