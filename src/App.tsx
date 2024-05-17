@@ -9,10 +9,15 @@ import { photoData } from "./components/photoData";
 function App() {
   // Photos State for graduating students
   const [photos, setPhotos] = useState(photoData);
+  const photosToBeDisplayed = photos;
+
+  const [selectedYear, setSelectedfYear] = useState(1970);
 
   return (
     <>
-      <GraduationFilterYear></GraduationFilterYear>
+      <GraduationFilterYear
+        onSelect={(year) => setSelectedfYear(year)}
+      ></GraduationFilterYear>
       <div
         style={{
           display: "flex",
@@ -21,9 +26,11 @@ function App() {
           alignItems: "center",
         }}
       >
-        {photos.map((photo) => (
-          <PhotoList {...photo} />
-        ))}
+        {photosToBeDisplayed
+          .filter((photo) => photo.year === selectedYear)
+          .map((photo) => (
+            <PhotoList {...photo} />
+          ))}
       </div>
     </>
   );

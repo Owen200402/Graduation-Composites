@@ -1,23 +1,29 @@
 import React, { useState } from "react";
 
+interface Props {
+  onSelect: (year: number) => void;
+}
+
 // A component for filtering photos based on year of graduation
-const GraduationFilterYear = () => {
-  const [year, setYear] = useState("2022");
+const GraduationFilterYear = ({ onSelect }: Props) => {
+  const [year, setYear] = useState(1970);
   return (
     <>
       <select
         className="form-select mb-3"
         onChange={(event) => {
-          setYear(event.target.value);
+          const selectedYear = parseInt(event.target.value, 10);
+          setYear(selectedYear);
+          onSelect(selectedYear);
         }}
       >
         <option value="" disabled>
           Select Year of Graduation
         </option>
-        <option value="1970">1970</option>
-        <option value="2022">2022</option>
+        <option value={1970}>1970</option>
+        <option value={2022}>2022</option>
       </select>
-      <h2>Graduation Class of {year}</h2>
+      <h2>ECE Graduation Class of {year}</h2>
     </>
   );
 };
