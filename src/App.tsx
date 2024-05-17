@@ -4,6 +4,14 @@ import GraduationFilterAlpha from "./components/GraduationFilterAlpha";
 import GraduationFilterYear from "./components/GraduationFilterYear";
 import PhotoList from "./components/PhotoList";
 import { photoData } from "./components/photoData";
+import styled from "styled-components";
+
+const PhotoContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`;
 
 // The parent that has states and allows change to be reflected to components
 function App() {
@@ -18,20 +26,13 @@ function App() {
       <GraduationFilterYear
         onSelect={(year) => setSelectedfYear(year)}
       ></GraduationFilterYear>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <PhotoContainer>
         {photosToBeDisplayed
           .filter((photo) => photo.year === selectedYear)
           .map((photo) => (
             <PhotoList {...photo} />
           ))}
-      </div>
+      </PhotoContainer>
     </>
   );
 }
