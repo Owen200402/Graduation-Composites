@@ -11,7 +11,7 @@ interface Props {
 }
 
 // A component for filtering photos based on year of graduation
-const GraduationFilterYearWithTitle = ({ onSelect }: Props) => {
+const GraduationFilterYear = ({ onSelect }: Props) => {
   const [year, setYear] = useState(1970);
   return (
     <>
@@ -29,9 +29,8 @@ const GraduationFilterYearWithTitle = ({ onSelect }: Props) => {
         <option value={1970}>1970</option>
         <option value={2022}>2022</option>
       </select>
-      <Title>ECE Graduation Class of {year}</Title>
     </>
   );
 };
 
-export default GraduationFilterYearWithTitle;
+export default GraduationFilterYear;

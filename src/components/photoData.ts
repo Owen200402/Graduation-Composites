@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 // Extracted photo's info for App.tsx to set states for
 export const photoData = [
   {

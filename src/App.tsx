@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 import GraduationFilterAlpha from "./components/GraduationFilterAlpha";
-import GraduationFilterYear from "./components/GraduationFilterYearWithTitle";
+import GraduationFilterYear from "./components/GraduationFilterYear";
 import PhotoList from "./components/PhotoList";
 import { photoData } from "./components/photoData";
 import styled from "styled-components";
+import Heading from "./components/Heading";
 
 // CSS in JS
 const PhotoContainer = styled.div`
@@ -26,6 +27,7 @@ function App() {
       <GraduationFilterYear
         onSelect={(year) => setSelectedfYear(year)}
       ></GraduationFilterYear>
+      <Heading year={selectedYear}></Heading>
       <PhotoContainer>
         {photosToBeDisplayed
           .filter((photo) => photo.year === selectedYear)
