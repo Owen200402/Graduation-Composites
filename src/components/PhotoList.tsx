@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Image = styled.img`
@@ -18,9 +18,21 @@ interface Props {
 
 // Rendering photos on the screen
 const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setIsLoaded(true);
+  };
+
   return (
     <div>
-      <Image src={path} alt={`${first_name} ${last_name}`} />
+      {!isLoaded && <div className="spinner-border"></div>}
+      <Image
+        src={path}
+        alt={`${first_name} ${last_name}`}
+        onLoad={handleImageLoad}
+        style={{ display: isLoaded ? "block" : "none" }}
+      />
       <p style={{ textAlign: "center" }}>
         {first_name} {last_name}
       </p>

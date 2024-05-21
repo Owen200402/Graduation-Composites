@@ -27,7 +27,9 @@ function App() {
       <GraduationFilterYear
         onSelect={(year) => setSelectedfYear(year)}
       ></GraduationFilterYear>
+
       <Heading year={selectedYear}></Heading>
+
       <PhotoContainer>
         {photosToBeDisplayed
           .filter((photo) => photo.year === selectedYear)
