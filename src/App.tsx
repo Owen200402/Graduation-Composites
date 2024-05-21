@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import GraduationFilterAlpha from "./components/GraduationFilterAlpha";
 import GraduationFilterYear from "./components/GraduationFilterYear";
 import PhotoList from "./components/PhotoList";
 import { photoData } from "./components/photoData";
