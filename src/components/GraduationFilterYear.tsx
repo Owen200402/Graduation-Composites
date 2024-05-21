@@ -15,20 +15,43 @@ const GraduationFilterYear = ({ onSelect }: Props) => {
   const [year, setYear] = useState(1930);
   return (
     <>
-      <select
-        className="form-select mb-3"
-        onChange={(event) => {
-          const selectedYear = parseInt(event.target.value, 10);
-          setYear(selectedYear);
-          onSelect(selectedYear);
-        }}
-      >
-        <option value="" disabled>
-          Select Year of Graduation
-        </option>
-        <option value={1930}>1930</option>
-        <option value={1937}>1937</option>
-      </select>
+      <div className="dropdown m-2">
+        <button
+          className="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Year of Graduation
+        </button>
+        <ul className="dropdown-menu">
+          <li>
+            <button
+              className="dropdown-item"
+              type="button"
+              onClick={() => {
+                onSelect(1930);
+                setYear(1930);
+              }}
+            >
+              1930
+            </button>
+          </li>
+          <li>
+            <button
+              className="dropdown-item"
+              type="button"
+              onClick={() => {
+                onSelect(1937);
+                setYear(1937);
+                console.log("set year 1937");
+              }}
+            >
+              1937
+            </button>
+          </li>
+        </ul>
+      </div>
     </>
   );
 };

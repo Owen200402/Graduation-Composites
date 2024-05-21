@@ -20,13 +20,13 @@ function App() {
   const [photos, setPhotos] = useState(photoData);
   const photosToBeDisplayed = photos;
 
-  const [selectedYear, setSelectedfYear] = useState(1930);
+  const [selectedYear, setSelectedYear] = useState(1930);
 
   return (
     <>
       <UBCLogo></UBCLogo>
       <GraduationFilterYear
-        onSelect={(year) => setSelectedfYear(year)}
+        onSelect={(year) => setSelectedYear(year)}
       ></GraduationFilterYear>
 
       <Heading year={selectedYear}></Heading>
