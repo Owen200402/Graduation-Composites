@@ -6,6 +6,7 @@ import PhotoList from "./components/PhotoList";
 import { photoData } from "./components/photoData";
 import styled from "styled-components";
 import Heading from "./components/Heading";
+import UBCLogo from "./components/UBCLogo";
 
 // CSS in JS
 const PhotoContainer = styled.div`
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <>
+      <UBCLogo></UBCLogo>
       <GraduationFilterYear
         onSelect={(year) => setSelectedfYear(year)}
       ></GraduationFilterYear>
