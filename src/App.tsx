@@ -35,7 +35,9 @@ function App() {
         {photosToBeDisplayed
           .filter((photo) => photo.year === selectedYear)
           .map((photo) => (
-            <PhotoList {...photo} />
+            <div key={photo.id}>
+              <PhotoList {...photo} />
+            </div>
           ))}
       </PhotoContainer>
     </>
