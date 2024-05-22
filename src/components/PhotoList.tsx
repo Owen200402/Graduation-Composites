@@ -7,6 +7,7 @@ const Image = styled.img`
   height: 200px;
   object-fit: cover;
   margin: 0.8rem;
+  box-shadow: 0 3px 6px rgba(110, 77, 11, 0.7);
 `;
 
 interface Props {

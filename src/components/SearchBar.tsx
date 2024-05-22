@@ -15,7 +15,7 @@ const SearchBar = () => {
       {!isExpanded && (
         <FaSearch
           className="m-2"
-          size={20}
+          size={25}
           onClick={clickToExpand}
           style={{ cursor: "pointer" }}
         ></FaSearch>
