@@ -6,6 +6,7 @@ import { photoData } from "./components/photoData";
 import styled from "styled-components";
 import Heading from "./components/Heading";
 import UBCLogo from "./components/TopBanner";
+import SearchBar from "./components/SearchBar";
 
 // CSS in JS
 const PhotoContainer = styled.div`
@@ -28,6 +29,7 @@ function App() {
       <GraduationFilterYear
         onSelect={(year) => setSelectedYear(year)}
       ></GraduationFilterYear>
+      <SearchBar></SearchBar>
 
       <Heading year={selectedYear}></Heading>
 
