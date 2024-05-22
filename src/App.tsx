@@ -5,7 +5,7 @@ import PhotoList from "./components/PhotoList";
 import { photoData } from "./components/photoData";
 import styled from "styled-components";
 import Heading from "./components/Heading";
-import UBCLogo from "./components/UBCLogo";
+import UBCLogo from "./components/TopBanner";
 
 // CSS in JS
 const PhotoContainer = styled.div`

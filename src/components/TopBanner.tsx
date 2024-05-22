@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Image = styled.img`
-  height: 6rem;
+  height: 7rem;
   object-fit: cover;
   margin: 0.8rem;
 `;
@@ -13,7 +13,7 @@ const Div = styled.div`
   align-items: center;
 `;
 
-const UBCLogo = () => {
+const TopBanner = () => {
   return (
     <Div>
       <Image src="assets/ubc-logo-2018-fullsig-blue-rgb72.jpg" alt="UBC Logo" />
@@ -22,4 +22,4 @@ const UBCLogo = () => {
   );
 };
 
-export default UBCLogo;
+export default TopBanner;
