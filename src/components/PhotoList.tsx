@@ -19,13 +19,8 @@ interface Props {
 
 // Rendering photos on the screen
 const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
-  const [isLoaded, setIsLoaded] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
   const [modelOpened, setModelOpened] = useState(false);
-
-  const handleImageLoad = () => {
-    setIsLoaded(true);
-  };
 
   function enlargeImage(imagePath: string) {
     setSelectedImage(imagePath);
@@ -39,12 +34,10 @@ const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
 
   return (
     <div>
-      {!isLoaded && <div className="spinner-border"></div>}
       <Image
         src={path}
         alt={`${first_name} ${last_name}`}
-        onLoad={handleImageLoad}
-        style={{ display: isLoaded ? "block" : "none", cursor: "pointer" }}
+        style={{ cursor: "pointer" }}
         onClick={() => enlargeImage(path)}
       />
 
