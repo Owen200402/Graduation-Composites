@@ -15,7 +15,7 @@ const GraduationFilterYear = ({ onSelect }: Props) => {
   const [year, setYear] = useState(1930);
   return (
     <>
-      <div className="dropdown m-3">
+      <div className="dropdown m-2">
         <button
           className="btn btn-secondary dropdown-toggle"
           type="button"
