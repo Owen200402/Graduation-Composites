@@ -28,7 +28,7 @@ const SearchBar = () => {
             placeholder="Search by Last Name"
             aria-label="Search by Last Name"
             aria-describedby="basic-addon2"
-            style={{ maxWidth: "182px" }}
+            style={{ maxWidth: "182px", borderRadius: "5px" }}
           />
           <div className="input-group-append m-2">
             <button className="btn btn-outline-secondary" type="button">
