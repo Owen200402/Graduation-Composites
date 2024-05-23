@@ -1,13 +1,36 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
-interface Props {} // TODO: Will need the Props
+interface Props {
+  last_names: string[];
+}
 
-const SearchBar = () => {
+const SearchBar = ({ last_names }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const clickToExpand = () => {
-    console.log("Expanded");
     setIsExpanded(true);
+  };
+
+  const searchPhoto = () => {
+    if (inputRef.current === null) {
+      return;
+    }
+
+    const inputValue = inputRef.current.value.toLowerCase();
+
+    if (inputValue === "") {
+      // Warning Message
+      console.log("Enter a name please");
+    } else if (
+      !last_names
+        .map((name) => name.toLowerCase())
+        .filter((name) => name === inputValue)
+        .includes(inputValue)
+    ) {
+      console.log(inputValue);
+    }
   };
 
   return (
@@ -29,9 +52,14 @@ const SearchBar = () => {
             aria-label="Search by Last Name"
             aria-describedby="basic-addon2"
             style={{ maxWidth: "182px", borderRadius: "5px" }}
+            ref={inputRef}
           />
           <div className="input-group-append m-2">
-            <button className="btn btn-outline-secondary" type="button">
+            <button
+              className="btn btn-outline-secondary"
+              type="button"
+              onClick={() => searchPhoto()}
+            >
               Search
             </button>
           </div>

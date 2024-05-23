@@ -29,7 +29,7 @@ function App() {
       <GraduationFilterYear
         onSelect={(year) => setSelectedYear(year)}
       ></GraduationFilterYear>
-      <SearchBar></SearchBar>
+      <SearchBar last_names={photos.map((p) => p.last_name)}></SearchBar>
 
       <Heading year={selectedYear}></Heading>
 

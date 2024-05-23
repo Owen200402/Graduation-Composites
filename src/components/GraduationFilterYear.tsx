@@ -44,7 +44,6 @@ const GraduationFilterYear = ({ onSelect }: Props) => {
               onClick={() => {
                 onSelect(1937);
                 setYear(1937);
-                console.log("set year 1937");
               }}
             >
               1937
