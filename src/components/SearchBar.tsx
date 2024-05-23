@@ -47,12 +47,13 @@ const SearchBar = ({ first_names, to_show }: Props) => {
     ) {
       setWarning("First name not found in past graduates!");
     } else {
-      setWarning("");
       to_show(
         photosToBeDisplayed.filter(
           (photo) => photo.first_name.toLowerCase() === inputValue
         )
       );
+      setWarning("");
+      inputRef.current.value = "";
     }
   };
 
