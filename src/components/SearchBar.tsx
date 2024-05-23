@@ -8,6 +8,7 @@ interface Props {
 const SearchBar = ({ last_names }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [warning, setWarning] = useState("");
 
   const clickToExpand = () => {
     setIsExpanded(true);
@@ -21,15 +22,17 @@ const SearchBar = ({ last_names }: Props) => {
     const inputValue = inputRef.current.value.toLowerCase();
 
     if (inputValue === "") {
-      // Warning Message
-      console.log("Enter a name please");
+      setWarning("Please enter a last name!");
     } else if (
       !last_names
         .map((name) => name.toLowerCase())
         .filter((name) => name === inputValue)
         .includes(inputValue)
     ) {
-      console.log(inputValue);
+      setWarning("Last name not found in past graduates!");
+    } else {
+      // TODO: set up widgets to target people
+      setWarning("");
     }
   };
 
@@ -47,14 +50,17 @@ const SearchBar = ({ last_names }: Props) => {
         <div className="input-group animate__animated animate__fadeInUp">
           <input
             type="text"
-            className="form-control m-2"
+            className="form-control m-2 mb-0"
             placeholder="Search by Last Name"
             aria-label="Search by Last Name"
             aria-describedby="basic-addon2"
             style={{ maxWidth: "182px", borderRadius: "5px" }}
             ref={inputRef}
+            onChange={() => {
+              setWarning("");
+            }}
           />
-          <div className="input-group-append m-2">
+          <div className="input-group-append m-2 mb-0">
             <button
               className="btn btn-outline-secondary"
               type="button"
@@ -64,6 +70,11 @@ const SearchBar = ({ last_names }: Props) => {
             </button>
           </div>
         </div>
+      )}
+      {warning && (
+        <p className="m-2 mb-0" style={{ color: "red" }}>
+          {warning}
+        </p>
       )}
     </div>
   );
