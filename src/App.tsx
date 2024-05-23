@@ -3,7 +3,6 @@ import "./App.css";
 import GraduationFilterYear from "./components/GraduationFilterYear";
 import PhotoList from "./components/PhotoList";
 import { photoData } from "./components/photoData";
-import styled from "styled-components";
 import Heading from "./components/Heading";
 import UBCLogo from "./components/TopBanner";
 import SearchBar from "./components/SearchBar";

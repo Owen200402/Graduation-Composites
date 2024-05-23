@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
 interface Props {
@@ -12,6 +12,9 @@ const SearchBar = ({ last_names }: Props) => {
 
   const clickToExpand = () => {
     setIsExpanded(true);
+    setTimeout(() => {
+      setIsExpanded(false);
+    }, 60000);
   };
 
   const searchPhoto = () => {
