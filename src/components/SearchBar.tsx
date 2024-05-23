@@ -14,6 +14,7 @@ const SearchBar = ({ last_names }: Props) => {
     setIsExpanded(true);
     setTimeout(() => {
       setIsExpanded(false);
+      setWarning("");
     }, 60000);
   };
 
