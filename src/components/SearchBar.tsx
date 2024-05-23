@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { photoData } from "../components/photoData";
-import SearchResultList from "./SearchResultList";
 
 interface PhotoList {
   id: number;
@@ -12,11 +11,11 @@ interface PhotoList {
 }
 
 interface Props {
-  last_names: string[];
+  first_names: string[];
   to_show: (photolist: PhotoList[]) => void;
 }
 
-const SearchBar = ({ last_names, to_show }: Props) => {
+const SearchBar = ({ first_names, to_show }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const [warning, setWarning] = useState("");
@@ -39,19 +38,19 @@ const SearchBar = ({ last_names, to_show }: Props) => {
     const inputValue = inputRef.current.value.toLowerCase();
 
     if (inputValue === "") {
-      setWarning("Please enter a last name!");
+      setWarning("First name cannot be blank!");
     } else if (
-      !last_names
+      !first_names
         .map((name) => name.toLowerCase())
         .filter((name) => name === inputValue)
         .includes(inputValue)
     ) {
-      setWarning("Last name not found in past graduates!");
+      setWarning("First name not found in past graduates!");
     } else {
       setWarning("");
       to_show(
         photosToBeDisplayed.filter(
-          (photo) => photo.last_name.toLowerCase() === inputValue
+          (photo) => photo.first_name.toLowerCase() === inputValue
         )
       );
     }
@@ -72,8 +71,8 @@ const SearchBar = ({ last_names, to_show }: Props) => {
           <input
             type="text"
             className="form-control m-2"
-            placeholder="Search by Last Name"
-            aria-label="Search by Last Name"
+            placeholder="Search by First Name"
+            aria-label="Search by First Name"
             aria-describedby="basic-addon2"
             style={{ maxWidth: "182px", borderRadius: "5px" }}
             ref={inputRef}

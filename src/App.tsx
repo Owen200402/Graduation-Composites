@@ -48,13 +48,13 @@ function App() {
           to_show={(photoList) => {
             setSearchResult(photoList);
           }}
-          last_names={photos.map((p) => p.last_name)}
+          first_names={photos.map((p) => p.first_name)}
         ></SearchBar>
       </div>
 
       {searchResult && (
         <>
-          <h3 className="m-3">Results For {searchResult[0].last_name}:</h3>
+          <h3 className="m-3">Results For {searchResult[0].first_name}:</h3>
           <div
             style={{
               display: "flex",

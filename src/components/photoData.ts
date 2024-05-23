@@ -10,7 +10,7 @@ export const photoData = [
   {
     id: 2,
     first_name: "Edward",
-    last_name: "Hay",
+    last_name: "Lunn",
     year: 1930,
     path: "assets/Edward_Lunn_1930.jpg",
   },
