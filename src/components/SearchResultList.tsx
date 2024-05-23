@@ -28,7 +28,7 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
   useEffect(() => {
     const handleScroll = () => {
       window.scrollBy({
-        top: window.scrollY + 100,
+        top: window.screenY + 450,
         left: 0,
         behavior: "smooth",
       });
