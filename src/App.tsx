@@ -6,13 +6,23 @@ import { photoData } from "./components/photoData";
 import Heading from "./components/Heading";
 import UBCLogo from "./components/TopBanner";
 import SearchBar from "./components/SearchBar";
+import SearchResultList from "./components/SearchResultList";
 
 // The parent that has states and allows change to be reflected to components
 function App() {
+  interface Photo {
+    id: number;
+    first_name: string;
+    last_name: string;
+    year: number;
+    path: string;
+  }
+
   const [photos, setPhotos] = useState(photoData);
   const photosToBeDisplayed = photos;
 
   const [selectedYear, setSelectedYear] = useState(1930);
+  const [searchResult, setSearchResult] = useState<Photo[]>();
 
   return (
     <div>
@@ -29,12 +39,49 @@ function App() {
             </div>
           ))}
       </div>
+
       <div className="container-flex">
         <GraduationFilterYear
           onSelect={(year) => setSelectedYear(year)}
         ></GraduationFilterYear>
-        <SearchBar last_names={photos.map((p) => p.last_name)}></SearchBar>
+        <SearchBar
+          to_show={(photoList) => {
+            setSearchResult(photoList);
+          }}
+          last_names={photos.map((p) => p.last_name)}
+        ></SearchBar>
       </div>
+
+      {searchResult && (
+        <>
+          <h3 className="m-3">Results For {searchResult[0].last_name}:</h3>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {searchResult.map((photo) => (
+              <div key={photo.id}>
+                <SearchResultList {...photo} />
+              </div>
+            ))}
+          </div>
+          <div style={{ display: "flex", justifyContent: "right" }}>
+            <button
+              className="btn btn-outline-danger"
+              onClick={() => {
+                setSearchResult(undefined);
+              }}
+            >
+              Back
+            </button>
+          </div>
+        </>
+      )}
+
       <div className="copyright">
         &copy; {new Date().getFullYear()} UBC Electrical and Computer
         Engineering. All rights reserved.

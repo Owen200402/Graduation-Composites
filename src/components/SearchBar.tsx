@@ -1,14 +1,27 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import { photoData } from "../components/photoData";
+import SearchResultList from "./SearchResultList";
+
+interface PhotoList {
+  id: number;
+  first_name: string;
+  last_name: string;
+  year: number;
+  path: string;
+}
 
 interface Props {
   last_names: string[];
+  to_show: (photolist: PhotoList[]) => void;
 }
 
-const SearchBar = ({ last_names }: Props) => {
+const SearchBar = ({ last_names, to_show }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const [warning, setWarning] = useState("");
+  const [photos, setPhotos] = useState(photoData);
+  const photosToBeDisplayed = photos;
 
   const clickToExpand = () => {
     setIsExpanded(true);
@@ -35,8 +48,12 @@ const SearchBar = ({ last_names }: Props) => {
     ) {
       setWarning("Last name not found in past graduates!");
     } else {
-      // TODO: set up widgets to target people
       setWarning("");
+      to_show(
+        photosToBeDisplayed.filter(
+          (photo) => photo.last_name.toLowerCase() === inputValue
+        )
+      );
     }
   };
 
@@ -68,7 +85,7 @@ const SearchBar = ({ last_names }: Props) => {
             <button
               className="btn btn-outline-secondary"
               type="button"
-              onClick={() => searchPhoto()}
+              onClick={searchPhoto}
             >
               Go
             </button>
