@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ImageModal from "./ImageModal";
 
@@ -24,6 +24,26 @@ interface Props {
 const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
   const [selectedImage, setSelectedImage] = useState("");
   const [modelOpened, setModelOpened] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollBy({
+        top: window.scrollY + 100,
+        left: 0,
+        behavior: "smooth",
+      });
+    };
+
+    handleScroll();
+
+    return () => {
+      window.scrollBy({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    };
+  }, []);
 
   function enlargeImage(imagePath: string) {
     setSelectedImage(imagePath);
