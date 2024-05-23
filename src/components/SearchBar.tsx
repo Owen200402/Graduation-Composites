@@ -66,13 +66,13 @@ const SearchBar = ({ last_names }: Props) => {
               type="button"
               onClick={() => searchPhoto()}
             >
-              Search
+              Go
             </button>
           </div>
         </div>
       )}
       {warning && (
-        <p className="m-2 mb-0" style={{ color: "red" }}>
+        <p className="m-2 mb-0 mt-0" style={{ color: "red" }}>
           {warning}
         </p>
       )}

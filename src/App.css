@@ -4,3 +4,19 @@
   flex-grow: 1;
   justify-content: center;
 }
+
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  color: rgb(85, 83, 83);
+  margin-top: 10px;
+  font-family: "Great Vibes", cursive; /* Apply the fancy font */
+}
+
+.photo_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}

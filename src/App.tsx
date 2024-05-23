@@ -8,15 +8,6 @@ import Heading from "./components/Heading";
 import UBCLogo from "./components/TopBanner";
 import SearchBar from "./components/SearchBar";
 
-// CSS in JS
-const PhotoContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-`;
-
 // The parent that has states and allows change to be reflected to components
 function App() {
   const [photos, setPhotos] = useState(photoData);
@@ -30,7 +21,7 @@ function App() {
 
       <Heading year={selectedYear}></Heading>
 
-      <PhotoContainer>
+      <div className="photo_container">
         {photosToBeDisplayed
           .filter((photo) => photo.year === selectedYear)
           .map((photo) => (
@@ -38,12 +29,16 @@ function App() {
               <PhotoList {...photo} />
             </div>
           ))}
-      </PhotoContainer>
+      </div>
       <div className="container-flex">
         <GraduationFilterYear
           onSelect={(year) => setSelectedYear(year)}
         ></GraduationFilterYear>
         <SearchBar last_names={photos.map((p) => p.last_name)}></SearchBar>
+      </div>
+      <div className="copyright">
+        &copy; {new Date().getFullYear()} UBC Electrical and Computer
+        Engineering. All rights reserved.
       </div>
     </div>
   );
