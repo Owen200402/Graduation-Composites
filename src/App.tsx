@@ -12,6 +12,7 @@ import SearchBar from "./components/SearchBar";
 const PhotoContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
 `;
@@ -24,12 +25,8 @@ function App() {
   const [selectedYear, setSelectedYear] = useState(1930);
 
   return (
-    <>
+    <div>
       <UBCLogo></UBCLogo>
-      <GraduationFilterYear
-        onSelect={(year) => setSelectedYear(year)}
-      ></GraduationFilterYear>
-      <SearchBar last_names={photos.map((p) => p.last_name)}></SearchBar>
 
       <Heading year={selectedYear}></Heading>
 
@@ -42,7 +39,13 @@ function App() {
             </div>
           ))}
       </PhotoContainer>
-    </>
+      <div className="container-flex">
+        <GraduationFilterYear
+          onSelect={(year) => setSelectedYear(year)}
+        ></GraduationFilterYear>
+        <SearchBar last_names={photos.map((p) => p.last_name)}></SearchBar>
+      </div>
+    </div>
   );
 }
 

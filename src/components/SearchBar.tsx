@@ -40,7 +40,7 @@ const SearchBar = ({ last_names }: Props) => {
     <div>
       {!isExpanded && (
         <FaSearch
-          className="m-2"
+          className="m-2 mt-3"
           size={25}
           onClick={clickToExpand}
           style={{ cursor: "pointer" }}
@@ -50,7 +50,7 @@ const SearchBar = ({ last_names }: Props) => {
         <div className="input-group animate__animated animate__fadeInUp">
           <input
             type="text"
-            className="form-control m-2 mb-0"
+            className="form-control m-2"
             placeholder="Search by Last Name"
             aria-label="Search by Last Name"
             aria-describedby="basic-addon2"
@@ -60,7 +60,7 @@ const SearchBar = ({ last_names }: Props) => {
               setWarning("");
             }}
           />
-          <div className="input-group-append m-2 mb-0">
+          <div className="input-group-append m-2">
             <button
               className="btn btn-outline-secondary"
               type="button"
