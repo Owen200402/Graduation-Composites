@@ -53,7 +53,7 @@ function App() {
       </div>
 
       {searchResult && (
-        <>
+        <div className="animate__animated animate__bounceInUp">
           <h3 className="m-3">Results For {searchResult[0].first_name}:</h3>
           <div
             style={{
@@ -79,7 +79,7 @@ function App() {
               Back
             </button>
           </div>
-        </>
+        </div>
       )}
 
       <div className="copyright">
