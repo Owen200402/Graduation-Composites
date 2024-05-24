@@ -49,6 +49,7 @@ function App() {
             setSearchResult(photoList);
           }}
           first_names={photos.map((p) => p.first_name)}
+          last_names={photos.map((p) => p.last_name)}
         ></SearchBar>
       </div>
 

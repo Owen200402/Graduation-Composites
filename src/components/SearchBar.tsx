@@ -12,10 +12,11 @@ interface PhotoList {
 
 interface Props {
   first_names: string[];
+  last_names: string[];
   to_show: (photolist: PhotoList[]) => void;
 }
 
-const SearchBar = ({ first_names, to_show }: Props) => {
+const SearchBar = ({ first_names, last_names, to_show }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const [warning, setWarning] = useState("");
@@ -40,17 +41,15 @@ const SearchBar = ({ first_names, to_show }: Props) => {
     if (inputValue === "") {
       setWarning("First name cannot be blank!");
     } else if (
-      !first_names
-        .map((name) => name.toLowerCase())
-        .filter((name) => name === inputValue)
-        .includes(inputValue)
+      (photosToBeDisplayed.filter(
+        (photo) => (inputValue.includes((photo.first_name + " " + photo.last_name).toLowerCase())) || ((photo.first_name + " " + photo.last_name).toLowerCase().includes(inputValue))
+      )).length === 0
     ) {
-      setWarning("First name not found in past graduates!");
+      setWarning("Name not found in past graduates!");
     } else {
-      const currentY = window.scrollY;
       to_show(
         photosToBeDisplayed.filter(
-          (photo) => photo.first_name.toLowerCase() === inputValue
+          (photo) => (inputValue.includes((photo.first_name + " " + photo.last_name).toLowerCase()) || ((photo.first_name + " " + photo.last_name).toLowerCase().includes(inputValue)))
         )
       );
       setWarning("");
@@ -73,10 +72,10 @@ const SearchBar = ({ first_names, to_show }: Props) => {
           <input
             type="text"
             className="form-control m-2"
-            placeholder="Search by First Name"
-            aria-label="Search by First Name"
+            placeholder="Search Name in Record"
+            aria-label="Search Name in Record"
             aria-describedby="basic-addon2"
-            style={{ maxWidth: "182px", borderRadius: "5px" }}
+            style={{ maxWidth: "198px", borderRadius: "5px" }}
             ref={inputRef}
             onChange={() => {
               setWarning("");

@@ -53,8 +53,8 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
   }
 
   function closeModel() {
-    setModelOpened(false);
     setSelectedImage("");
+    setModelOpened(false);
   }
 
   return (
