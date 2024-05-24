@@ -38,7 +38,7 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
 
     return () => {
       window.scrollBy({
-        top: 0,
+        top: window.screenY - 450,
         left: 0,
         behavior: "smooth",
       });

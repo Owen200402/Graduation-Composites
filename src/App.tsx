@@ -71,7 +71,7 @@ function App() {
           </div>
           <div style={{ display: "flex", justifyContent: "right" }}>
             <button
-              className="btn btn-outline-danger"
+              className="btn btn-outline-danger m-3"
               onClick={() => {
                 setSearchResult(undefined);
               }}
