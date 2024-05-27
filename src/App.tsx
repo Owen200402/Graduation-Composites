@@ -44,7 +44,7 @@ function App() {
     <div style={{ background: theme.palette.mode === 'dark' ? '#807a7a' : 'linear-gradient(to bottom, #e6f7ff, #ffffff)', color: theme.palette.mode === 'dark' ? 'white' : 'black' }}>
       <UBCLogo />
 
-      <div style={{ display: 'flex', justifyContent: "space-between", color: textStyle.color }}>
+      <div style={{ display: 'flex', justifyContent: "space-between",  }}>
         <div className="p-2"><CompositeDialog /></div>
         <div><Heading year={selectedYear} /></div>
         <div>

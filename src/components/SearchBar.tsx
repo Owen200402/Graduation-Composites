@@ -43,15 +43,27 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
     if (inputValue === "") {
       setWarning("Name cannot be blank!");
     } else if (
-      (photosToBeDisplayed.filter(
-        (photo) => (inputValue.includes((photo.first_name + " " + photo.last_name).toLowerCase())) || ((photo.first_name + " " + photo.last_name).toLowerCase().includes(inputValue))
-      )).length === 0
+      photosToBeDisplayed.filter(
+        (photo) =>
+          inputValue.includes(
+            (photo.first_name + " " + photo.last_name).toLowerCase()
+          ) ||
+          (photo.first_name + " " + photo.last_name)
+            .toLowerCase()
+            .includes(inputValue)
+      ).length === 0
     ) {
       setWarning("Name not found!");
     } else {
       to_show(
         photosToBeDisplayed.filter(
-          (photo) => (inputValue.includes((photo.first_name + " " + photo.last_name).toLowerCase()) || ((photo.first_name + " " + photo.last_name).toLowerCase().includes(inputValue)))
+          (photo) =>
+            inputValue.includes(
+              (photo.first_name + " " + photo.last_name).toLowerCase()
+            ) ||
+            (photo.first_name + " " + photo.last_name)
+              .toLowerCase()
+              .includes(inputValue)
         ),
         inputValue
       );
@@ -61,7 +73,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
   };
 
   return (
-    <div style={{color: themeColor}}>
+    <div style={{ color: themeColor }}>
       {!isExpanded && (
         <FaSearch
           className="m-2 mt-3"
@@ -71,36 +83,45 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
         ></FaSearch>
       )}
       {isExpanded && (
-        <div className="input-group animate__animated animate__fadeInUp" >
-
+        <div className="input-group animate__animated animate__fadeInUp">
           <TextField
             className="form-control m-2"
             label="Search Name from Record"
             variant="outlined"
             size="small"
-            sx={{width: "20ch",
-            '& input': {
-              color: 'black', // Text color
-            },}}
+            sx={{
+              maxWidth: "20ch",
+              "& input": {
+                color: "black", // Text color
+              },
+              '& .MuiOutlinedInput-root': {
+                backgroundColor: themeColor === 'light' ? 'white' : '#807a7a', // Background color based on themeColor prop
+                borderRadius: "0px",
+                '& input': {
+                  color: 'black', // Text color
+                },
+              },
+            }}
             inputRef={inputRef}
             onChange={() => {
               setWarning("");
             }}
             inputProps={{
               size: 24, // Adjust size as needed based on your default message length
-              sx: {
-                bg: themeColor==="light" ? "white" : '#black'
-              },
             }}
             InputLabelProps={{
               sx: {
-                color: 'black'
+                color: "black",
               },
             }}
           />
           <div className="input-group-append m-2">
             <button
-              className={themeColor==="light" ? "btn btn-outline-secondary" : "btn btn-outline-info"}
+              className={
+                themeColor === "light"
+                  ? "btn btn-outline-secondary"
+                  : "btn btn-outline-info"
+              }
               type="button"
               onClick={searchPhoto}
             >
