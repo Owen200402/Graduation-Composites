@@ -1,6 +1,6 @@
 // A child component of PhotoList
 
-import React from "react";
+import { Typography } from "@mui/material";
 import styled from "styled-components";
 
 const Modal = styled.div`
@@ -14,6 +14,8 @@ const Modal = styled.div`
   max-height: 90%;
   overflow: auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 `;
 
 // Overlay defines the background of the modal
@@ -31,9 +33,11 @@ interface Props {
   isOpen: boolean;
   onClose: () => void;
   imageUrl: string;
+  first_name: string;
+  last_name: string
 }
 
-const ImageModal = ({ isOpen, onClose, imageUrl }: Props) => {
+const ImageModal = ({ isOpen, onClose, imageUrl, first_name, last_name }: Props) => {
   if (!isOpen) return null;
 
   return (
@@ -49,6 +53,7 @@ const ImageModal = ({ isOpen, onClose, imageUrl }: Props) => {
               paddingBottom: "5px",
             }}
           />
+          <Typography variant="h4" style={{color: "#696969"}} className="animate__animated animate__fadeInUp">{first_name} {last_name}</Typography>
           <button
             onClick={onClose}
             className="btn-close btn-close-white"
@@ -60,6 +65,7 @@ const ImageModal = ({ isOpen, onClose, imageUrl }: Props) => {
             }}
           ></button>
         </Modal>
+        
       </Overlay>
     </>
   );

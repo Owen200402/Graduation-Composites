@@ -80,6 +80,8 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
           isOpen={modelOpened}
           onClose={closeModel}
           imageUrl={path}
+          first_name={first_name}
+          last_name={last_name}
         ></ImageModal>
       </div>
     </div>

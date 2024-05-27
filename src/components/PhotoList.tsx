@@ -51,6 +51,8 @@ const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
         isOpen={modelOpened}
         onClose={closeModel}
         imageUrl={path}
+        first_name={first_name}
+        last_name={last_name}
       ></ImageModal>
     </div>
   );
