@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { photoData } from "../components/photoData";
+import { TextField } from "@mui/material";
 
 interface PhotoList {
   id: number;
@@ -70,16 +71,19 @@ const SearchBar = ({ first_names, last_names, to_show }: Props) => {
       )}
       {isExpanded && (
         <div className="input-group animate__animated animate__fadeInUp">
-          <input
-            type="text"
+
+          <TextField
             className="form-control m-2"
-            placeholder="Search Name in Record"
-            aria-label="Search Name in Record"
-            aria-describedby="basic-addon2"
-            style={{ maxWidth: "198px", borderRadius: "5px" }}
-            ref={inputRef}
+            label="Search Name from Record"
+            variant="outlined"
+            size="small"
+            sx={{width: "20ch"}}
+            inputRef={inputRef}
             onChange={() => {
               setWarning("");
+            }}
+            inputProps={{
+              size: 24, // Adjust size as needed based on your default message length
             }}
           />
           <div className="input-group-append m-2">
