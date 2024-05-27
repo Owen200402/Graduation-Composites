@@ -13,6 +13,7 @@ import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import IconButton from "@mui/material/IconButton";
+import { Typography } from '@mui/material';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -55,7 +56,7 @@ function App() {
         </div>
       </div>
 
-      <div className="photo_container" style={{ color: textStyle.color }}>
+      <div className="photo_container m-3" style={{ color: textStyle.color }}>
         {photosToBeDisplayed
           .filter((photo) => photo.year === selectedYear)
           .map((photo) => (
@@ -80,8 +81,8 @@ function App() {
       </div>
 
       {searchResult && (
-        <div className="" style={{ color: textStyle.color }}>
-          <h3 className="m-3">Results For {searchedInput}:</h3>
+        <div style={{ color: textStyle.color }}>
+          <Typography variant='h4' className='p-2'>Results for {searchedInput}:</Typography>
           <div className="photo_container">
             {searchResult.map((photo) => (
               <div key={photo.id}>

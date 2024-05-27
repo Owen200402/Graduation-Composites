@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ImageModal from "./ImageModal";
+import { Typography } from "@mui/material";
 
 const Image = styled.img`
   width: 200px;
@@ -42,9 +43,9 @@ const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
         onClick={() => enlargeImage(path)}
       />
 
-      <p style={{ textAlign: "center" }}>
+      <Typography component="p" style={{ textAlign: "center" }}>
         {first_name} {last_name}
-      </p>
+      </Typography>
 
       <ImageModal
         isOpen={modelOpened}

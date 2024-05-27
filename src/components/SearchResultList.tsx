@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ImageModal from "./ImageModal";
+import { Typography } from "@mui/material";
 
 const Image = styled.img`
   width: 200px;
@@ -63,7 +64,7 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
           alignItems: "center",
         }}
       >
-        <h4 className="mb-0">{year}</h4>
+        <Typography variant="h5">{year}</Typography>
         <Image
           src={path}
           alt={`${first_name} ${last_name}`}
@@ -71,9 +72,9 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
           onClick={() => enlargeImage(path)}
         />
 
-        <p style={{ textAlign: "center" }}>
+        <Typography component="p" style={{ textAlign: "center" }}>
           {first_name} {last_name}
-        </p>
+        </Typography>
 
         <ImageModal
           isOpen={modelOpened}
