@@ -62,12 +62,7 @@ function App() {
         <div className="">
           <h3 className="m-3">Results For {searchedInput}:</h3>
           <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
+            className="photo_container"
           >
             {searchResult.map((photo) => (
               <div key={photo.id}>

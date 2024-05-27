@@ -2,10 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ImageModal from "./ImageModal";
 
-const Title = styled.h2`
-  text-align: center;
-`;
-
 const Image = styled.img`
   width: 200px;
   height: 200px;
