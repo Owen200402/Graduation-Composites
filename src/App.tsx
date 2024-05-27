@@ -7,6 +7,7 @@ import Heading from "./components/Heading";
 import UBCLogo from "./components/TopBanner";
 import SearchBar from "./components/SearchBar";
 import SearchResultList from "./components/SearchResultList";
+import CompositeDialog from "./components/CompositeDialog";
 
 // The parent that has states and allows change to be reflected to components
 function App() {
@@ -31,7 +32,11 @@ function App() {
     }}>
       <UBCLogo></UBCLogo>
 
-      <Heading year={selectedYear}></Heading>
+      <div style={{display: 'flex', justifyContent: "space-between"}}>
+        <div className="p-2"><CompositeDialog></CompositeDialog></div>
+        <div><Heading year={selectedYear}></Heading></div>
+        <div className="p-2"><h2>Dark Mode</h2></div>
+      </div>
 
       <div className="photo_container">
         {photosToBeDisplayed

@@ -31,7 +31,7 @@ const CompositeDialog = () => {
   return (
     <React.Fragment>
       <Button variant="outlined" onClick={handleClickOpen}>
-        Composite description
+        Description
       </Button>
       <BootstrapDialog
         onClose={handleClose}
@@ -39,7 +39,7 @@ const CompositeDialog = () => {
         open={open}
       >
         <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-          Graduation composite description and usage
+          Graduation Composite
         </DialogTitle>
         <IconButton
           aria-label="close"
@@ -55,23 +55,22 @@ const CompositeDialog = () => {
         </IconButton>
         <DialogContent dividers>
           <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
+            The graduation composite features past graduates from 1970 to 2022 in UBC's electrical 
+            and computer engineering department.
           </Typography>
           <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+            This website (also used for digital signage project) showcases a collection of 
+            graduated student photos which is filterable by years. As a user, you can
+            also click on photos to enlarge them, or simply search the graduate's name in
+            the search bar at the bottom of the page.
           </Typography>
           <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
-            magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
-            ullamcorper nulla non metus auctor fringilla.
+            All software used for this project is owned by ECE, and the development of this website gives credit for Owen Zheng, our 2024 summer Co-op student, who is currently studying BSc Computer Science at the University of British Columbia. 
           </Typography>
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose}>
-            Save changes
+            Done
           </Button>
         </DialogActions>
       </BootstrapDialog>
