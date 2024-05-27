@@ -90,7 +90,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
             variant="outlined"
             size="small"
             sx={{
-              maxWidth: "20ch",
+              maxWidth: "25ch",
               "& input": {
                 color: "black", // Text color
               },
