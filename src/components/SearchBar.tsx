@@ -15,9 +15,10 @@ interface Props {
   first_names: string[];
   last_names: string[];
   to_show: (photolist: PhotoList[], input: string) => void;
+  themeColor: string;
 }
 
-const SearchBar = ({ first_names, last_names, to_show }: Props) => {
+const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const [warning, setWarning] = useState("");
@@ -60,7 +61,7 @@ const SearchBar = ({ first_names, last_names, to_show }: Props) => {
   };
 
   return (
-    <div>
+    <div style={{color: themeColor}}>
       {!isExpanded && (
         <FaSearch
           className="m-2 mt-3"
@@ -70,25 +71,36 @@ const SearchBar = ({ first_names, last_names, to_show }: Props) => {
         ></FaSearch>
       )}
       {isExpanded && (
-        <div className="input-group animate__animated animate__fadeInUp">
+        <div className="input-group animate__animated animate__fadeInUp" >
 
           <TextField
             className="form-control m-2"
             label="Search Name from Record"
             variant="outlined"
             size="small"
-            sx={{width: "20ch"}}
+            sx={{width: "20ch",
+            '& input': {
+              color: 'black', // Text color
+            },}}
             inputRef={inputRef}
             onChange={() => {
               setWarning("");
             }}
             inputProps={{
               size: 24, // Adjust size as needed based on your default message length
+              sx: {
+                bg: themeColor==="light" ? "white" : '#black'
+              },
+            }}
+            InputLabelProps={{
+              sx: {
+                color: 'black'
+              },
             }}
           />
           <div className="input-group-append m-2">
             <button
-              className="btn btn-outline-secondary"
+              className={themeColor==="light" ? "btn btn-outline-secondary" : "btn btn-outline-info"}
               type="button"
               onClick={searchPhoto}
             >

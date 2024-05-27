@@ -1,17 +1,14 @@
+import { Typography } from "@mui/material";
 import React, { useState } from "react";
 import styled from "styled-components";
 
 // CSS in JS
-const Title = styled.h2`
-  text-align: center;
-`;
-
 interface Props {
   year: number;
 }
 
 const Heading = ({ year }: Props) => {
-  return <Title>ECE Graduation Class of {year}</Title>;
+  return <Typography variant="h3" sx={{textAlign: "center"}}>ECE Graduation Class of {year}</Typography>;
 };
 
 export default Heading;

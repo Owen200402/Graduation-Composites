@@ -1,4 +1,5 @@
-import { useState } from "react";
+import * as React from 'react';
+import { useState, useMemo, useContext } from "react";
 import "./App.css";
 import GraduationFilterYear from "./components/GraduationFilterYear";
 import PhotoList from "./components/PhotoList";
@@ -8,8 +9,13 @@ import UBCLogo from "./components/TopBanner";
 import SearchBar from "./components/SearchBar";
 import SearchResultList from "./components/SearchResultList";
 import CompositeDialog from "./components/CompositeDialog";
+import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import IconButton from "@mui/material/IconButton";
 
-// The parent that has states and allows change to be reflected to components
+const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+
 function App() {
   interface Photo {
     id: number;
@@ -27,18 +33,29 @@ function App() {
   const [searchResult, setSearchResult] = useState<Photo[]>();
   const [searchedInput, setSearchedInput] = useState("");
 
-  return (
-    <div style={{background: "linear-gradient(to bottom, #e6f7ff, #ffffff)"
-    }}>
-      <UBCLogo></UBCLogo>
+  const theme = useTheme();
+  const colorMode = useContext(ColorModeContext);
 
-      <div style={{display: 'flex', justifyContent: "space-between"}}>
-        <div className="p-2"><CompositeDialog></CompositeDialog></div>
-        <div><Heading year={selectedYear}></Heading></div>
-        <div className="p-2"><h2>Dark Mode</h2></div>
+  const textStyle = {
+    color: theme.palette.mode === 'dark' ? 'white' : 'black'
+  };
+
+  return (
+    <div style={{ background: theme.palette.mode === 'dark' ? '#807a7a' : 'linear-gradient(to bottom, #e6f7ff, #ffffff)', color: theme.palette.mode === 'dark' ? 'white' : 'black' }}>
+      <UBCLogo />
+
+      <div style={{ display: 'flex', justifyContent: "space-between", color: textStyle.color }}>
+        <div className="p-2"><CompositeDialog /></div>
+        <div><Heading year={selectedYear} /></div>
+        <div>
+          {theme.palette.mode} mode
+          <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
+            {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+          </IconButton>
+        </div>
       </div>
 
-      <div className="photo_container">
+      <div className="photo_container" style={{ color: textStyle.color }}>
         {photosToBeDisplayed
           .filter((photo) => photo.year === selectedYear)
           .map((photo) => (
@@ -48,10 +65,8 @@ function App() {
           ))}
       </div>
 
-      <div className="container-flex">
-        <GraduationFilterYear
-          onSelect={(year) => setSelectedYear(year)}
-        ></GraduationFilterYear>
+      <div className="container-flex" style={{ color: textStyle.color }}>
+        <GraduationFilterYear onSelect={(year) => setSelectedYear(year)} />
         <SearchBar
           to_show={(photoList, input) => {
             setSearchResult(photoList);
@@ -60,15 +75,14 @@ function App() {
           }}
           first_names={photos.map((p) => p.first_name)}
           last_names={photos.map((p) => p.last_name)}
-        ></SearchBar>
+          themeColor={theme.palette.mode}
+        />
       </div>
 
       {searchResult && (
-        <div className="">
+        <div className="" style={{ color: textStyle.color }}>
           <h3 className="m-3">Results For {searchedInput}:</h3>
-          <div
-            className="photo_container"
-          >
+          <div className="photo_container">
             {searchResult.map((photo) => (
               <div key={photo.id}>
                 <SearchResultList {...photo} />
@@ -88,12 +102,40 @@ function App() {
         </div>
       )}
 
-      <div className="copyright">
-        &copy; {new Date().getFullYear()} UBC Electrical and Computer
-        Engineering. All rights reserved.
+      <div className="copyright" style={{ color: textStyle.color }}>
+        &copy; {new Date().getFullYear()} UBC Electrical and Computer Engineering. All rights reserved.
       </div>
     </div>
   );
 }
 
-export default App;
+export default function MyApp() {
+  const [mode, setMode] = useState<'light' | 'dark'>('light');
+
+  const colorMode = useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+    }),
+    [],
+  );
+
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+        },
+      }),
+    [mode],
+  );
+
+  return (
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </ColorModeContext.Provider>
+  );
+}
