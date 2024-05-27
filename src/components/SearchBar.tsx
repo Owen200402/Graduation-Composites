@@ -13,7 +13,7 @@ interface PhotoList {
 interface Props {
   first_names: string[];
   last_names: string[];
-  to_show: (photolist: PhotoList[]) => void;
+  to_show: (photolist: PhotoList[], input: string) => void;
 }
 
 const SearchBar = ({ first_names, last_names, to_show }: Props) => {
@@ -50,7 +50,8 @@ const SearchBar = ({ first_names, last_names, to_show }: Props) => {
       to_show(
         photosToBeDisplayed.filter(
           (photo) => (inputValue.includes((photo.first_name + " " + photo.last_name).toLowerCase()) || ((photo.first_name + " " + photo.last_name).toLowerCase().includes(inputValue)))
-        )
+        ),
+        inputValue
       );
       setWarning("");
       inputRef.current.value = "";

@@ -16,8 +16,8 @@ const Div = styled.div`
 const TopBanner = () => {
   return (
     <Div>
-      <Image src="assets/ubc-logo-2018-fullsig-blue-rgb72.jpg" alt="UBC Logo" />
-      <Image src="assets/ECE-Logo.png" alt="ECE Logo" />
+      <Image src="assets/UBC.png" alt="UBC Logo" />
+      <Image src="assets/ECE.png" alt="ECE Logo" />
     </Div>
   );
 };

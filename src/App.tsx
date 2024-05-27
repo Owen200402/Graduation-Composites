@@ -22,10 +22,13 @@ function App() {
   const photosToBeDisplayed = photos;
 
   const [selectedYear, setSelectedYear] = useState(1930);
+
   const [searchResult, setSearchResult] = useState<Photo[]>();
+  const [searchedInput, setSearchedInput] = useState("");
 
   return (
-    <div>
+    <div style={{background: "linear-gradient(to bottom, #e6f7ff, #ffffff)"
+    }}>
       <UBCLogo></UBCLogo>
 
       <Heading year={selectedYear}></Heading>
@@ -45,8 +48,10 @@ function App() {
           onSelect={(year) => setSelectedYear(year)}
         ></GraduationFilterYear>
         <SearchBar
-          to_show={(photoList) => {
+          to_show={(photoList, input) => {
             setSearchResult(photoList);
+            setSearchedInput(input);
+            console.log(searchedInput);
           }}
           first_names={photos.map((p) => p.first_name)}
           last_names={photos.map((p) => p.last_name)}
@@ -55,7 +60,7 @@ function App() {
 
       {searchResult && (
         <div className="">
-          <h3 className="m-3">Results For {searchResult[0].first_name}:</h3>
+          <h3 className="m-3">Results For {searchedInput}:</h3>
           <div
             style={{
               display: "flex",
