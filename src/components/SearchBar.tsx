@@ -40,13 +40,13 @@ const SearchBar = ({ first_names, last_names, to_show }: Props) => {
     const inputValue = inputRef.current.value.toLowerCase();
 
     if (inputValue === "") {
-      setWarning("First name cannot be blank!");
+      setWarning("Name cannot be blank!");
     } else if (
       (photosToBeDisplayed.filter(
         (photo) => (inputValue.includes((photo.first_name + " " + photo.last_name).toLowerCase())) || ((photo.first_name + " " + photo.last_name).toLowerCase().includes(inputValue))
       )).length === 0
     ) {
-      setWarning("Name not found in past graduates!");
+      setWarning("Name not found!");
     } else {
       to_show(
         photosToBeDisplayed.filter(
