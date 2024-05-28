@@ -5,7 +5,7 @@ export const photoData = [
     first_name: "Edward",
     last_name: "Hay",
     year: 1930,
-    path: "assets/Edward_Hay_1930.jpg",
+    path: "images/bottom-banner.webp",
   },
   {
     id: 2,
