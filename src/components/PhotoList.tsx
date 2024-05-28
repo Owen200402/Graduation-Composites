@@ -19,7 +19,6 @@ interface Props {
   path: string;
 }
 
-// Rendering photos on the screen
 const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
   const [selectedImage, setSelectedImage] = useState("");
   const [modelOpened, setModelOpened] = useState(false);

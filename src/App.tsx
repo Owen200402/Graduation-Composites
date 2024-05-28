@@ -37,6 +37,8 @@ function App() {
   const [searchResult, setSearchResult] = useState<Photo[]>();
   const [searchedInput, setSearchedInput] = useState('');
 
+  const [isBacked, setIsBacked] = useState(false);
+
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
 
@@ -107,7 +109,6 @@ function App() {
           to_show={(photoList, input) => {
             setSearchResult(photoList);
             setSearchedInput(input);
-            console.log(searchedInput);
           }}
           first_names={photos.map((p) => p.first_name)}
           last_names={photos.map((p) => p.last_name)}
