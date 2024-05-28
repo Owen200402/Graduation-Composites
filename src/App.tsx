@@ -62,7 +62,7 @@ function App() {
           <CompositeDialog />
         </div>
         <div>
-          <Heading year={selectedYear} />
+          {!searchResult && <Heading year={selectedYear} />}
         </div>
         <div>
           {theme.palette.mode} mode
@@ -72,14 +72,12 @@ function App() {
         </div>
       </div>
 
-      
-
       {searchResult ? (
         <div style={{ color: textStyle.color }}>
           <Typography variant='h5' className='p-2' sx={{textAlign: "center", color: "royalblue"}}>
             Search results for {searchedInput}:
           </Typography>
-          <div className='photo_container'>
+          <div className='photo_container animate__animated animate__backInUp'>
             {searchResult.map((photo) => (
               <div key={photo.id}>
                 <SearchResultList {...photo} />
@@ -92,7 +90,8 @@ function App() {
             </button>
           </div>
         </div>
-      ) : <div className='photo_container m-3' style={{ color: textStyle.color }}>
+      ) : 
+      <div className='photo_container m-3 animate__animated animate__fadeInTopLeft' style={{ color: textStyle.color }}>
       {photosToBeDisplayed
         .filter((photo) => photo.year === selectedYear)
         .map((photo) => (
