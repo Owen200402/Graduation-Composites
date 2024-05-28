@@ -31,7 +31,7 @@ const CompositeDialog = () => {
 
   return (
     <React.Fragment>
-      <DescriptionIcon onClick={handleClickOpen} sx={{cursor: "pointer", fontSize: 38, ml: 2, mr: 8, color: "#0055B7"}}></DescriptionIcon>
+      <DescriptionIcon onClick={handleClickOpen} sx={{cursor: "pointer", fontSize: 38, ml: 2, mr: 10, color: "#0055B7"}}></DescriptionIcon>
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"

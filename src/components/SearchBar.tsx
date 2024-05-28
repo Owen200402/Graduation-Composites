@@ -86,20 +86,17 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
         <div className="input-group animate__animated animate__fadeInUp">
           <TextField
             className="form-control m-2"
-            label="Search Name from Record"
+            label="Search Name in All Years"
             variant="outlined"
             size="small"
             sx={{
               maxWidth: "25ch",
               "& input": {
-                color: "black", // Text color
+                color: themeColor === "light" ? "black" : "white"
               },
               '& .MuiOutlinedInput-root': {
-                backgroundColor: themeColor === 'light' ? 'white' : '#807a7a', // Background color based on themeColor prop
+                backgroundColor: themeColor === 'light' ? 'white' : '#807a7a', 
                 borderRadius: "0px",
-                '& input': {
-                  color: 'black', // Text color
-                },
               },
             }}
             inputRef={inputRef}
@@ -107,7 +104,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
               setWarning("");
             }}
             inputProps={{
-              size: 24, // Adjust size as needed based on your default message length
+              size: 24, 
             }}
             InputLabelProps={{
               sx: {
