@@ -26,3 +26,36 @@ body {
   padding-left: 10rem;
   padding-right: 10rem;
 }
+
+.weather-position {
+  position: absolute;
+  top: 4%;
+  right: 15%;
+  opacity: 0.5;
+}
+
+.top-banner-image {
+  height: 6.5rem;
+  object-fit: cover;
+  margin: 0.8rem;
+}
+
+.top-banner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1440px) {
+  .weather-position {
+    right: 25%;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .top-banner-image {
+    height: 4.5rem;
+  }
+}
+

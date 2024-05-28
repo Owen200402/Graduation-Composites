@@ -15,6 +15,8 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import IconButton from '@mui/material/IconButton';
 import { Typography } from '@mui/material';
 import BottomBanner from './components/BottomBanner';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import NightsStayIcon from '@mui/icons-material/NightsStay';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -52,6 +54,8 @@ function App() {
       }}
     >
       <UBCLogo />
+      {theme.palette.mode === "light" ? <WbSunnyIcon sx={{fontSize: 55, color: "#e65015"}} className="weather-position"></WbSunnyIcon> 
+      : <NightsStayIcon sx={{fontSize: 55, color: "#040cdb"}} className="weather-position"></NightsStayIcon> }
 
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div className='p-2'>
