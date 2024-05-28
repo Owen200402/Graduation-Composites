@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const Banner = styled.div`
-  background-image: url('../public/assets/bottom-banner.webp');
+  background-image: url('../public/images/bottom-banner.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
