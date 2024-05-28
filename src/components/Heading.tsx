@@ -1,6 +1,4 @@
 import { Typography } from "@mui/material";
-import React, { useState } from "react";
-import styled from "styled-components";
 
 // CSS in JS
 interface Props {

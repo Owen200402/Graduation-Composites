@@ -1,19 +1,20 @@
 import * as React from 'react';
-import { useState, useMemo, useContext } from "react";
-import "./App.css";
-import GraduationFilterYear from "./components/GraduationFilterYear";
-import PhotoList from "./components/PhotoList";
-import { photoData } from "./components/photoData";
-import Heading from "./components/Heading";
-import UBCLogo from "./components/TopBanner";
-import SearchBar from "./components/SearchBar";
-import SearchResultList from "./components/SearchResultList";
-import CompositeDialog from "./components/CompositeDialog";
-import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
+import { useState, useMemo, useContext } from 'react';
+import './App.css';
+import GraduationFilterYear from './components/GraduationFilterYear';
+import PhotoList from './components/PhotoList';
+import { photoData } from './components/photoData';
+import Heading from './components/Heading';
+import UBCLogo from './components/TopBanner';
+import SearchBar from './components/SearchBar';
+import SearchResultList from './components/SearchResultList';
+import CompositeDialog from './components/CompositeDialog';
+import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import IconButton from "@mui/material/IconButton";
+import IconButton from '@mui/material/IconButton';
 import { Typography } from '@mui/material';
+import BottomBanner from './components/BottomBanner';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -32,7 +33,7 @@ function App() {
   const [selectedYear, setSelectedYear] = useState(1930);
 
   const [searchResult, setSearchResult] = useState<Photo[]>();
-  const [searchedInput, setSearchedInput] = useState("");
+  const [searchedInput, setSearchedInput] = useState('');
 
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
@@ -42,21 +43,32 @@ function App() {
   };
 
   return (
-    <div style={{ background: theme.palette.mode === 'dark' ? '#807a7a' : 'linear-gradient(to bottom, #e6f7ff, #ffffff)', color: theme.palette.mode === 'dark' ? 'white' : 'black', minHeight: "100vh" }}>
+    <div
+      style={{
+        background:
+          theme.palette.mode === 'dark' ? '#807a7a' : 'linear-gradient(to bottom, #e6f7ff, #ffffff)',
+        color: theme.palette.mode === 'dark' ? 'white' : 'black',
+        minHeight: '100vh'
+      }}
+    >
       <UBCLogo />
 
-      <div style={{ display: 'flex', justifyContent: "space-between"}}>
-        <div className="p-2"><CompositeDialog /></div>
-        <div><Heading year={selectedYear} /></div>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div className='p-2'>
+          <CompositeDialog />
+        </div>
+        <div>
+          <Heading year={selectedYear} />
+        </div>
         <div>
           {theme.palette.mode} mode
-          <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
+          <IconButton sx={{ ml: 1, mr: 2}} onClick={colorMode.toggleColorMode} color='inherit'>
             {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
         </div>
       </div>
 
-      <div className="photo_container m-3" style={{ color: textStyle.color }}>
+      <div className='photo_container m-3' style={{ color: textStyle.color }}>
         {photosToBeDisplayed
           .filter((photo) => photo.year === selectedYear)
           .map((photo) => (
@@ -66,7 +78,7 @@ function App() {
           ))}
       </div>
 
-      <div className="container-flex" style={{ color: textStyle.color }}>
+      <div className='container-flex' style={{ color: textStyle.color }}>
         <GraduationFilterYear onSelect={(year) => setSelectedYear(year)} />
         <SearchBar
           to_show={(photoList, input) => {
@@ -82,34 +94,33 @@ function App() {
 
       {searchResult && (
         <div style={{ color: textStyle.color }}>
-          <Typography variant='h4' className='p-2'>Results for {searchedInput}:</Typography>
-          <div className="photo_container">
+          <Typography variant='h4' className='p-2'>
+            Results for {searchedInput}:
+          </Typography>
+          <div className='photo_container'>
             {searchResult.map((photo) => (
               <div key={photo.id}>
                 <SearchResultList {...photo} />
               </div>
             ))}
           </div>
-          <div style={{ display: "flex", justifyContent: "right" }}>
-            <button
-              className="btn btn-outline-danger m-3"
-              onClick={() => {
-                setSearchResult(undefined);
-              }}
-            >
+          <div style={{ display: 'flex', justifyContent: 'right' }}>
+            <button className='btn btn-outline-danger m-3' onClick={() => setSearchResult(undefined)}>
               Back
             </button>
           </div>
         </div>
       )}
 
-      <div className="copyright" style={{ color: textStyle.color }}>
+      <div className='copyright' style={{ color: textStyle.color }}>
         &copy; {new Date().getFullYear()} UBC Electrical and Computer Engineering. All rights reserved.
       </div>
+      <BottomBanner></BottomBanner>
     </div>
   );
 }
 
+// The app that has the color theme =
 export default function MyApp() {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
 
@@ -119,7 +130,7 @@ export default function MyApp() {
         setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
       },
     }),
-    [],
+    []
   );
 
   const theme = useMemo(
@@ -129,7 +140,7 @@ export default function MyApp() {
           mode,
         },
       }),
-    [mode],
+    [mode]
   );
 
   return (

@@ -8,6 +8,7 @@ import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
+import DescriptionIcon from '@mui/icons-material/Description';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -30,9 +31,7 @@ const CompositeDialog = () => {
 
   return (
     <React.Fragment>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Description
-      </Button>
+      <DescriptionIcon color="primary" onClick={handleClickOpen} sx={{cursor: "pointer", fontSize: 45, ml: 2, mr: 8}}></DescriptionIcon>
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
