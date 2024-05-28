@@ -12,7 +12,7 @@ const Modal = styled.div`
   z-index: 1000;
   max-width: 90%;
   max-height: 90%;
-  overflow: auto;
+  overflow: hidden;
   text-align: center;
   display: flex;
   flex-direction: column;
