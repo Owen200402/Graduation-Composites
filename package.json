@@ -1,5 +1,6 @@
 {
   "name": "graduation-composites",
+  "homepage": "https://people.ece.ubc.ca/eng-services",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +9,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
