@@ -22,28 +22,6 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
   const [selectedImage, setSelectedImage] = useState("");
   const [modelOpened, setModelOpened] = useState(false);
 
-  useEffect(() => {
-    const currentLocation = window.screenY;
-
-    const handleScroll = () => {
-      window.scrollBy({
-        top: currentLocation + 450,
-        left: 0,
-        behavior: "smooth",
-      });
-    };
-
-    handleScroll();
-
-    return () => {
-      window.scrollBy({
-        top: currentLocation,
-        left: 0,
-        behavior: "smooth",
-      });
-    };
-  }, []);
-
   function enlargeImage(imagePath: string) {
     setSelectedImage(imagePath);
     setModelOpened(true);

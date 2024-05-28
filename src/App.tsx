@@ -72,15 +72,35 @@ function App() {
         </div>
       </div>
 
-      <div className='photo_container m-3' style={{ color: textStyle.color }}>
-        {photosToBeDisplayed
-          .filter((photo) => photo.year === selectedYear)
-          .map((photo) => (
-            <div key={photo.id}>
-              <PhotoList {...photo} />
-            </div>
-          ))}
-      </div>
+      
+
+      {searchResult ? (
+        <div style={{ color: textStyle.color }}>
+          <Typography variant='h5' className='p-2' sx={{textAlign: "center", color: "royalblue"}}>
+            Search results for {searchedInput}:
+          </Typography>
+          <div className='photo_container'>
+            {searchResult.map((photo) => (
+              <div key={photo.id}>
+                <SearchResultList {...photo} />
+              </div>
+            ))}
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'right' }}>
+            <button className='btn btn-outline-danger m-3' onClick={() => setSearchResult(undefined)}>
+              Back
+            </button>
+          </div>
+        </div>
+      ) : <div className='photo_container m-3' style={{ color: textStyle.color }}>
+      {photosToBeDisplayed
+        .filter((photo) => photo.year === selectedYear)
+        .map((photo) => (
+          <div key={photo.id}>
+            <PhotoList {...photo} />
+          </div>
+        ))}
+    </div>}
 
       <div className='container-flex' style={{ color: textStyle.color }}>
         <GraduationFilterYear onSelect={(year) => setSelectedYear(year)} />
@@ -96,25 +116,7 @@ function App() {
         />
       </div>
 
-      {searchResult && (
-        <div style={{ color: textStyle.color }}>
-          <Typography variant='h4' className='p-2'>
-            Results for {searchedInput}:
-          </Typography>
-          <div className='photo_container'>
-            {searchResult.map((photo) => (
-              <div key={photo.id}>
-                <SearchResultList {...photo} />
-              </div>
-            ))}
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'right' }}>
-            <button className='btn btn-outline-danger m-3' onClick={() => setSearchResult(undefined)}>
-              Back
-            </button>
-          </div>
-        </div>
-      )}
+      
 
       <div className='copyright' style={{ color: textStyle.color }}>
         &copy; {new Date().getFullYear()} UBC Electrical and Computer Engineering. All rights reserved.
