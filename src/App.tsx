@@ -56,8 +56,8 @@ function App() {
       }}
     >
       <UBCLogo />
-      {theme.palette.mode === "light" ? <WbSunnyIcon sx={{fontSize: 55, color: "#e65015"}} className="weather-position"></WbSunnyIcon> 
-      : <NightsStayIcon sx={{fontSize: 55, color: "#040cdb"}} className="weather-position"></NightsStayIcon> }
+      {theme.palette.mode === "light" ? <WbSunnyIcon sx={{fontSize: 55, color: "#e65015"}} className="weather-position animate__animated animate__fadeInDown"></WbSunnyIcon> 
+      : <NightsStayIcon sx={{fontSize: 55, color: "#040cdb"}} className="weather-position animate__animated animate__fadeInUp"></NightsStayIcon> }
 
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div className='p-2'>
