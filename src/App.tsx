@@ -42,7 +42,7 @@ function App() {
   };
 
   return (
-    <div style={{ background: theme.palette.mode === 'dark' ? '#807a7a' : 'linear-gradient(to bottom, #e6f7ff, #ffffff)', color: theme.palette.mode === 'dark' ? 'white' : 'black' }}>
+    <div style={{ background: theme.palette.mode === 'dark' ? '#807a7a' : 'linear-gradient(to bottom, #e6f7ff, #ffffff)', color: theme.palette.mode === 'dark' ? 'white' : 'black', minHeight: "100vh" }}>
       <UBCLogo />
 
       <div style={{ display: 'flex', justifyContent: "space-between"}}>

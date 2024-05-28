@@ -7,7 +7,6 @@
 .copyright {
   text-align: center;
   font-size: 14px;
-  color: rgb(85, 83, 83);
   margin-top: 10px;
   font-family: "Great Vibes", cursive; /* Apply the fancy font */
 }
@@ -18,4 +17,6 @@
   gap: 1rem;
   justify-content: center;
   align-items: center;
+  padding-left: 10rem;
+  padding-right: 10rem;
 }
