@@ -27,6 +27,12 @@ body {
   padding-right: 10rem;
 }
 
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .weather-position {
   position: absolute;
   top: 4%;

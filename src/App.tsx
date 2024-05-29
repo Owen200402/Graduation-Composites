@@ -79,7 +79,7 @@ function App() {
           <Typography variant='h5' className='p-2' sx={{textAlign: "center", color: "royalblue"}}>
             Search results for {searchedInput}:
           </Typography>
-          <div className='photo_container'>
+          <div className='photo_container animate__animated animate__backInUp'>
             {searchResult.map((photo) => (
               <div key={photo.id}>
                 <SearchResultList {...photo} />
