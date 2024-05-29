@@ -79,7 +79,7 @@ function App() {
           <Typography variant='h5' className='p-2' sx={{textAlign: "center", color: "royalblue"}}>
             Search results for {searchedInput}:
           </Typography>
-          <div className='photo_container animate__animated animate__backInUp'>
+          <div className='photo_container'>
             {searchResult.map((photo) => (
               <div key={photo.id}>
                 <SearchResultList {...photo} />
@@ -93,7 +93,7 @@ function App() {
           </div>
         </div>
       ) : 
-      <div className='photo_container m-3 animate__animated animate__fadeInTopLeft' style={{ color: textStyle.color }}>
+      <div className='photo_container m-3' style={{ color: textStyle.color }}>
       {photosToBeDisplayed
         .filter((photo) => photo.year === selectedYear)
         .map((photo) => (
