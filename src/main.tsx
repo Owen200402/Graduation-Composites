@@ -5,6 +5,8 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "animate.css";
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
