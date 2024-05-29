@@ -4,8 +4,8 @@ import ImageModal from "./ImageModal";
 import { Typography } from "@mui/material";
 
 const Image = styled.img`
-  width: 170px;
-  height: 170px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   margin: 0.8rem;
   box-shadow: 0 3px 6px rgba(110, 77, 11, 0.7);
