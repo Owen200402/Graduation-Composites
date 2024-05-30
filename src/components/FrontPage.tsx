@@ -23,6 +23,7 @@ const SloganL = styled.div `
     margin: 2rem;
     color: #00A7E1;
     max-width: 600px;
+    word-wrap: break-word;
 `
 
 const Sub = styled.div `
@@ -30,8 +31,9 @@ const Sub = styled.div `
     left: 0;
     top: 5rem;
     margin: 2rem;
-    color: #00A7E1;
+    color: #6EC4E8;
     max-width: 400px;
+    word-wrap: break-word;
 `
 
 interface Props {
