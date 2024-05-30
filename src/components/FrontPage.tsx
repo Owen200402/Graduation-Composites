@@ -30,11 +30,10 @@ const FrontPage = ({title, subtitle}: Props) => {
 
         const interval = setInterval(() => {
             setDisplayedSubtitle(prev);
-
             index++;
             prev += subtitle.charAt(index)
             if (index >= subtitle.length) {
-                clearInterval(interval); // ensures page doesn't get refreshed when I return
+                clearInterval(interval); 
             }
         }, 50)
         return () => clearInterval(interval);
