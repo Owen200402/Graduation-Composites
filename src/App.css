@@ -19,7 +19,7 @@ body::-webkit-scrollbar {
   text-align: center;
   font-size: 14px;
   margin-top: 10px;
-  font-family: "Great Vibes", cursive; /* Apply the fancy font */
+  font-family: 'Great Vibes', cursive; /* Apply the fancy font */
 }
 
 .photo_container {
@@ -63,7 +63,6 @@ body::-webkit-scrollbar {
   }
 }
 
-
 @media (max-width: 1024px) {
   .top-banner-image {
     height: 4.5rem;
@@ -78,4 +77,3 @@ body::-webkit-scrollbar {
     opacity: 1;
   }
 }
-

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import { FaSearch } from "react-icons/fa";
-import { photoData } from "../components/photoData";
-import { TextField } from "@mui/material";
+import React, { useEffect, useRef, useState } from 'react';
+import { FaSearch } from 'react-icons/fa';
+import { photoData } from '../components/photoData';
+import { TextField } from '@mui/material';
 
 interface PhotoList {
   id: number;
@@ -21,7 +21,7 @@ interface Props {
 const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  const [warning, setWarning] = useState("");
+  const [warning, setWarning] = useState('');
   const [photos, setPhotos] = useState(photoData);
   const photosToBeDisplayed = photos;
 
@@ -29,7 +29,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
     setIsExpanded(true);
     setTimeout(() => {
       setIsExpanded(false);
-      setWarning("");
+      setWarning('');
     }, 60000);
   };
 
@@ -40,35 +40,35 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
 
     const inputValue = inputRef.current.value.toLowerCase();
 
-    if (inputValue === "") {
-      setWarning("Name cannot be blank!");
+    if (inputValue === '') {
+      setWarning('Name cannot be blank!');
     } else if (
       photosToBeDisplayed.filter(
         (photo) =>
           inputValue.includes(
-            (photo.first_name + " " + photo.last_name).toLowerCase()
+            (photo.first_name + ' ' + photo.last_name).toLowerCase()
           ) ||
-          (photo.first_name + " " + photo.last_name)
+          (photo.first_name + ' ' + photo.last_name)
             .toLowerCase()
             .includes(inputValue)
       ).length === 0
     ) {
-      setWarning("Name not found!");
+      setWarning('Name not found!');
     } else {
       to_show(
         photosToBeDisplayed.filter(
           (photo) =>
             inputValue.includes(
-              (photo.first_name + " " + photo.last_name).toLowerCase()
+              (photo.first_name + ' ' + photo.last_name).toLowerCase()
             ) ||
-            (photo.first_name + " " + photo.last_name)
+            (photo.first_name + ' ' + photo.last_name)
               .toLowerCase()
               .includes(inputValue)
         ),
         inputValue
       );
-      setWarning("");
-      inputRef.current.value = "";
+      setWarning('');
+      inputRef.current.value = '';
     }
   };
 
@@ -79,7 +79,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
           className="m-2 mt-3"
           size={25}
           onClick={clickToExpand}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: 'pointer' }}
         ></FaSearch>
       )}
       {isExpanded && (
@@ -90,34 +90,34 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
             variant="outlined"
             size="small"
             sx={{
-              maxWidth: "25ch",
-              "& input": {
-                color: themeColor === "light" ? "black" : "white"
+              maxWidth: '25ch',
+              '& input': {
+                color: themeColor === 'light' ? 'black' : 'white',
               },
               '& .MuiOutlinedInput-root': {
-                backgroundColor: themeColor === 'light' ? 'white' : '#807a7a', 
-                borderRadius: "0px",
+                backgroundColor: themeColor === 'light' ? 'white' : '#807a7a',
+                borderRadius: '0px',
               },
             }}
             inputRef={inputRef}
             onChange={() => {
-              setWarning("");
+              setWarning('');
             }}
             inputProps={{
-              size: 24, 
+              size: 24,
             }}
             InputLabelProps={{
               sx: {
-                color: themeColor === "light" ? "black" : "white"
+                color: themeColor === 'light' ? 'black' : 'white',
               },
             }}
           />
           <div className="input-group-append m-2">
             <button
               className={
-                themeColor === "light"
-                  ? "btn btn-outline-secondary"
-                  : "btn btn-outline-info"
+                themeColor === 'light'
+                  ? 'btn btn-outline-secondary'
+                  : 'btn btn-outline-info'
               }
               type="button"
               onClick={searchPhoto}
@@ -128,7 +128,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
         </div>
       )}
       {warning && (
-        <p className="m-2 mb-0 mt-0" style={{ color: "red" }}>
+        <p className="m-2 mb-0 mt-0" style={{ color: 'red' }}>
           {warning}
         </p>
       )}

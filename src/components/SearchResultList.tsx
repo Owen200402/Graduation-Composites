@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import ImageModal from "./ImageModal";
-import { Typography } from "@mui/material";
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import ImageModal from './ImageModal';
+import { Typography } from '@mui/material';
 
 const Image = styled.img`
   width: 200px;
@@ -19,7 +19,7 @@ interface Props {
 }
 
 const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
-  const [selectedImage, setSelectedImage] = useState("");
+  const [selectedImage, setSelectedImage] = useState('');
   const [modelOpened, setModelOpened] = useState(false);
 
   function enlargeImage(imagePath: string) {
@@ -28,7 +28,7 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
   }
 
   function closeModel() {
-    setSelectedImage("");
+    setSelectedImage('');
     setModelOpened(false);
   }
 
@@ -36,21 +36,21 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
     <div>
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <Typography variant="h5">{year}</Typography>
         <Image
           src={path}
           alt={`${first_name} ${last_name}`}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: 'pointer' }}
           onClick={() => enlargeImage(path)}
         />
 
-        <Typography component="p" style={{ textAlign: "center" }}>
+        <Typography component="p" style={{ textAlign: 'center' }}>
           {first_name} {last_name}
         </Typography>
 

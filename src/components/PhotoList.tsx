@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import ImageModal from "./ImageModal";
-import { Typography } from "@mui/material";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import ImageModal from './ImageModal';
+import { Typography } from '@mui/material';
 
 const Image = styled.img`
   width: 180px;
@@ -20,7 +20,7 @@ interface Props {
 }
 
 const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
-  const [selectedImage, setSelectedImage] = useState("");
+  const [selectedImage, setSelectedImage] = useState('');
   const [modelOpened, setModelOpened] = useState(false);
 
   function enlargeImage(imagePath: string) {
@@ -30,7 +30,7 @@ const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
 
   function closeModel() {
     setModelOpened(false);
-    setSelectedImage("");
+    setSelectedImage('');
   }
 
   return (
@@ -38,11 +38,11 @@ const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
       <Image
         src={path}
         alt={`${first_name} ${last_name}`}
-        style={{ cursor: "pointer" }}
+        style={{ cursor: 'pointer' }}
         onClick={() => enlargeImage(path)}
       />
 
-      <Typography component="p" style={{ textAlign: "center" }}>
+      <Typography component="p" style={{ textAlign: 'center' }}>
         {first_name} {last_name}
       </Typography>
 

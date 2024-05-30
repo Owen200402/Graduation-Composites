@@ -44,92 +44,124 @@ function App() {
   const colorMode = useContext(ColorModeContext);
 
   const textStyle = {
-    color: theme.palette.mode === 'dark' ? 'white' : 'black'
+    color: theme.palette.mode === 'dark' ? 'white' : 'black',
   };
 
   return (
     <>
-    {/* Front Page */}
-    <FrontPage title="Graduation Composites" subtitle='An AI supercharged photo composite featuring past graduates from 1937 to 2022 at the university of british columbia.' slogan="Tuum Est. Its Yours." subHeading="Welcome to School of Engineering"></FrontPage>
-    {/* Content Page */}
-    <div
-      id="main"
-      style={{
-        background:
-          theme.palette.mode === 'dark' ? '#807a7a' : 'linear-gradient(to bottom, #e6f7ff, #ffffff)',
-        color: theme.palette.mode === 'dark' ? 'white' : 'black',
-        minHeight: '100vh'
-      }}
-    >
-      <UBCLogo />
-      {theme.palette.mode === "light" ? <WbSunnyIcon sx={{fontSize: 55, color: "#e65015"}} className="weather-position animate__animated animate__fadeInDown"></WbSunnyIcon> 
-      : <NightsStayIcon sx={{fontSize: 55, color: "#040cdb"}} className="weather-position animate__animated animate__fadeInUp"></NightsStayIcon> }
+      {/* Front Page */}
+      <FrontPage
+        title="Graduation Composites"
+        subtitle="An AI supercharged photo composite featuring past graduates from 1937 to 2022 at the university of british columbia."
+        slogan="Tuum Est. Its Yours."
+        subHeading="Welcome to School of Engineering"
+      ></FrontPage>
+      {/* Content Page */}
+      <div
+        id="main"
+        style={{
+          background:
+            theme.palette.mode === 'dark'
+              ? '#807a7a'
+              : 'linear-gradient(to bottom, #e6f7ff, #ffffff)',
+          color: theme.palette.mode === 'dark' ? 'white' : 'black',
+          minHeight: '100vh',
+        }}
+      >
+        <UBCLogo />
+        {theme.palette.mode === 'light' ? (
+          <WbSunnyIcon
+            sx={{ fontSize: 55, color: '#e65015' }}
+            className="weather-position animate__animated animate__fadeInDown"
+          ></WbSunnyIcon>
+        ) : (
+          <NightsStayIcon
+            sx={{ fontSize: 55, color: '#040cdb' }}
+            className="weather-position animate__animated animate__fadeInUp"
+          ></NightsStayIcon>
+        )}
 
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div className='p-2'>
-          <CompositeDialog />
-        </div>
-        <div>
-          {!searchResult && <Heading year={selectedYear} />}
-        </div>
-        <div>
-          {theme.palette.mode} mode
-          <IconButton sx={{ ml: 1, mr: 2}} onClick={colorMode.toggleColorMode} color='inherit'>
-            {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-          </IconButton>
-        </div>
-      </div>
-
-      {searchResult ? (
-        <div style={{ color: textStyle.color }}>
-          <Typography variant='h5' className='p-2' sx={{textAlign: "center", color: "royalblue"}}>
-            Search results for {searchedInput}:
-          </Typography>
-          <div className='photo_container animate__animated animate__backInUp'>
-            {searchResult.map((photo) => (
-              <div key={photo.id}>
-                <SearchResultList {...photo} />
-              </div>
-            ))}
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div className="p-2">
+            <CompositeDialog />
           </div>
-          <div style={{ display: 'flex', justifyContent: 'right' }}>
-            <button className='btn btn-outline-danger m-3' onClick={() => setSearchResult(undefined)}>
-              Back
-            </button>
+          <div>{!searchResult && <Heading year={selectedYear} />}</div>
+          <div>
+            {theme.palette.mode} mode
+            <IconButton
+              sx={{ ml: 1, mr: 2 }}
+              onClick={colorMode.toggleColorMode}
+              color="inherit"
+            >
+              {theme.palette.mode === 'dark' ? (
+                <Brightness7Icon />
+              ) : (
+                <Brightness4Icon />
+              )}
+            </IconButton>
           </div>
         </div>
-      ) : 
-      <div className='photo_container m-3' style={{ color: textStyle.color }}>
-      {photosToBeDisplayed
-        .filter((photo) => photo.year === selectedYear)
-        .map((photo) => (
-          <div key={photo.id}>
-            <PhotoList {...photo} />
+
+        {searchResult ? (
+          <div style={{ color: textStyle.color }}>
+            <Typography
+              variant="h5"
+              className="p-2"
+              sx={{ textAlign: 'center', color: 'royalblue' }}
+            >
+              Search results for {searchedInput}:
+            </Typography>
+            <div className="photo_container animate__animated animate__backInUp">
+              {searchResult.map((photo) => (
+                <div key={photo.id}>
+                  <SearchResultList {...photo} />
+                </div>
+              ))}
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'right' }}>
+              <button
+                className="btn btn-outline-danger m-3"
+                onClick={() => setSearchResult(undefined)}
+              >
+                Back
+              </button>
+            </div>
           </div>
-        ))}
-    </div>}
+        ) : (
+          <div
+            className="photo_container m-3"
+            style={{ color: textStyle.color }}
+          >
+            {photosToBeDisplayed
+              .filter((photo) => photo.year === selectedYear)
+              .map((photo) => (
+                <div key={photo.id}>
+                  <PhotoList {...photo} />
+                </div>
+              ))}
+          </div>
+        )}
 
-      <div className='container-flex' style={{ color: textStyle.color }}>
-        <GraduationFilterYear onSelect={(year) => setSelectedYear(year)} />
-        <SearchBar
-          to_show={(photoList, input) => {
-            setSearchResult(photoList);
-            setSearchedInput(input);
-          }}
-          first_names={photos.map((p) => p.first_name)}
-          last_names={photos.map((p) => p.last_name)}
-          themeColor={theme.palette.mode}
-        />
+        <div className="container-flex" style={{ color: textStyle.color }}>
+          <GraduationFilterYear onSelect={(year) => setSelectedYear(year)} />
+          <SearchBar
+            to_show={(photoList, input) => {
+              setSearchResult(photoList);
+              setSearchedInput(input);
+            }}
+            first_names={photos.map((p) => p.first_name)}
+            last_names={photos.map((p) => p.last_name)}
+            themeColor={theme.palette.mode}
+          />
+        </div>
+
+        <div className="copyright" style={{ color: textStyle.color }}>
+          &copy; {new Date().getFullYear()} UBC Electrical and Computer
+          Engineering. All rights reserved.
+        </div>
+        <BottomBanner></BottomBanner>
       </div>
-
-      
-
-      <div className='copyright' style={{ color: textStyle.color }}>
-        &copy; {new Date().getFullYear()} UBC Electrical and Computer Engineering. All rights reserved.
-      </div>
-      <BottomBanner></BottomBanner>
-    </div>
-  </>
+    </>
   );
 }
 

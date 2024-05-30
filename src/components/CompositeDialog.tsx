@@ -31,7 +31,16 @@ const CompositeDialog = () => {
 
   return (
     <React.Fragment>
-      <DescriptionIcon onClick={handleClickOpen} sx={{cursor: "pointer", fontSize: 38, ml: 2, mr: 10, color: "#0055B7"}}></DescriptionIcon>
+      <DescriptionIcon
+        onClick={handleClickOpen}
+        sx={{
+          cursor: 'pointer',
+          fontSize: 38,
+          ml: 2,
+          mr: 10,
+          color: '#0055B7',
+        }}
+      ></DescriptionIcon>
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
@@ -54,17 +63,21 @@ const CompositeDialog = () => {
         </IconButton>
         <DialogContent dividers>
           <Typography gutterBottom>
-            The graduation composite features past graduates from 1970 to 2022 in UBC's electrical 
-            and computer engineering department.
+            The graduation composite features past graduates from 1970 to 2022
+            in UBC's electrical and computer engineering department.
           </Typography>
           <Typography gutterBottom>
-            This website (also used for digital signage project) showcases a collection of 
-            graduated student photos which is filterable by years. As a user, you can
-            also click on photos to enlarge them, or simply search the graduate's name in
-            the search bar at the bottom of the page.
+            This website (also used for digital signage project) showcases a
+            collection of graduated student photos which is filterable by years.
+            As a user, you can also click on photos to enlarge them, or simply
+            search the graduate's name in the search bar at the bottom of the
+            page.
           </Typography>
           <Typography gutterBottom>
-            All software used for this project is owned by ECE, and the development of this website gives credit for Owen Zheng, our 2024 summer Co-op student, who is currently studying BSc Computer Science at the University of British Columbia. 
+            All software used for this project is owned by ECE, and the
+            development of this website gives credit for Owen Zheng, our 2024
+            summer Co-op student, who is currently studying BSc Computer Science
+            at the University of British Columbia.
           </Typography>
         </DialogContent>
         <DialogActions>
@@ -75,6 +88,6 @@ const CompositeDialog = () => {
       </BootstrapDialog>
     </React.Fragment>
   );
-}
+};
 
 export default CompositeDialog;
