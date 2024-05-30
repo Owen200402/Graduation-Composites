@@ -17,6 +17,7 @@ import { Typography } from '@mui/material';
 import BottomBanner from './components/BottomBanner';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
+import FrontPage from './components/FrontPage';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -47,7 +48,12 @@ function App() {
   };
 
   return (
+    <>
+    {/* Front Page */}
+    <FrontPage title="Graduation Composites" subtitle='An AI supercharged photo composite featuring past graduates from 1937 to 2022 at the university of british columbia.'></FrontPage>
+    {/* Content Page */}
     <div
+      id="main"
       style={{
         background:
           theme.palette.mode === 'dark' ? '#807a7a' : 'linear-gradient(to bottom, #e6f7ff, #ffffff)',
@@ -123,6 +129,7 @@ function App() {
       </div>
       <BottomBanner></BottomBanner>
     </div>
+  </>
   );
 }
 
