@@ -88,7 +88,7 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
         <Typography variant="h2">{displayedSlogan}</Typography>
       </SloganL>
       <Sub>
-        <Typography variant="h3" sx={{ animation: 'fadeIn 12s ease-in-out;' }}>
+        <Typography variant="h3" sx={{ animation: 'fadeIn 10s ease-in-out;' }}>
           {subHeading}
         </Typography>
       </Sub>
