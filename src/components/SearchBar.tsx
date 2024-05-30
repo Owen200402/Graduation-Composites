@@ -108,7 +108,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
             }}
             InputLabelProps={{
               sx: {
-                color: "black",
+                color: themeColor === "light" ? "black" : "white"
               },
             }}
           />
