@@ -5,6 +5,10 @@ body {
   overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .container-flex {
   display: flex;
   flex-direction: row;
