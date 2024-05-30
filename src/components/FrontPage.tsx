@@ -13,7 +13,8 @@ const Front = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  text-align: center
+  text-align: center;
+  animation: background-enter 2s ease-in-out;
 `
 
 interface Props {
@@ -50,7 +51,7 @@ const FrontPage = ({title, subtitle}: Props) => {
     <>
         <Front>
             <div><Typography variant="h4" sx={{color: "white", animation:"fadeIn 1.5s ease-in-out;"}}>{title}</Typography></div>
-            <div style={{maxWidth: "500px"}}><Typography component="p" sx={{color: "white", animation:"fadeIn 2.5s ease-in-out;"}}>{displayedSubtitle}</Typography></div>
+            <div style={{maxWidth: "500px"}}><Typography component="p" sx={{color: "whitesmoke", animation:"fadeIn 2.5s ease-in-out;"}}>{displayedSubtitle}</Typography></div>
             <div style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
             <div style={{marginTop: "20px"}}><Button color="secondary" variant="outlined" sx={{animation: "fadeIn 8s ease-in-out"}} onClick={scrollDown}>Explore</Button></div>
         </div>
