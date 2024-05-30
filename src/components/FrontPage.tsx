@@ -80,10 +80,7 @@ const FrontPage = ({title, subtitle, slogan, subHeading}: Props) => {
 
 
     const scrollDown = () => {
-        window.scrollBy({
-          top: window.innerHeight * 1.2,
-          behavior: 'smooth',
-        });
+        document.getElementById("main")?.scrollIntoView({ behavior: 'smooth', block: 'start' })
       };
     return (
     <>
