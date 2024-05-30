@@ -40,10 +40,10 @@ interface Props {
     title: string;
     subtitle: string;
     slogan: string;
-    subTitle: string;
+    subHeading: string;
 }
 
-const FrontPage = ({title, subtitle, slogan, subTitle}: Props) => {
+const FrontPage = ({title, subtitle, slogan, subHeading}: Props) => {
     const [displayedSubtitle, setDisplayedSubtitle] = useState("");
     const [displayedSlogan, setDisplayedSlogan] = useState("");
 
@@ -88,11 +88,11 @@ const FrontPage = ({title, subtitle, slogan, subTitle}: Props) => {
     return (
     <>
         <SloganL><Typography variant="h2">{displayedSlogan}</Typography></SloganL>
-        <Sub><Typography variant="h3" sx={{animation:"fadeIn 12s ease-in-out;"}}>{subTitle}</Typography></Sub>
+        <Sub><Typography variant="h3" sx={{animation:"fadeIn 12s ease-in-out;"}}>{subHeading}</Typography></Sub>
 
         <Front>
             <div><Typography variant="h4" sx={{color: "white", animation:"fadeIn 1.5s ease-in-out;"}}>{title}</Typography></div>
-            <div style={{maxWidth: "500px"}}><Typography component="p" sx={{color: "whitesmoke", animation:"fadeIn 2.5s ease-in-out;"}}>{displayedSubtitle}</Typography></div>
+            <div style={{maxWidth: "450px"}}><Typography component="p" sx={{color: "whitesmoke", animation:"fadeIn 2.5s ease-in-out;"}}>{displayedSubtitle}</Typography></div>
             <div style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
                 <div style={{marginTop: "20px"}}><Button color="secondary" variant="outlined" sx={{animation: "fadeIn 8s ease-in-out"}} onClick={scrollDown}>Explore</Button></div>
             </div>
