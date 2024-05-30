@@ -50,7 +50,7 @@ function App() {
   return (
     <>
     {/* Front Page */}
-    <FrontPage title="Graduation Composites" subtitle='An AI supercharged photo composite featuring past graduates from 1937 to 2022 at the university of british columbia.'></FrontPage>
+    <FrontPage title="Graduation Composites" subtitle='An AI supercharged photo composite featuring past graduates from 1937 to 2022 at the university of british columbia.' slogan="Tuum Est. Its Yours." subTitle="Welcome to School of Engineering"></FrontPage>
     {/* Content Page */}
     <div
       id="main"
