@@ -1,6 +1,7 @@
 import { Button, Typography } from '@mui/material';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
+import VideoFront from './VideoFront';
 
 const Front = styled.div`
   background-image: url('images/front-page.webp');
@@ -45,8 +46,9 @@ interface Props {
 }
 
 const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
-  const [displayedSubtitle, setDisplayedSubtitle] = useState('');
+  const [displayedSubtitle, setDisplayedSubtitle] = useState("");
   const [displayedSlogan, setDisplayedSlogan] = useState('');
+  const [displayFrontPage, setDisplayFrontPage] = useState(false);
 
   useEffect(() => {
     let index = -1;
@@ -78,6 +80,14 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDisplayFrontPage(true);
+    }, 8000);
+
+    return () => clearTimeout(timer);
+  }, [])
+
   const scrollDown = () => {
     document
       .getElementById('main')
@@ -94,12 +104,10 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
         <h2 style={{ fontFamily: 'cursive' }}>{subHeading}</h2>
       </Sub>
 
+      {/* <VideoFront></VideoFront> */}
+
       <Front>
         <div>
-          {/* <video autoPlay muted id="background-video">
-            <source src="public/assets/8s.mp4" type="video/mp4" />
-            Your browser does not support HTML5 video.
-          </video> */}
           <Typography
             variant="h4"
             sx={{ color: 'white', animation: 'fadeIn 1.5s ease-in-out;' }}
@@ -110,7 +118,7 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
         <div style={{ maxWidth: '450px' }}>
           <Typography
             component="p"
-            sx={{ color: 'whitesmoke', animation: 'fadeIn 2.5s ease-in-out;' }}
+            sx={{ color: 'whitesmoke', animation: 'fadeIn 3.5s ease-in-out;' }}
           >
             {displayedSubtitle}
           </Typography>
@@ -126,7 +134,7 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
             <Button
               color="secondary"
               variant="outlined"
-              sx={{ animation: 'fadeIn 8s ease-in-out' }}
+              sx={{ animation: 'fadeIn 6s ease-in-out' }}
               onClick={scrollDown}
             >
               Explore
