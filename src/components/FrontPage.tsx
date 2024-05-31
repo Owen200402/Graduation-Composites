@@ -86,16 +86,20 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
   return (
     <div id="front-page">
       <Slogan>
-        <h1 style={{ fontFamily: "cursive", fontWeight: "bolder" }}>{displayedSlogan}</h1>
+        <h1 style={{ fontFamily: 'cursive', fontWeight: 'bolder' }}>
+          {displayedSlogan}
+        </h1>
       </Slogan>
       <Sub>
-        <h2 style={{ fontFamily: "cursive" }}>
-          {subHeading}
-        </h2>
+        <h2 style={{ fontFamily: 'cursive' }}>{subHeading}</h2>
       </Sub>
 
       <Front>
         <div>
+          {/* <video autoPlay muted id="background-video">
+            <source src="public/assets/8s.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video> */}
           <Typography
             variant="h4"
             sx={{ color: 'white', animation: 'fadeIn 1.5s ease-in-out;' }}
