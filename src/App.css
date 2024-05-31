@@ -83,3 +83,12 @@ body::-webkit-scrollbar {
     opacity: 1;
   }
 }
+
+@keyframes moveUp {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    translate: translateY(0px);
+  }
+}

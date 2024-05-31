@@ -84,7 +84,7 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
       ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
   return (
-    <>
+    <div id="front-page">
       <Slogan>
         <h1 style={{ fontFamily: "cursive", fontWeight: "bolder" }}>{displayedSlogan}</h1>
       </Slogan>
@@ -130,7 +130,7 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
           </div>
         </div>
       </Front>
-    </>
+    </div>
   );
 };
 
