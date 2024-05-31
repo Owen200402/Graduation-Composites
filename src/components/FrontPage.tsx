@@ -17,7 +17,7 @@ const Front = styled.div`
   animation: background-enter 2s ease-in-out;
 `;
 
-const SloganL = styled.div`
+const Slogan = styled.div`
   position: absolute;
   left: 0;
   margin: 2rem;
@@ -34,6 +34,7 @@ const Sub = styled.div`
   color: #6ec4e8;
   max-width: 400px;
   word-wrap: break-word;
+  animation: fadeIn 10s ease-in-out;
 `;
 
 interface Props {
@@ -84,13 +85,13 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
   };
   return (
     <>
-      <SloganL>
-        <Typography variant="h2">{displayedSlogan}</Typography>
-      </SloganL>
+      <Slogan>
+        <h1 style={{ fontFamily: "cursive", fontWeight: "bolder" }}>{displayedSlogan}</h1>
+      </Slogan>
       <Sub>
-        <Typography variant="h3" sx={{ animation: 'fadeIn 10s ease-in-out;' }}>
+        <h2 style={{ fontFamily: "cursive" }}>
           {subHeading}
-        </Typography>
+        </h2>
       </Sub>
 
       <Front>
