@@ -57,7 +57,13 @@ body::-webkit-scrollbar {
   align-items: center;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1500px) {
+  .weather-position {
+    right: 20%;
+  }
+}
+
+@media (max-width: 1300px) {
   .weather-position {
     right: 25%;
   }
