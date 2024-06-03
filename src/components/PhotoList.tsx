@@ -12,7 +12,7 @@ const Image = styled.img`
   box-shadow: 0 3px 6px rgba(110, 77, 11, 0.7);
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 80%;
     height: auto;
   }
 `;
