@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import ImageModal from './ImageModal';
 import { Skeleton, Typography } from '@mui/material';
+import LoadingSkeleton from './LoadingSkeleton';
 
 const Image = styled.img`
   width: 170px;
@@ -39,27 +40,12 @@ const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
 
   return (
     <div>
-      {!isLoaded && (
-        <div>
-          <Skeleton
-            variant="rectangular"
-            width={170}
-            height={170}
-            sx={{ margin: '0.8rem' }}
-          />
-          <Skeleton
-            variant="text"
-            width={170}
-            sx={{ fontSize: '1rem', margin: '0.8rem' }}
-          />
-        </div>
-      )}
-      <div>
+      {!isLoaded && <LoadingSkeleton></LoadingSkeleton>}
       <Image
         src={path}
         ref={imageRef}
         alt={`${first_name} ${last_name}`}
-        style={{ cursor: 'pointer', display: "none"}}
+        style={{ cursor: 'pointer', display: 'none' }}
         onClick={() => enlargeImage(path)}
         onLoad={() => {
           setLoaded(true);
@@ -71,10 +57,13 @@ const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
         }}
       />
 
-      <Typography component="p" ref={textRef} style={{ textAlign: 'center', display: "none"}}>
+      <Typography
+        component="p"
+        ref={textRef}
+        style={{ textAlign: 'center', display: 'none' }}
+      >
         {first_name} {last_name}
       </Typography>
-      </div>
 
       <ImageModal
         isOpen={modelOpened}
