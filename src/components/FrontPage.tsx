@@ -25,6 +25,9 @@ const Slogan = styled.div`
   color: #00a7e1;
   max-width: 600px;
   word-wrap: break-word;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Sub = styled.div`
@@ -36,6 +39,9 @@ const Sub = styled.div`
   max-width: 400px;
   word-wrap: break-word;
   animation: fadeIn 10s ease-in-out;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 interface Props {

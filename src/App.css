@@ -28,8 +28,8 @@ body::-webkit-scrollbar {
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  padding-left: 10rem;
-  padding-right: 10rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .photo {
@@ -56,6 +56,27 @@ body::-webkit-scrollbar {
   justify-content: space-between;
   align-items: center;
 }
+
+
+.setCenterAlignment {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media (max-width: 768px) {
+  .noDisplay {
+    display: none;
+  }
+  .setCenterAlignment {
+    justify-content: center;
+    padding-top: 2rem;
+  }
+  .top-banner-container {
+    display: none;
+  }
+}
+
 
 @media (max-width: 1500px) {
   .weather-position {

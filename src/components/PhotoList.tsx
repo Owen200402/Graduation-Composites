@@ -5,11 +5,16 @@ import { Skeleton, Typography } from '@mui/material';
 import LoadingSkeleton from './LoadingSkeleton';
 
 const Image = styled.img`
-  width: 170px;
-  height: 170px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
-  margin: 0.8rem;
+  margin: 1rem;
   box-shadow: 0 3px 6px rgba(110, 77, 11, 0.7);
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 interface Props {
@@ -41,6 +46,7 @@ const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
   return (
     <div>
       {!isLoaded && <LoadingSkeleton></LoadingSkeleton>}
+      <div style={{display: 'flex', flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
       <Image
         src={path}
         ref={imageRef}
@@ -64,6 +70,7 @@ const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
       >
         {first_name} {last_name}
       </Typography>
+      </div>
 
       <ImageModal
         isOpen={modelOpened}

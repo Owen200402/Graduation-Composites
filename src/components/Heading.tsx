@@ -1,13 +1,14 @@
-import { Typography } from '@mui/material';
+import { Typography, useMediaQuery, useTheme } from '@mui/material';
 
-// CSS in JS
 interface Props {
   year: number;
 }
 
 const Heading = ({ year }: Props) => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   return (
-    <Typography variant="h3" sx={{ textAlign: 'center' }}>
+    <Typography variant={isSmallScreen ? 'h4' : 'h3'} sx={{ textAlign: 'center'}}>
       ECE Graduation Class of {year}
     </Typography>
   );

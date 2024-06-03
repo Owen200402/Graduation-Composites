@@ -72,25 +72,43 @@ function App() {
         <UBCLogo />
         {theme.palette.mode === 'light' ? (
           <WbSunnyIcon
-            sx={{ fontSize: 55, color: '#e65015' }}
+            sx={{
+              fontSize: 55,
+              color: '#e65015',
+              '@media (max-width: 768px)': {
+                display: 'none',
+              },
+            }}
             className="weather-position animate__animated animate__fadeInDown"
           ></WbSunnyIcon>
         ) : (
           <NightsStayIcon
-            sx={{ fontSize: 55, color: '#040cdb' }}
+            sx={{
+              fontSize: 55,
+              color: '#040cdb',
+              '@media (max-width: 768px)': {
+                display: 'none',
+              },
+            }}
             className="weather-position animate__animated animate__fadeInUp"
           ></NightsStayIcon>
         )}
 
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div className="p-2">
+        <div className='setCenterAlignment'>
+          <div className="p-2 noDisplay">
             <CompositeDialog />
           </div>
           <div>{!searchResult && <Heading year={selectedYear} />}</div>
-          <div>
+          <div className="noDisplay">
             {theme.palette.mode} mode
             <IconButton
-              sx={{ ml: 1, mr: 2 }}
+              sx={{
+                ml: 1,
+                mr: 2,
+                '@media (max-width: 768px)': {
+                  display: 'none',
+                },
+              }}
               onClick={colorMode.toggleColorMode}
               color="inherit"
             >
