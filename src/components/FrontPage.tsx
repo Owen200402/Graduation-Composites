@@ -46,7 +46,7 @@ interface Props {
 }
 
 const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
-  const [displayedSubtitle, setDisplayedSubtitle] = useState("");
+  const [displayedSubtitle, setDisplayedSubtitle] = useState('');
   const [displayedSlogan, setDisplayedSlogan] = useState('');
   const [displayFrontPage, setDisplayFrontPage] = useState(false);
 
@@ -86,7 +86,7 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
     }, 8000);
 
     return () => clearTimeout(timer);
-  }, [])
+  }, []);
 
   const scrollDown = () => {
     document

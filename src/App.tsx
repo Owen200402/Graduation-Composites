@@ -54,7 +54,7 @@ function App() {
       <FrontPage
         title="Graduation Composites"
         subtitle="An AI supercharged photo composite featuring past graduates from 1937 to 2022 at the University of British Columbia."
-        slogan="Tuum Est. Its Yours."
+        slogan="Tuum Est. It's Yours."
         subHeading="Welcome to School of Engineering"
       ></FrontPage>
       {/* Content Page */}
@@ -112,7 +112,7 @@ function App() {
             >
               Search results for {searchedInput}:
             </Typography>
-            <div className="photo_container animate__animated animate__backInUp">
+            <div className="photo_container">
               {searchResult.map((photo) => (
                 <div key={photo.id}>
                   <SearchResultList {...photo} />
