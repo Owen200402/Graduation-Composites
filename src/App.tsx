@@ -21,7 +21,7 @@ import FrontPage from './components/FrontPage';
 import ArrowUp from './components/ArrowUp';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-
+import '@babel/polyfill';
 
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
