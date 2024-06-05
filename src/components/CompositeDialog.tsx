@@ -37,7 +37,7 @@ const CompositeDialog = () => {
           cursor: 'pointer',
           fontSize: 38,
           ml: 2,
-          mr: 10,
+          mr: 0,
           color: '#0055B7',
         }}
       ></DescriptionIcon>

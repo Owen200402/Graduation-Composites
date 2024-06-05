@@ -13,16 +13,15 @@ import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import IconButton from '@mui/material/IconButton';
-import { Typography } from '@mui/material';
+import { Link, Typography } from '@mui/material';
 import BottomBanner from './components/BottomBanner';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
 import FrontPage from './components/FrontPage';
-import ArrowUp from './components/ArrowUp';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import '@babel/polyfill';
-
+import CourseOfferingLink from './components/CourseOfferingLink';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -98,9 +97,10 @@ function App() {
           ></NightsStayIcon>
         )}
 
-        <div className='setCenterAlignment'>
+        <div className="setCenterAlignment">
           <div className="p-2 noDisplay">
-            <CompositeDialog />
+            <CompositeDialog /> 
+            <CourseOfferingLink />
           </div>
           <div>{!searchResult && <Heading year={selectedYear} />}</div>
           <div className="noDisplay">
@@ -182,7 +182,6 @@ function App() {
           &copy; {new Date().getFullYear()} UBC Electrical and Computer
           Engineering. All rights reserved.
         </div>
-        <ArrowUp></ArrowUp>
 
         <BottomBanner></BottomBanner>
       </div>
