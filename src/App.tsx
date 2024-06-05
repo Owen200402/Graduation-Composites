@@ -18,9 +18,6 @@ import BottomBanner from './components/BottomBanner';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
 import FrontPage from './components/FrontPage';
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
-import '@babel/polyfill';
 import CourseOfferingLink from './components/CourseOfferingLink';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });

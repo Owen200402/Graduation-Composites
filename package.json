@@ -22,6 +22,7 @@
     "core-js": "^3.37.1",
     "modernizr": "^3.13.0",
     "react": "^18.2.0",
+    "react-app-polyfill": "^3.0.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
     "regenerator-runtime": "^0.14.1",
