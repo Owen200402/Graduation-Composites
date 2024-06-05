@@ -19,6 +19,10 @@ import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
 import FrontPage from './components/FrontPage';
 import ArrowUp from './components/ArrowUp';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+
+
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
