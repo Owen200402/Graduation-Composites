@@ -19,6 +19,17 @@ import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
 import FrontPage from './components/FrontPage';
 import CourseOfferingLink from './components/CourseOfferingLink';
+import { styled } from 'styled-components';
+
+const ResponsiveContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -95,10 +106,10 @@ function App() {
         )}
 
         <div className="setCenterAlignment">
-          <div className="p-2 noDisplay" style={{display: "flex", flexDirection: "column"}}>
+          <ResponsiveContainer className="noDisplay">
             <CompositeDialog /> 
             <CourseOfferingLink />
-          </div>
+          </ResponsiveContainer>
           <div>{!searchResult && <Heading year={selectedYear} />}</div>
           <div className="noDisplay">
             {theme.palette.mode} mode
