@@ -110,12 +110,12 @@ function App() {
             <CourseOfferingLink />
           </ResponsiveContainer>
           <div>{!searchResult && <Heading year={selectedYear} />}</div>
-          <div className="noDisplay">
+          <div className="noDisplay" style={{whiteSpace: "nowrap"}}>
             {theme.palette.mode} mode
             <IconButton
               sx={{
-                ml: 1,
-                mr: 2,
+                ml: 0,
+                mr: 1,
                 '@media (max-width: 768px)': {
                   display: 'none',
                 },

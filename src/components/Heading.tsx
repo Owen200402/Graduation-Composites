@@ -6,9 +6,9 @@ interface Props {
 
 const Heading = ({ year }: Props) => {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('lg'));
   return (
-    <Typography variant={isSmallScreen ? 'h4' : 'h3'} sx={{ textAlign: 'center'}}>
+    <Typography variant={isSmallScreen ? 'h4' : 'h3'} sx={{ textAlign: 'center', whiteSpace: "nowrap"}}>
       ECE Graduation Class of {year}
     </Typography>
   );
