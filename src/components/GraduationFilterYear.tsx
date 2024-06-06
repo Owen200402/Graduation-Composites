@@ -43,6 +43,30 @@ const GraduationFilterYear = ({ onSelect }: Props) => {
               1937
             </button>
           </li>
+          <li>
+            <button
+              className="dropdown-item"
+              type="button"
+              onClick={() => {
+                onSelect(1938);
+                setYear(1938);
+              }}
+            >
+              1938
+            </button>
+          </li>
+          <li>
+            <button
+              className="dropdown-item"
+              type="button"
+              onClick={() => {
+                onSelect(1939);
+                setYear(1939);
+              }}
+            >
+              1939
+            </button>
+          </li>
         </ul>
       </div>
     </>
