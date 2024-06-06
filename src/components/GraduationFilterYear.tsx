@@ -18,20 +18,23 @@ const GraduationFilterYear = ({ onSelect, years }: Props) => {
         >
           Year of Graduation
         </button>
-        <div className="dropdown-menu multi-column">
-          {years.map((year) => (
-            <button
-              className="dropdown-item"
-              type="button"
-              onClick={() => {
-                onSelect(year);
-                setYear(year);
-              }}
-            >
-              {year}
-            </button>
-          ))}
-        </div>
+        <ul className="dropdown-menu">
+            {years.map((year) => (
+              <li>
+                <button
+                  key={year}
+                  className="dropdown-item"
+                  type="button"
+                  onClick={() => {
+                    onSelect(year);
+                    setYear(year);
+                  }}
+                >
+                  {year}
+                </button>
+              </li>
+            ))}
+        </ul>
       </div>
     </>
   );
