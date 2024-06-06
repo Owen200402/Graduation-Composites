@@ -173,7 +173,7 @@ function App() {
         )}
 
         <div className="container-flex" style={{ color: textStyle.color }}>
-          <GraduationFilterYear onSelect={(year) => setSelectedYear(year)} />
+          <GraduationFilterYear onSelect={(year) => setSelectedYear(year)} years={[1930, 1937, 1938, 1939, 1940, 1941]} />
           <SearchBar
             to_show={(photoList, input) => {
               setSearchResult(photoList);
