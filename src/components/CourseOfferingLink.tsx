@@ -1,24 +1,40 @@
-import React from 'react';
-import { Link } from '@mui/material';
-import ClassIcon from '@mui/icons-material/Class';
+import { Link, Typography } from '@mui/material';
+import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
 
 const CourseOfferingLink = () => {
   return (
-    <Link
-      href="https://course-navigator.vercel.app/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <ClassIcon
-        sx={{
-          cursor: 'pointer',
-          fontSize: 38,
-          ml: 2,
-          mr: 10,
-          color: '#18184d',
+    <div style={{display: "flex", flexDirection: "row"}}>
+      <Link
+        href="https://course-navigator.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <ClassOutlinedIcon
+          sx={{
+            cursor: 'pointer',
+            fontSize: 38,
+            ml: 1,
+            mr: 0,
+            mt: 1,
+            color: '#18184d',
+          }}
+        />
+      </Link>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
-      />
-    </Link>
+      >
+        <Typography
+          variant="body1"
+          sx={{ color: '#18184d', textAlign: 'center' }}
+        >
+          Courses
+        </Typography>
+      </div>
+    </div>
   );
 };
 

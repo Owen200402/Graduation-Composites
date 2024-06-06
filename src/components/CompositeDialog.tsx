@@ -31,16 +31,27 @@ const CompositeDialog = () => {
 
   return (
     <React.Fragment>
-      <DescriptionIcon
-        onClick={handleClickOpen}
-        sx={{
-          cursor: 'pointer',
-          fontSize: 38,
-          ml: 2,
-          mr: 0,
-          color: '#0055B7',
-        }}
-      ></DescriptionIcon>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <DescriptionIcon
+          onClick={handleClickOpen}
+          sx={{
+            cursor: 'pointer',
+            fontSize: 38,
+            ml: 1,
+            mr: 0,
+            color: '#0055B7',
+          }}
+        ></DescriptionIcon>
+        <div style={{ display: 'flex', justifyContent: "center", alignItems: "center"}}>
+          <Typography
+            variant="body1"
+            sx={{ color: '#0055B7', textAlign: 'center' }}
+          >
+            Info
+          </Typography>
+        </div>
+      </div>
+
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"

@@ -95,7 +95,7 @@ function App() {
         )}
 
         <div className="setCenterAlignment">
-          <div className="p-2 noDisplay">
+          <div className="p-2 noDisplay" style={{display: "flex", flexDirection: "column"}}>
             <CompositeDialog /> 
             <CourseOfferingLink />
           </div>
