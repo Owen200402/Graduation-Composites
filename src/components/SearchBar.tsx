@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FaSearch } from 'react-icons/fa';
+import ScreenSearchDesktopIcon from '@mui/icons-material/ScreenSearchDesktop';
 import { photoData } from '../components/photoData';
 import { TextField } from '@mui/material';
 
@@ -75,12 +75,12 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
   return (
     <div style={{ color: themeColor }}>
       {!isExpanded && (
-        <FaSearch
-          className="m-2 mt-3"
-          size={25}
+        <ScreenSearchDesktopIcon
+          className="m-2 mt-2"
+          fontSize='large'
           onClick={clickToExpand}
           style={{ cursor: 'pointer' }}
-        ></FaSearch>
+        ></ScreenSearchDesktopIcon>
       )}
       {isExpanded && (
         <div className="input-group animate__animated animate__fadeInUp">

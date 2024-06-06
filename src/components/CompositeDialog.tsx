@@ -36,15 +36,16 @@ const CompositeDialog = () => {
           onClick={handleClickOpen}
           sx={{
             cursor: 'pointer',
-            fontSize: 38,
+            fontSize: 35,
             ml: 1,
             mr: 0.2,
+            mt: 1,
             color: '#0055B7',
           }}
         ></DescriptionIcon>
         <div style={{ display: 'flex', justifyContent: "center", alignItems: "center"}}>
           <Typography
-            variant="body1"
+            variant="body2"
             sx={{ color: '#0055B7', textAlign: 'center' }}
           >
             Info
