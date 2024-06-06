@@ -14,7 +14,7 @@ const CourseOfferingLink = () => {
             cursor: 'pointer',
             fontSize: 38,
             ml: 1,
-            mr: 0,
+            mr: 0.2,
             mt: 1,
             color: '#18184d',
           }}
