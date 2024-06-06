@@ -48,7 +48,7 @@ const CompositeDialog = () => {
             variant="body2"
             sx={{ color: '#0055B7', textAlign: 'center' }}
           >
-            Info
+            About
           </Typography>
         </div>
       </div>
