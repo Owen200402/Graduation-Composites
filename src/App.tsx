@@ -13,7 +13,7 @@ import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import IconButton from '@mui/material/IconButton';
-import { Link, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import BottomBanner from './components/BottomBanner';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
@@ -175,7 +175,7 @@ function App() {
         <div className="container-flex" style={{ color: textStyle.color }}>
           <GraduationFilterYear
             onSelect={(year) => setSelectedYear(year)}
-            years={[1930, 1937, 1938, 1939, 1940, 1941]}
+            years={[1930, 1937, 1938, 1939, 1940, 1941, 1944, 1945, 1946, 1947]}
           />
           <SearchBar
             to_show={(photoList, input) => {
