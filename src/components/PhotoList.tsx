@@ -46,30 +46,37 @@ const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
   return (
     <div>
       {!isLoaded && <LoadingSkeleton></LoadingSkeleton>}
-      <div style={{display: 'flex', flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-      <Image
-        src={path}
-        ref={imageRef}
-        alt={`${first_name} ${last_name}`}
-        style={{ cursor: 'pointer', display: 'none' }}
-        onClick={() => enlargeImage(path)}
-        onLoad={() => {
-          setLoaded(true);
-          if (imageRef.current) imageRef.current.style.display = 'block';
-          if (textRef.current) textRef.current.style.display = 'block';
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
-        onError={() => {
-          setLoaded(false);
-        }}
-      />
-
-      <Typography
-        component="p"
-        ref={textRef}
-        style={{ textAlign: 'center', display: 'none' }}
       >
-        {first_name} {last_name}
-      </Typography>
+        <Image
+          src={path}
+          ref={imageRef}
+          alt={`${first_name} ${last_name}`}
+          style={{ cursor: 'pointer', display: 'none' }}
+          onClick={() => enlargeImage(path)}
+          onLoad={() => {
+            setLoaded(true);
+            if (imageRef.current) imageRef.current.style.display = 'block';
+            if (textRef.current) textRef.current.style.display = 'block';
+          }}
+          onError={() => {
+            setLoaded(false);
+          }}
+        />
+
+        <Typography
+          component="p"
+          ref={textRef}
+          style={{ textAlign: 'center', display: 'none' }}
+        >
+          {first_name} {last_name}
+        </Typography>
       </div>
 
       <ImageModal

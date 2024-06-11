@@ -20,9 +20,8 @@ const GraduationFilterYear = ({ onSelect, years }: Props) => {
         </button>
         <ul className="dropdown-menu">
             {years.map((year) => (
-              <li>
+              <li key={year}>
                 <button
-                  key={year}
                   className="dropdown-item"
                   type="button"
                   onClick={() => {
