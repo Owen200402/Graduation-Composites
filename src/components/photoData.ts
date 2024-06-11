@@ -1230,7 +1230,7 @@ export const photoData = [
     first_name: 'Rod',
     last_name: 'James',
     year: 1947,
-    path: 'assets/1947/Rod_James_1947.jpg',
+    path: 'assets/1947/Rod._James_1947.jpg',
   },
   {
     id: 178,
