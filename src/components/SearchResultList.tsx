@@ -42,11 +42,11 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
           alignItems: 'center',
         }}
       >
-        <Typography variant="h5">{year}</Typography>
+        <Typography variant="h5"><i>{year}</i></Typography>
         <Image
           src={path}
           alt={`${first_name} ${last_name}`}
-          style={{ cursor: 'pointer' }}
+          style={{ cursor: 'pointer', marginTop: "0px"}}
           onClick={() => enlargeImage(path)}
         />
 
