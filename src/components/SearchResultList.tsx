@@ -82,6 +82,7 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
           imageUrl={path}
           first_name={first_name}
           last_name={last_name}
+          year={year}
         ></ImageModal>
       </div>
     </div>

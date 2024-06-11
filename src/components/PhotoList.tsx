@@ -85,6 +85,7 @@ const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
         imageUrl={path}
         first_name={first_name}
         last_name={last_name}
+        year={year}
       ></ImageModal>
     </div>
   );

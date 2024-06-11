@@ -9,7 +9,7 @@ const Heading = ({ year }: Props) => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('lg'));
   return (
     <Typography variant={isSmallScreen ? 'h4' : 'h3'} sx={{ textAlign: 'center', whiteSpace: "nowrap"}}>
-      ECE Graduation Class of {year}
+      Graduation Class of {year}
     </Typography>
   );
 };
