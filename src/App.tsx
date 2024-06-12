@@ -21,6 +21,7 @@ import FrontPage from './components/FrontPage';
 import CourseOfferingLink from './components/CourseOfferingLink';
 import { styled } from 'styled-components';
 import YearSelection from './components/YearSelection';
+import BackToMainButton from './components/BackToMainButton';
 
 const ResponsiveContainer = styled.div`
   display: flex;
@@ -115,7 +116,11 @@ function App() {
             <CourseOfferingLink />
           </ResponsiveContainer>
           <div>
-            {isAtMainScreen ? <Heading></Heading> : !searchResult && <Heading year={selectedYear}></Heading>}
+            {isAtMainScreen ? (
+              <Heading></Heading>
+            ) : (
+              !searchResult && <Heading year={selectedYear}></Heading>
+            )}
           </div>
           <div className="noDisplay" style={{ whiteSpace: 'nowrap' }}>
             {theme.palette.mode} mode
@@ -188,10 +193,6 @@ function App() {
         )}
 
         <div className="container-flex" style={{ color: textStyle.color }}>
-          {/* <GraduationFilterYear
-            onSelect={(year) => setSelectedYear(year)}
-            years={years}
-          /> */}
           <SearchBar
             to_show={(photoList, input) => {
               setSearchResult(photoList);
@@ -201,6 +202,14 @@ function App() {
             last_names={photos.map((p) => p.last_name)}
             themeColor={theme.palette.mode}
           />
+          {(!isAtMainScreen || searchResult) && (
+            <BackToMainButton
+              onClickBackToMain={() => {
+                setAtMainScreen(true);
+                setSearchResult(undefined);
+              }}
+            />
+          )}
         </div>
 
         <div className="copyright" style={{ color: textStyle.color }}>
