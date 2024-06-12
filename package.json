@@ -5,8 +5,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "parcel serve index.html",
-    "build": "parcel build index.html"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@babel/core": "^7.24.7",
