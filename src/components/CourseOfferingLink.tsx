@@ -28,7 +28,7 @@ const CourseOfferingLink = () => {
       >
         <Typography
           variant="body2"
-          sx={{ color: '#18184d', textAlign: 'center' }}
+          sx={{ color: '#18184d', textAlign: 'center', mt: 1 }}
         >
           Courses
         </Typography>
