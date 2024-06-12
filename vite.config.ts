@@ -6,7 +6,6 @@ export default defineConfig({
   plugins: [
     react(),
     babel({
-      babelHelpers: 'runtime',
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
       presets: [
         ['@babel/preset-env', {
@@ -15,9 +14,6 @@ export default defineConfig({
           corejs: 3,
         }],
         '@babel/preset-react'
-      ],
-      plugins: [
-        '@babel/plugin-transform-runtime'
       ]
     })
   ],
