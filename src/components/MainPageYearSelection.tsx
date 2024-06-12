@@ -33,7 +33,7 @@ const YearSelectionMainPage = ({ years, onSelectYear }: Props) => {
             sx={{
               height: 130,
             }}
-            image={`public/assets/displayedOnCover/ECE${year}.png`}
+            image={`assets/displayedOnCover/ECE${year}.png`}
             title={`graduation class of ${year}`}
           />
           <CardContent>
