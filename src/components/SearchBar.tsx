@@ -2,6 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import ScreenSearchDesktopIcon from '@mui/icons-material/ScreenSearchDesktop';
 import { photoData } from '../components/photoData';
 import { TextField } from '@mui/material';
+import styled from 'styled-components';
+
+const SearchIcon = styled(ScreenSearchDesktopIcon)`
+  animation: zoomInAndOut 2s infinite;
+`;
 
 interface PhotoList {
   id: number;
@@ -75,12 +80,12 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
   return (
     <div style={{ color: themeColor }}>
       {!isExpanded && (
-        <ScreenSearchDesktopIcon
+        <SearchIcon
           className="m-2 mt-2"
           fontSize="large"
           onClick={clickToExpand}
           style={{ cursor: 'pointer' }}
-        ></ScreenSearchDesktopIcon>
+        ></SearchIcon>
       )}
       {isExpanded && (
         <div className="input-group animate__animated animate__fadeInUp">
