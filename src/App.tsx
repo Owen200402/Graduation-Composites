@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useState, useMemo, useContext } from 'react';
 import './App.css';
-import GraduationFilterYear from './components/GraduationFilterYear';
 import PhotoList from './components/PhotoList';
 import { photoData } from './components/photoData';
 import Heading from './components/Heading';
@@ -20,7 +19,7 @@ import NightsStayIcon from '@mui/icons-material/NightsStay';
 import FrontPage from './components/FrontPage';
 import CourseOfferingLink from './components/CourseOfferingLink';
 import { styled } from 'styled-components';
-import YearSelection from './components/YearSelection';
+import MainPageYearSelection from './components/MainPageYearSelection';
 import BackToMainButton from './components/BackToMainButton';
 
 const ResponsiveContainer = styled.div`
@@ -183,13 +182,13 @@ function App() {
               ))}
           </div>
         ) : (
-          <YearSelection
+          <MainPageYearSelection
             years={years}
             onSelectYear={(year) => {
               setSelectedYear(year);
               setAtMainScreen(false);
             }}
-          ></YearSelection>
+          ></MainPageYearSelection>
         )}
 
         <div className="container-flex" style={{ color: textStyle.color }}>
