@@ -202,6 +202,8 @@ function App() {
             last_names={photos.map((p) => p.last_name)}
             themeColor={theme.palette.mode}
           />
+        </div>
+        <div className="container-flex" style={{ color: textStyle.color }}>
           {(!isAtMainScreen || searchResult) && (
             <BackToMainButton
               onClickBackToMain={() => {
