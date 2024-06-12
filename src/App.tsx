@@ -20,6 +20,7 @@ import NightsStayIcon from '@mui/icons-material/NightsStay';
 import FrontPage from './components/FrontPage';
 import CourseOfferingLink from './components/CourseOfferingLink';
 import { styled } from 'styled-components';
+import YearSelection from './components/YearSelection';
 
 const ResponsiveContainer = styled.div`
   display: flex;
@@ -51,12 +52,16 @@ function App() {
 
   const [isBacked, setIsBacked] = useState(false);
 
+  const [isAtMainScreen, setAtMainScreen] = useState(true);
+
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
 
   const textStyle = {
     color: theme.palette.mode === 'dark' ? 'white' : 'black',
   };
+
+  const years = [1930, 1937, 1938, 1939, 1940, 1941, 1944, 1945, 1946, 1947];
 
   return (
     <>
@@ -109,7 +114,9 @@ function App() {
             <CompositeDialog />
             <CourseOfferingLink />
           </ResponsiveContainer>
-          <div>{!searchResult && <Heading year={selectedYear} />}</div>
+          <div>
+            {isAtMainScreen ? <Heading></Heading> : !searchResult && <Heading year={selectedYear}></Heading>}
+          </div>
           <div className="noDisplay" style={{ whiteSpace: 'nowrap' }}>
             {theme.palette.mode} mode
             <IconButton
@@ -157,7 +164,7 @@ function App() {
               </button>
             </div>
           </div>
-        ) : (
+        ) : !isAtMainScreen ? (
           <div
             className="photo_container m-3"
             style={{ color: textStyle.color }}
@@ -170,13 +177,21 @@ function App() {
                 </div>
               ))}
           </div>
+        ) : (
+          <YearSelection
+            years={years}
+            onSelectYear={(year) => {
+              setSelectedYear(year);
+              setAtMainScreen(false);
+            }}
+          ></YearSelection>
         )}
 
         <div className="container-flex" style={{ color: textStyle.color }}>
-          <GraduationFilterYear
+          {/* <GraduationFilterYear
             onSelect={(year) => setSelectedYear(year)}
-            years={[1930, 1937, 1938, 1939, 1940, 1941, 1944, 1945, 1946, 1947]}
-          />
+            years={years}
+          /> */}
           <SearchBar
             to_show={(photoList, input) => {
               setSearchResult(photoList);
