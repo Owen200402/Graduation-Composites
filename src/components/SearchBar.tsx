@@ -91,7 +91,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
         <div className="input-group animate__animated animate__fadeInUp">
           <TextField
             className="form-control m-2"
-            label="Search Name in All Years"
+            label="Search Student's Name"
             variant="outlined"
             size="small"
             sx={{
