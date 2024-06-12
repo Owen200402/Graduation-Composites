@@ -1,8 +1,14 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { babel } from '@rollup/plugin-babel';
 
 export default defineConfig({
   plugins: [
-    react()]
+    react(),
+  ],
+  build: {
+    target: ['chrome39'],
+  },
+  optimizeDeps: {
+    include: ['core-js/stable', 'regenerator-runtime/runtime']
+  }
 });
