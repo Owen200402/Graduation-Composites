@@ -11,7 +11,7 @@ const BackToMainButton = ({ onClickBackToMain }: Props) => {
       color="secondary"
       onClick={() => onClickBackToMain()}
     >
-      Select Another Year
+      Select From Another Year
     </Button>
   );
 };

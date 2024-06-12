@@ -77,7 +77,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
       {!isExpanded && (
         <ScreenSearchDesktopIcon
           className="m-2 mt-2"
-          fontSize='large'
+          fontSize="large"
           onClick={clickToExpand}
           style={{ cursor: 'pointer' }}
         ></ScreenSearchDesktopIcon>
@@ -90,7 +90,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
             variant="outlined"
             size="small"
             sx={{
-              maxWidth: '25ch',
+              maxWidth: '21ch',
               '& input': {
                 color: themeColor === 'light' ? 'black' : 'white',
               },
