@@ -12,11 +12,15 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@babel/core": "^7.24.7",
     "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.18",
     "@mui/material": "^5.15.18",
+    "@rollup/plugin-babel": "^6.0.4",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
     "core-js": "^3.37.1",
@@ -48,5 +52,5 @@
     "last 2 Safari versions",
     "last 2 Android versions",
     "last 2 iOS versions"
-]
+  ]
 }
