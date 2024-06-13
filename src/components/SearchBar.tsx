@@ -95,7 +95,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
             variant="outlined"
             size="small"
             sx={{
-              maxWidth: '21ch',
+              maxWidth: '24ch',
               '& input': {
                 color: themeColor === 'light' ? 'black' : 'white',
               },
@@ -121,7 +121,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
             <button
               className={
                 themeColor === 'light'
-                  ? 'btn btn-outline-secondary'
+                  ? 'btn btn-outline-primary'
                   : 'btn btn-outline-info'
               }
               type="button"
