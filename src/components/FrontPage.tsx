@@ -140,7 +140,8 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
             <Button
               color="secondary"
               variant="outlined"
-              sx={{ animation: 'fadeIn 6s ease-in-out' }}
+              sx={{ animation: 'fadeIn 4s ease-in' }}
+              size='small'
               onClick={scrollDown}
             >
               Explore
