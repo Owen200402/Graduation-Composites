@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 
 interface Props {
   onClickBackToMain: () => void;
@@ -11,7 +11,7 @@ const BackToMainButton = ({ onClickBackToMain }: Props) => {
       color="secondary"
       onClick={() => onClickBackToMain()}
     >
-      Select From Another Year
+      <Typography variant="caption">Other Years</Typography>
     </Button>
   );
 };
