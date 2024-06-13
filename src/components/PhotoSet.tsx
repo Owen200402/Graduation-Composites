@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import ImageModal from './ImageModal';
-import { Skeleton, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import LoadingSkeleton from './LoadingSkeleton';
 
 const Image = styled.img`
@@ -25,7 +25,7 @@ interface Props {
   path: string;
 }
 
-const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
+const PhotoSet = ({ id, first_name, last_name, year, path }: Props) => {
   const [selectedImage, setSelectedImage] = useState('');
   const [modelOpened, setModelOpened] = useState(false);
   const [isLoaded, setLoaded] = useState(false);
@@ -91,4 +91,4 @@ const PhotoList = ({ id, first_name, last_name, year, path }: Props) => {
   );
 };
 
-export default PhotoList;
+export default PhotoSet;

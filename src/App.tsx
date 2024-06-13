@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useMemo, useContext } from 'react';
 import './App.css';
-import PhotoList from './components/PhotoList';
+import PhotoSet from './components/PhotoSet';
 import { photoData } from './components/photoData';
 import Heading from './components/Heading';
 import UBCLogo from './components/TopBanner';
@@ -177,7 +177,7 @@ function App() {
               .filter((photo) => photo.year === selectedYear)
               .map((photo) => (
                 <div key={photo.id}>
-                  <PhotoList {...photo} />
+                  <PhotoSet {...photo} />
                 </div>
               ))}
           </div>
@@ -193,8 +193,8 @@ function App() {
 
         <div className="container-flex" style={{ color: textStyle.color }}>
           <SearchBar
-            to_show={(photoList, input) => {
-              setSearchResult(photoList);
+            to_show={(PhotoSet, input) => {
+              setSearchResult(PhotoSet);
               setSearchedInput(input);
             }}
             first_names={photos.map((p) => p.first_name)}
