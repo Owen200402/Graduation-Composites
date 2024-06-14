@@ -21,8 +21,8 @@ body::-webkit-scrollbar {
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-left: 12rem;
-  margin-right: 12rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
