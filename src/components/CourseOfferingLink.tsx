@@ -13,7 +13,7 @@ const CourseOfferingLink = () => {
           sx={{
             cursor: 'pointer',
             fontSize: 35,
-            ml: 1,
+            pl: 1,
             mt: 1.2,
             color: '#18184d',
           }}
