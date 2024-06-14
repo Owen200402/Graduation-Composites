@@ -1,7 +1,6 @@
 import { Button, Typography } from '@mui/material';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
-import VideoFront from './VideoFront';
 
 const Front = styled.div`
   background-image: url('images/front-page.webp');
@@ -110,21 +109,19 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
         <h2 style={{ fontFamily: 'cursive' }}>{subHeading}</h2>
       </Sub>
 
-      {/* <VideoFront></VideoFront> */}
-
       <Front>
         <div>
           <Typography
             variant="h4"
-            sx={{ color: 'white', animation: 'fadeIn 1.5s ease-in-out;' }}
+            sx={{ color: 'white', marginTop: "1rem"}}
           >
             {title}
           </Typography>
         </div>
-        <div style={{ maxWidth: '450px' }}>
+        <div style={{ maxWidth: '400px' }}>
           <Typography
-            component="p"
-            sx={{ color: 'whitesmoke', animation: 'fadeIn 3.5s ease-in-out;' }}
+            variant="body2"
+            sx={{ color: 'whitesmoke' }}
           >
             {displayedSubtitle}
           </Typography>
@@ -136,7 +133,7 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
             justifyContent: 'center',
           }}
         >
-          <div style={{ marginTop: '20px' }}>
+          <div style={{ marginTop: '1rem' }}>
             <Button
               color="secondary"
               variant="outlined"

@@ -6,20 +6,20 @@ interface Props {
 
 const Heading = ({ year }: Props) => {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('lg'));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
   if (!year) {
     return (
       <Typography
-        variant={isSmallScreen ? 'h5' : 'h4'}
+        variant={isSmallScreen ? 'h6' : 'h4'}
         sx={{ textAlign: 'center', whiteSpace: 'nowrap' }}
       >
-        Graduation Composites
+        ECE Graduation Composites
       </Typography>
     );
   }
   return (
     <Typography
-      variant={isSmallScreen ? 'h5' : 'h4'}
+      variant={isSmallScreen ? 'h6' : 'h4'}
       sx={{ textAlign: 'center', whiteSpace: 'nowrap' }}
     >
       Electrical Engineering Class of {year}
