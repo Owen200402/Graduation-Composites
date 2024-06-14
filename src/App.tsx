@@ -61,7 +61,7 @@ function App() {
     color: theme.palette.mode === 'dark' ? 'white' : 'black',
   };
 
-  const years = [1930, 1937, 1938, 1939, 1940, 1941, 1944, 1945, 1946, 1947];
+  const years = [1930, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947];
 
   return (
     <>

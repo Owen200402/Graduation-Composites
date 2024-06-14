@@ -142,3 +142,7 @@ body::-webkit-scrollbar {
 .dropdown-menu > li {
   display: inline-block;
 }
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 2s;
+}

@@ -70,7 +70,7 @@ const ImageModal = ({
           <Typography
             variant="h5"
             style={{ color: '#696969' }}
-            className="animate__animated animate__fadeInUp"
+            className="animate__animated animate__fadeIn"
           >
             Class of {year}
           </Typography>
