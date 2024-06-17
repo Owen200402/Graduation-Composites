@@ -36,8 +36,19 @@ const YearSelectionMainPage = ({ years, onSelectYear }: Props) => {
   return (
     <div className="cover-page-cards">
       {years.map((year, index) => (
-        <Card key={year} sx={{ width: 230 }}>
-          <CardMedia sx={{ height: 130 }}>
+        <Card
+          key={year}
+          sx={{
+            width: 220,
+            transition: 'transform 0.3s',
+            ':hover': {
+              transform: 'scale(1.1)',
+              cursor: "pointer"
+            },
+          }}
+          onClick={() => onSelectYear(year)}
+        >
+          <CardMedia sx={{ height: 120 }}>
             {!loadedArray[index] && (
               <Skeleton variant="rectangular" width="100%" height="100%" />
             )}
