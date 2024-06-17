@@ -1,6 +1,7 @@
 import { Button, Typography } from '@mui/material';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
+import { GiClick } from 'react-icons/gi';
 
 const Front = styled.div`
   background-image: url('images/front-page.webp');
@@ -111,18 +112,12 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
 
       <Front>
         <div>
-          <Typography
-            variant="h4"
-            sx={{ color: 'white', marginTop: "1rem"}}
-          >
+          <Typography variant="h4" sx={{ color: 'white', marginTop: '1rem' }}>
             {title}
           </Typography>
         </div>
         <div style={{ maxWidth: '400px' }}>
-          <Typography
-            variant="body2"
-            sx={{ color: 'whitesmoke' }}
-          >
+          <Typography variant="body2" sx={{ color: 'whitesmoke' }}>
             {displayedSubtitle}
           </Typography>
         </div>
@@ -131,19 +126,30 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
+            position: "relative"
           }}
         >
           <div style={{ marginTop: '1rem' }}>
             <Button
               color="secondary"
               variant="outlined"
-              sx={{ animation: 'fadeIn 4s ease-in' }}
-              size='small'
+              sx={{ animation: 'fadeIn 1s ease-in' }}
+              size="small"
               onClick={scrollDown}
             >
               Explore
             </Button>
           </div>
+          <GiClick
+            style={{
+              position: 'absolute',
+              top: 35,
+              left: 70,
+              color: '#03e3fc',
+              fontSize: "30px",
+              animation: 'zoomInAndOut 2s ease-in-out infinite' 
+            }}
+          />
         </div>
       </Front>
     </div>
