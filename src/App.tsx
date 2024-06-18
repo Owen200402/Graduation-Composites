@@ -75,10 +75,10 @@ function App() {
         style={{
           position: 'fixed',
           bottom: '0',
-          width: '20%',
+          width: '18%',
           height: '20px',
         }}
-      />
+      ></ReactAudioPlayer>
       {/* Front Page */}
       <FrontPage
         title="Graduation Composites"
