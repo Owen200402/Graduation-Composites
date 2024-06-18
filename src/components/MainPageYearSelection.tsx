@@ -6,6 +6,7 @@ import {
   CardMedia,
   Skeleton,
   Typography,
+  useTheme,
 } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 
@@ -16,6 +17,8 @@ interface Props {
 
 const YearSelectionMainPage = ({ years, onSelectYear }: Props) => {
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
+  const theme = useTheme();
+
   const [loadedArray, setLoadedArray] = useState<boolean[]>(
     new Array(years.length).fill(false)
   );
@@ -43,7 +46,7 @@ const YearSelectionMainPage = ({ years, onSelectYear }: Props) => {
             transition: 'transform 0.3s',
             ':hover': {
               transform: 'scale(1.1)',
-              cursor: "pointer"
+              cursor: 'pointer',
             },
           }}
           onClick={() => onSelectYear(year)}
@@ -65,7 +68,11 @@ const YearSelectionMainPage = ({ years, onSelectYear }: Props) => {
               }}
             />
           </CardMedia>
-          <CardContent>
+          <CardContent
+            sx={{
+              background: theme.palette.mode === 'dark' ? '#2f324a' : 'white',
+            }}
+          >
             <Typography gutterBottom variant="h5">
               {year}
             </Typography>
@@ -73,7 +80,12 @@ const YearSelectionMainPage = ({ years, onSelectYear }: Props) => {
               Click to explore the photo composite for {year}'s graduates.
             </Typography>
           </CardContent>
-          <CardActions sx={{ paddingTop: '0px' }}>
+          <CardActions
+            sx={{
+              paddingTop: '0px',
+              background: theme.palette.mode === 'dark' ? '#2f324a' : 'white',
+            }}
+          >
             <Button size="small" onClick={() => onSelectYear(year)}>
               Learn More
             </Button>
