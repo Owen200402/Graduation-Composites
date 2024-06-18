@@ -69,7 +69,7 @@ function App() {
   return (
     <>
       <ReactAudioPlayer
-        src="assets/videos/chopin-waltz.mp3"
+        src="assets/videos/Midnight-the-Stars-and-You.mp3"
         autoPlay
         controls
         style={{
