@@ -21,6 +21,7 @@ import CourseOfferingLink from './components/CourseOfferingLink';
 import { styled } from 'styled-components';
 import MainPageYearSelection from './components/MainPageYearSelection';
 import BackToMainButton from './components/BackToMainButton';
+import ReactAudioPlayer from 'react-audio-player';
 
 const ResponsiveContainer = styled.div`
   display: flex;
@@ -61,10 +62,23 @@ function App() {
     color: theme.palette.mode === 'dark' ? 'white' : 'black',
   };
 
-  const years = [1930, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947];
+  const years = [
+    1930, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947,
+  ];
 
   return (
     <>
+      <ReactAudioPlayer
+        src="assets/videos/chopin-waltz.mp3"
+        autoPlay
+        controls
+        style={{
+          position: 'fixed',
+          bottom: '0',
+          width: '20%',
+          height: '20px',
+        }}
+      />
       {/* Front Page */}
       <FrontPage
         title="Graduation Composites"
