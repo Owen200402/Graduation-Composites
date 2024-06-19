@@ -22,6 +22,7 @@ import { styled } from 'styled-components';
 import MainPageYearSelection from './components/MainPageYearSelection';
 import BackToMainButton from './components/BackToMainButton';
 import ReactAudioPlayer from 'react-audio-player';
+import useThinPlate from './services/useThinPlate';
 
 const ResponsiveContainer = styled.div`
   display: flex;
@@ -55,6 +56,8 @@ function App() {
 
   const [isAtMainScreen, setAtMainScreen] = useState(true);
 
+  const { output, error } = useThinPlate();
+
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
 
@@ -68,6 +71,16 @@ function App() {
 
   return (
     <>
+      <div>
+        <h1>Thin Plate Spline Motion Model</h1>
+        {error && <p>Error: {error}</p>}
+        {output && (
+          <div>
+            <h2>Result:</h2>
+            <pre>{JSON.stringify(output, null, 2)}</pre>
+          </div>
+        )}
+      </div>
       <ReactAudioPlayer
         src="assets/videos/Midnight-the-Stars-and-You.mp3"
         autoPlay
