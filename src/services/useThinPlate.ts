@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Replicate from 'replicate';
 
+
 // Define the input types
 interface Input {
   source_image: string;
@@ -27,7 +28,7 @@ const useThinPlate = () => {
 
       const input: Input = {
         source_image:
-          'https://replicate.delivery/mgxm/b8efcd01-da81-42c7-8cd6-0a820084a983/source.png',
+          'https://drive.google.com/uc?export=view&id=1LoOgonGKVyCiINAful8ZEbpNBM05vJSj',
         driving_video:
           'https://replicate.delivery/mgxm/005e32a9-ff8e-4dfd-bcfd-bbbf3791ca94/driving.mp4',
       };
