@@ -21,7 +21,7 @@ const useThinPlate = () => {
   useEffect(() => {
     const fetchImage = async () => {
       const replicate = new Replicate({
-        auth: process.env.REPLICATE_API_TOKEN,
+        auth: import.meta.env.VITE_REPLICATE_API_TOKEN,
         baseUrl: 'http://glacial-bayou-86820-65acb0ccb297.herokuapp.com/https://api.replicate.com/v1', // Use your local CORS proxy
       });
 
