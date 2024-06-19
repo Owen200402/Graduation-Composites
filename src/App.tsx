@@ -71,16 +71,6 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>Thin Plate Spline Motion Model</h1>
-        {error && <p>Error: {error}</p>}
-        {output && (
-          <div>
-            <h2>Result:</h2>
-            <pre>{JSON.stringify(output, null, 2)}</pre>
-          </div>
-        )}
-      </div>
       <ReactAudioPlayer
         src="assets/videos/Midnight-the-Stars-and-You.mp3"
         autoPlay
@@ -246,6 +236,16 @@ function App() {
         </div>
 
         <BottomBanner></BottomBanner>
+        <div>
+          <h1>Thin Plate Spline Motion Model</h1>
+          {error && <p>Error: {error}</p>}
+          {output && (
+            <div>
+              <h2>Result:</h2>
+              <pre>{JSON.stringify(output, null, 2)}</pre>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

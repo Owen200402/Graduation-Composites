@@ -21,7 +21,8 @@ const useThinPlate = () => {
   useEffect(() => {
     const fetchImage = async () => {
       const replicate = new Replicate({
-        auth: 'r8_G3eLKdK4fBOFn90WOD6LrYvFlNuPpes0ioVPj',
+        auth: 'r8_Yp6jjhGw6foh5BdiAtguVJvTsctIPG71i4pKG',
+        baseUrl: 'http://localhost:8080/https://api.replicate.com/v1', // Use your local CORS proxy
       });
 
       const input: Input = {
