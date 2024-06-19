@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 .vercel
 src/config.ts
-.env*.local
+.env.local
