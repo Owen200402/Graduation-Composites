@@ -22,7 +22,7 @@ const useThinPlate = () => {
     const fetchImage = async () => {
       const replicate = new Replicate({
         auth: import.meta.env.VITE_REPLICATE_API_TOKEN,
-        baseUrl: 'http://glacial-bayou-86820-65acb0ccb297.herokuapp.com/https://api.replicate.com/v1', // Use your local CORS proxy
+        baseUrl: 'https://glacial-bayou-86820-65acb0ccb297.herokuapp.com/https://api.replicate.com/v1',
       });
 
       const input: Input = {
