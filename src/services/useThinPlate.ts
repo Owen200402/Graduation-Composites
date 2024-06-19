@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import Replicate from 'replicate';
+import dotenv from 'dotenv';
+
 
 // Define the input types
 interface Input {
@@ -21,7 +23,7 @@ const useThinPlate = () => {
   useEffect(() => {
     const fetchImage = async () => {
       const replicate = new Replicate({
-        auth: 'r8_eH4fEUdfSAA0pxLU4H6k8MsuDZiw27b168BJL',
+        auth: process.env.REACT_APP_REPLICATE_API_TOKEN as string,
         baseUrl: 'http://glacial-bayou-86820-65acb0ccb297.herokuapp.com/https://api.replicate.com/v1', // Use your local CORS proxy
       });
 
