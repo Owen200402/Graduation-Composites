@@ -245,7 +245,7 @@ function App() {
                   <h4>Result {index + 1}</h4>
                   <pre>{JSON.stringify(output, null, 2)}</pre>
                   {ImageLinkPaths.length === index + 1 && (
-                    <h4 style={{ color: 'green' }}>Done!</h4>
+                    <h4 style={{ color: 'green', marginBottom: "3rem" }}>Done!</h4>
                   )}
                 </div>
               ))}
