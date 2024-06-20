@@ -242,7 +242,7 @@ function App() {
             <div>
               {outputs.map((output, index) => (
                 <div key={index}>
-                  <h2>Result {index + 1}</h2>
+                  <h3>Result {index + 1}</h3>
                   <pre>{JSON.stringify(output, null, 2)}</pre>
                 </div>
               ))}
