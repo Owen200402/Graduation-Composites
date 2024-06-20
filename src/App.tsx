@@ -244,6 +244,7 @@ function App() {
                 <div key={index}>
                   <h3>Result {index + 1}</h3>
                   <pre>{JSON.stringify(output, null, 2)}</pre>
+                  {index === outputs.length && <h3 color='green'>Done!</h3>}
                 </div>
               ))}
             </div>
