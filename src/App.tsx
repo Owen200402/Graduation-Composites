@@ -242,9 +242,11 @@ function App() {
             <div>
               {outputs.map((output, index) => (
                 <div key={index}>
-                  <h3>Result {index + 1}</h3>
+                  <h4>Result {index + 1}</h4>
                   <pre>{JSON.stringify(output, null, 2)}</pre>
-                  {index === outputs.length && <h3 color='green'>Done!</h3>}
+                  {ImageLinkPaths.length === index + 1 && (
+                    <h4 style={{ color: 'green' }}>Done!</h4>
+                  )}
                 </div>
               ))}
             </div>

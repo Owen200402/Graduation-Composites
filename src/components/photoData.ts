@@ -1042,6 +1042,7 @@ export const photoData = [
     last_name: 'Evans',
     year: 1947,
     path: 'https://people.ece.ubc.ca/~haileynadine/assets/1947/D.J._Evans_1947.jpg',
+    result: "https://replicate.delivery/czjl/7GXCmX7uQexmcCU17QeRD5OVhUKBZ7UEW8N48om9f9sZGHBmA/output.mp4",
   },
   {
     id: 151,

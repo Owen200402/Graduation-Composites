@@ -11,6 +11,7 @@ interface Input {
 interface Output {
   result?: any;
   error?: string;
+  imageUrl?: string;
 }
 
 interface Props {
@@ -26,7 +27,7 @@ const useThinPlate = ({ imageUrls }: Props) => {
       const newOutputs: Output[] = [];
       const newErrors: string[] = [];
 
-      imageUrls.map(async (imageUrl, index) => {
+      imageUrls.map(async (imageUrl) => {
         const replicate = new Replicate({
           auth: import.meta.env.VITE_REPLICATE_API_TOKEN,
           baseUrl:
@@ -44,7 +45,7 @@ const useThinPlate = ({ imageUrls }: Props) => {
             'yoyo-nb/thin-plate-spline-motion-model:382ceb8a9439737020bad407dec813e150388873760ad4a5a83a2ad01b039977',
             { input }
           );
-          newOutputs.push({ result });
+          newOutputs.push({result, imageUrl});
           setOutputs(newOutputs);
         } catch (err: any) {
           newErrors.push(err.message);
