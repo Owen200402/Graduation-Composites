@@ -22,6 +22,7 @@ import { styled } from 'styled-components';
 import MainPageYearSelection from './components/MainPageYearSelection';
 import BackToMainButton from './components/BackToMainButton';
 import ReactAudioPlayer from 'react-audio-player';
+import { ImageLinkPaths } from './components/ImageLinkPaths';
 import useThinPlate from './services/useThinPlate';
 
 const ResponsiveContainer = styled.div`
@@ -52,11 +53,9 @@ function App() {
   const [searchResult, setSearchResult] = useState<Photo[]>();
   const [searchedInput, setSearchedInput] = useState('');
 
-  const [isBacked, setIsBacked] = useState(false);
-
   const [isAtMainScreen, setAtMainScreen] = useState(true);
 
-  const { output, error } = useThinPlate();
+  const { outputs, errors } = useThinPlate({ imageUrls: ImageLinkPaths });
 
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
@@ -238,11 +237,15 @@ function App() {
         <BottomBanner></BottomBanner>
         <div>
           <h1>Thin Plate Spline Motion Model</h1>
-          {error && <p>Error: {error}</p>}
-          {output && (
+          {errors.length >= 1 && <p>Error: {errors}</p>}
+          {outputs && (
             <div>
-              <h2>Result:</h2>
-              <pre>{JSON.stringify(output, null, 2)}</pre>
+              {outputs.map((output, index) => (
+                <div key={index}>
+                  <h2>Result {index + 1}</h2>
+                  <pre>{JSON.stringify(output, null, 2)}</pre>
+                </div>
+              ))}
             </div>
           )}
         </div>
