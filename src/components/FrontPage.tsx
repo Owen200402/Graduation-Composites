@@ -157,7 +157,7 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
             ></GaugeWithText>
             <GaugeWithText
               text="Grad Photo Coverage"
-              percentage={98}
+              percentage={96}
               arcColor="#DBAC34"
               textColor="#DBAC34"
               numberColor="#DBAC34"
