@@ -25,8 +25,6 @@ const GaugeWithText = ({
       if (currentValue < percentage) {
         currentValue++;
         setAnimatedValue(currentValue);
-      } else {
-        clearInterval(interval);
       }
     }, 20);
     return () => clearInterval(interval);
@@ -38,13 +36,13 @@ const GaugeWithText = ({
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
-      width="110px" // Adjust the width as needed
-      height="110px" // Adjust the height as needed
+      width="100px" 
+      height="100px"
       marginTop={0}
     >
       <Gauge
-        width={70}
-        height={70}
+        width={75}
+        height={75}
         value={animatedValue}
         sx={(theme) => ({
           [`& .${gaugeClasses.valueText}`]: {
@@ -60,6 +58,9 @@ const GaugeWithText = ({
             fill: theme.palette.text.disabled,
           },
         })}
+        text={
+            ({ value }) => `${value}%`
+         }
       />
 
       <Typography

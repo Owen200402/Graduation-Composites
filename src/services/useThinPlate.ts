@@ -38,7 +38,7 @@ const useThinPlate = ({ imageUrls }: Props) => {
           source_image: imageUrl,
           driving_video:
             // 'https://replicate.delivery/mgxm/005e32a9-ff8e-4dfd-bcfd-bbbf3791ca94/driving.mp4',
-            'https://people.ece.ubc.ca/~haileynadine/driver%20videos/looking%20left.mp4',
+            'https://people.ece.ubc.ca/~haileynadine/driver%20videos/looking%20straight%202.mp4',
         };
 
         try {
