@@ -95,6 +95,8 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
     return () => clearTimeout(timer);
   }, []);
 
+  
+
   const scrollDown = () => {
     document
       .getElementById('main')
@@ -117,7 +119,7 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
             {title}
           </Typography>
         </div>
-        <div style={{ maxWidth: '400px', marginTop: "0.3rem" }}>
+        <div style={{ maxWidth: '400px', marginTop: '0.3rem' }}>
           <Typography variant="body2" sx={{ color: 'whitesmoke' }}>
             {displayedSubtitle}
           </Typography>
@@ -128,34 +130,37 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
             flexDirection: 'column',
             justifyContent: 'center',
             position: 'relative',
-            animation: "fadeIn 5s ease-in-out"
+            animation: 'fadeIn 2s ease-in-out',
           }}
         >
           <div
             style={{
               display: 'flex',
-              justifyContent: "center",
-              alignItems: "center",
-              marginTop: "0.5rem"
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: '0.5rem',
             }}
           >
             <GaugeWithText
               text="Experience Satisfaction"
               percentage={95}
-              color="#52b202"
-              textColor='#52b202'
+              arcColor="#52b202"
+              textColor="#52b202"
+              numberColor="#52b202"
             ></GaugeWithText>
             <GaugeWithText
               text="Touch-Screen Support"
               percentage={100}
-              color="#2480ad"
-              textColor='#2480ad'
+              arcColor="#2480ad"
+              textColor="#2480ad"
+              numberColor="#2480ad"
             ></GaugeWithText>
             <GaugeWithText
               text="Grad Photo Coverage"
               percentage={98}
-              color="#DBAC34"
-              textColor='#DBAC34'
+              arcColor="#DBAC34"
+              textColor="#DBAC34"
+              numberColor="#DBAC34"
             ></GaugeWithText>
           </div>
 
