@@ -37,7 +37,8 @@ const useThinPlate = ({ imageUrls }: Props) => {
         const input: Input = {
           source_image: imageUrl,
           driving_video:
-            'https://replicate.delivery/mgxm/005e32a9-ff8e-4dfd-bcfd-bbbf3791ca94/driving.mp4',
+            // 'https://replicate.delivery/mgxm/005e32a9-ff8e-4dfd-bcfd-bbbf3791ca94/driving.mp4',
+            'https://people.ece.ubc.ca/~haileynadine/driver%20videos/looking%20left.mp4',
         };
 
         try {
@@ -45,7 +46,7 @@ const useThinPlate = ({ imageUrls }: Props) => {
             'yoyo-nb/thin-plate-spline-motion-model:382ceb8a9439737020bad407dec813e150388873760ad4a5a83a2ad01b039977',
             { input }
           );
-          newOutputs.push({result, imageUrl});
+          newOutputs.push({ result, imageUrl });
           setOutputs(newOutputs);
         } catch (err: any) {
           newErrors.push(err.message);

@@ -2,6 +2,7 @@ import { Button, Typography } from '@mui/material';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { GiClick } from 'react-icons/gi';
+import GaugeWithText from './GaugeWithText';
 
 const Front = styled.div`
   background-image: url('images/front-page.webp');
@@ -13,7 +14,7 @@ const Front = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   text-align: center;
   animation: background-enter 2s ease-in-out;
 `;
@@ -112,11 +113,11 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
 
       <Front>
         <div>
-          <Typography variant="h4" sx={{ color: 'white', marginTop: '1rem' }}>
+          <Typography variant="h4" sx={{ color: 'white', marginTop: '2rem' }}>
             {title}
           </Typography>
         </div>
-        <div style={{ maxWidth: '400px' }}>
+        <div style={{ maxWidth: '400px', marginTop: "0.3rem" }}>
           <Typography variant="body2" sx={{ color: 'whitesmoke' }}>
             {displayedSubtitle}
           </Typography>
@@ -126,30 +127,49 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            position: "relative"
+            position: 'relative',
+            animation: "fadeIn 5s ease-in-out"
           }}
         >
-          <div style={{ marginTop: '1rem' }}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "0.5rem"
+            }}
+          >
+            <GaugeWithText
+              text="Experience Satisfaction"
+              percentage={95}
+              color="#52b202"
+              textColor='#52b202'
+            ></GaugeWithText>
+            <GaugeWithText
+              text="Touch-Screen Support"
+              percentage={100}
+              color="#2480ad"
+              textColor='#2480ad'
+            ></GaugeWithText>
+            <GaugeWithText
+              text="Grad Photo Coverage"
+              percentage={98}
+              color="#DBAC34"
+              textColor='#DBAC34'
+            ></GaugeWithText>
+          </div>
+
+          <div style={{ marginTop: '2rem' }}>
             <Button
               color="secondary"
               variant="outlined"
-              sx={{ animation: 'fadeIn 1s ease-in' }}
+              sx={{ animation: 'fadeIn 8s ease-in' }}
               size="small"
               onClick={scrollDown}
             >
               Explore
             </Button>
           </div>
-          <GiClick
-            style={{
-              position: 'absolute',
-              top: 35,
-              left: 70,
-              color: '#03e3fc',
-              fontSize: "30px",
-              animation: 'zoomInAndOut 2s ease-in-out infinite' 
-            }}
-          />
         </div>
       </Front>
     </div>
