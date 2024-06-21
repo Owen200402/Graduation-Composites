@@ -236,7 +236,7 @@ function App() {
 
         <BottomBanner></BottomBanner>
         <div>
-          <h1>Thin Plate Spline Motion Model</h1>
+          <h2 style={{textAlign: "center"}}>Thin Plate Spline Motion Model (under development)</h2>
           {errors.length >= 1 && <p>Error: {errors}</p>}
           {outputs && (
             <div>
