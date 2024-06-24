@@ -41,12 +41,12 @@ const GaugeWithText = ({
       marginTop={0}
     >
       <Gauge
-        width={75}
-        height={75}
+        width={70}
+        height={70}
         value={animatedValue}
         sx={(theme) => ({
           [`& .${gaugeClasses.valueText}`]: {
-            fontSize: 14,
+            fontSize: 13,
             '& text': {
               fill: numberColor,
             },

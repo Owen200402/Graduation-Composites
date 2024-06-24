@@ -86,7 +86,7 @@ function App() {
       {/* Front Page */}
       <FrontPage
         title="Graduation Composites"
-        subtitle="An AI supercharged photo composite featuring past graduates from 1937 to 2022 at the University of British Columbia."
+        subtitle="An AI supercharged photo composite featuring electrical engineering graduates from 1937 to 2022 at the University of British Columbia."
         slogan="Tuum Est. It's Yours."
         subHeading="Welcome to School of Engineering"
       ></FrontPage>
