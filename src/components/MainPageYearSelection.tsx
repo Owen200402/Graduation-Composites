@@ -15,7 +15,7 @@ interface Props {
   onSelectYear: (year: number) => void;
 }
 
-const YearSelectionMainPage = ({ years, onSelectYear }: Props) => {
+const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
   const theme = useTheme();
 
@@ -56,7 +56,7 @@ const YearSelectionMainPage = ({ years, onSelectYear }: Props) => {
               <Skeleton variant="rectangular" width="100%" height="100%" />
             )}
             <img
-              src={`https://people.ece.ubc.ca/~haileynadine/assets/displayedOnCover/ECE${year}.png`}
+              src={`assets/displayedOnCover/ECE${year}.png`}
               alt={`graduation class of ${year}`}
               ref={(el) => (imageRefs.current[index] = el)}
               onLoad={() => handleImageLoad(index)}
@@ -65,6 +65,7 @@ const YearSelectionMainPage = ({ years, onSelectYear }: Props) => {
                 width: '100%',
                 objectFit: 'cover',
                 display: 'none',
+                overflow: "hidden"
               }}
             />
           </CardMedia>
@@ -96,4 +97,4 @@ const YearSelectionMainPage = ({ years, onSelectYear }: Props) => {
   );
 };
 
-export default YearSelectionMainPage;
+export default MainPageYearSelection;
