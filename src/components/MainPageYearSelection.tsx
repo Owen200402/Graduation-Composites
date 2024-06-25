@@ -9,6 +9,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
+import { photoData } from './photoData';
 
 interface Props {
   years: number[];
@@ -65,7 +66,7 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
                 width: '100%',
                 objectFit: 'cover',
                 display: 'none',
-                overflow: "hidden"
+                overflow: 'hidden',
               }}
             />
           </CardMedia>
@@ -77,8 +78,17 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
             <Typography gutterBottom variant="h5">
               {year}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Click to explore the photo composite for {year}'s graduates.
+            <Typography variant="body2" color="text.secondary" marginLeft={0.5}>
+              {year >= 2020
+                ? 'Location: Floor 4'
+                : year >= 2000 && year < 2020
+                  ? 'Location: Floor 3'
+                  : year >= 1950 && year < 1970
+                    ? 'Location: Floor 2'
+                    : 'Location: Floor 1'}
+                    <br></br>
+              Building: UBC MacLeod <br></br>
+              Number of Graduates: {photoData.filter(photo => photo.year === year).length}
             </Typography>
           </CardContent>
           <CardActions

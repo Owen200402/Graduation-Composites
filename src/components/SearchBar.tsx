@@ -91,11 +91,11 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
         <div className="input-group animate__animated animate__fadeInUp">
           <TextField
             className="form-control m-2 mt-3"
-            label="Search Name from Dataset"
+            label="Advanced Search for Grad"
             variant="outlined"
             size="small"
             sx={{
-              maxWidth: '32ch',
+              maxWidth: '60pch',
               '& input': {
                 color: themeColor === 'light' ? 'black' : 'white',
               },
