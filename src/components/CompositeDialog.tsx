@@ -45,7 +45,7 @@ const CompositeDialog = () => {
         <div style={{ display: 'flex', justifyContent: "center", alignItems: "center"}}>
           <Typography
             variant="body2"
-            sx={{ color: '#0055B7', textAlign: 'center', mt: 1 }}
+            sx={{ color: '#023266', textAlign: 'center', mt: 1 }}
           >
             About
           </Typography>

@@ -96,7 +96,7 @@ function App() {
         style={{
           background:
             theme.palette.mode === 'dark'
-              ? '#807a7a'
+              ? 'linear-gradient(to top, rgb(9, 32, 63) 0%, rgb(83, 120, 149) 100%)'
               : 'linear-gradient(to bottom, #e6f7ff, #ffffff)',
           color: theme.palette.mode === 'dark' ? 'white' : 'black',
           minHeight: '100vh',
