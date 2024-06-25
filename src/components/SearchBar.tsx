@@ -90,12 +90,12 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
       {isExpanded && (
         <div className="input-group animate__animated animate__fadeInUp">
           <TextField
-            className="form-control m-2"
-            label="Search Student's Name"
+            className="form-control m-2 mt-3"
+            label="Search Name from Dataset"
             variant="outlined"
             size="small"
             sx={{
-              maxWidth: '24ch',
+              maxWidth: '32ch',
               '& input': {
                 color: themeColor === 'light' ? 'black' : 'white',
               },
@@ -117,7 +117,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
               },
             }}
           />
-          <div className="input-group-append m-2">
+          <div className="input-group-append m-2 mt-3">
             <button
               className={
                 themeColor === 'light'

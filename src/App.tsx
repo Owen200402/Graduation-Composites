@@ -220,7 +220,15 @@ function App() {
             themeColor={theme.palette.mode}
           />
         </div>
-        <div className="container-flex" style={{ color: textStyle.color }}>
+
+        <div className="copyright" style={{ color: textStyle.color }}>
+          &copy; {new Date().getFullYear()} UBC Electrical and Computer
+          Engineering. All rights reserved.
+        </div>
+        <div
+          className="m-2"
+          style={{ color: textStyle.color, position: 'absolute', left: '0%', transform: "translate(0px, -25px)" }}
+        >
           {(!isAtMainScreen || searchResult) && (
             <BackToMainButton
               onClickBackToMain={() => {
@@ -229,11 +237,6 @@ function App() {
               }}
             />
           )}
-        </div>
-
-        <div className="copyright" style={{ color: textStyle.color }}>
-          &copy; {new Date().getFullYear()} UBC Electrical and Computer
-          Engineering. All rights reserved.
         </div>
 
         <BottomBanner></BottomBanner>

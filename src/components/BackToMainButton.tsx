@@ -1,4 +1,5 @@
-import { Button, Typography } from "@mui/material";
+import { ArrowLeft } from '@mui/icons-material';
+import { Button, Typography } from '@mui/material';
 
 interface Props {
   onClickBackToMain: () => void;
@@ -7,11 +8,13 @@ interface Props {
 const BackToMainButton = ({ onClickBackToMain }: Props) => {
   return (
     <Button
-      variant="text"
-      color="secondary"
+      variant="outlined"
+      color="error"
+      startIcon={<ArrowLeft />}
       onClick={() => onClickBackToMain()}
+      size="small"
     >
-      <Typography variant="caption">Pick Another Year</Typography>
+      Back
     </Button>
   );
 };
