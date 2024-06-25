@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import ScreenSearchDesktopIcon from '@mui/icons-material/ScreenSearchDesktop';
 import { photoData } from '../components/photoData';
 import { TextField } from '@mui/material';
