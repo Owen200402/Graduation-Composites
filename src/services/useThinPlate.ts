@@ -25,6 +25,9 @@ const useThinPlate = ({ imageUrls }: Props) => {
   const drivingVideos = [
     'https://replicate.delivery/mgxm/005e32a9-ff8e-4dfd-bcfd-bbbf3791ca94/driving.mp4',
     'https://people.ece.ubc.ca/~haileynadine/driver%20videos/looking%20straight%202.mp4',
+    'https://people.ece.ubc.ca/~haileynadine/driver%20videos/image%20filler-1-Animated.mp4',
+    'https://people.ece.ubc.ca/~haileynadine/driver%20videos/image%20filler%202_edited.mp4',
+    'https://people.ece.ubc.ca/~haileynadine/driver%20videos/image%20filler%203_edited.mp4',
   ];
 
   useEffect(() => {
@@ -41,7 +44,7 @@ const useThinPlate = ({ imageUrls }: Props) => {
 
         const input: Input = {
           source_image: imageUrl,
-          driving_video: drivingVideos[Math.floor(Math.random() * 2)], // random video
+          driving_video: drivingVideos[Math.floor(Math.random() * 5)], // random video
         };
 
         try {
