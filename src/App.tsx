@@ -227,7 +227,7 @@ function App() {
         </div>
         <div
           className="m-2"
-          style={{ color: textStyle.color, position: 'absolute', left: '0%', transform: "translate(0px, -25px)" }}
+          style={{ color: textStyle.color, position: 'absolute', left: '0%', transform: "translate(0px, -30px)" }}
         >
           {(!isAtMainScreen || searchResult) && (
             <BackToMainButton
