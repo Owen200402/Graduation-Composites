@@ -83,7 +83,7 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
                 ? 'Location: Floor 4'
                 : year >= 2000 && year < 2020
                   ? 'Location: Floor 3'
-                  : year >= 1950 && year < 1970
+                  : year >= 1970 && year < 1999
                     ? 'Location: Floor 2'
                     : 'Location: Floor 1'}
                     <br></br>

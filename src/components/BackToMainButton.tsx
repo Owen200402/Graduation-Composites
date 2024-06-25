@@ -14,7 +14,7 @@ const BackToMainButton = ({ onClickBackToMain }: Props) => {
       onClick={() => onClickBackToMain()}
       size="small"
     >
-      Back
+      Back to Main
     </Button>
   );
 };

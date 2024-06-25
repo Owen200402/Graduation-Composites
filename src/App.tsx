@@ -48,7 +48,7 @@ function App() {
   const [photos, setPhotos] = useState(photoData);
   const photosToBeDisplayed = photos;
 
-  const [selectedYear, setSelectedYear] = useState(1930);
+  const [selectedYear, setSelectedYear] = useState<number | undefined>();
 
   const [searchResult, setSearchResult] = useState<Photo[]>();
   const [searchedInput, setSearchedInput] = useState('');
@@ -165,8 +165,8 @@ function App() {
           <div style={{ color: textStyle.color }}>
             <Typography
               variant="h5"
-              className="p-2"
-              sx={{ textAlign: 'center', color: 'royalblue' }}
+              className="p-2 m-2"
+              sx={{ textAlign: 'center', color: '#002145' }}
             >
               Search results for {searchedInput}:
             </Typography>
@@ -177,13 +177,22 @@ function App() {
                 </div>
               ))}
             </div>
-            <div style={{ display: 'flex', justifyContent: 'right' }}>
-              <button
-                className="btn btn-outline-danger m-3"
-                onClick={() => setSearchResult(undefined)}
-              >
-                Back
-              </button>
+            <div style={{ display: 'flex', justifyContent: 'left' }}>
+              {selectedYear ? (
+                <button
+                  className="btn btn-outline-danger m-2"
+                  onClick={() => setSearchResult(undefined)}
+                >
+                  Back to Your Search: {selectedYear}
+                </button>
+              ) : (
+                <button
+                  className="btn btn-outline-danger m-2"
+                  onClick={() => setSearchResult(undefined)}
+                >
+                  Back
+                </button>
+              )}
             </div>
           </div>
         ) : !isAtMainScreen ? (
@@ -227,13 +236,19 @@ function App() {
         </div>
         <div
           className="m-2"
-          style={{ color: textStyle.color, position: 'absolute', left: '0%', transform: "translate(0px, -30px)" }}
+          style={{
+            color: textStyle.color,
+            position: 'absolute',
+            left: '0%',
+            transform: 'translate(0px, -30px)',
+          }}
         >
           {(!isAtMainScreen || searchResult) && (
             <BackToMainButton
               onClickBackToMain={() => {
                 setAtMainScreen(true);
                 setSearchResult(undefined);
+                setSelectedYear(undefined);
               }}
             />
           )}
