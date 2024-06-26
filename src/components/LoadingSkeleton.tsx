@@ -4,14 +4,13 @@ const LoadingSkeleton = () => {
     return <div>
         <Skeleton
             variant="rectangular"
-            width={180}
-            height={180}
+            width={190}
+            height={190}
             sx={{ margin: '1rem' }}
           />
           <Skeleton
             variant="text"
-            width={180}
-            sx={{ fontSize: '1rem', margin: '1rem' }}
+            width={190}
           />
     </div>
 }
