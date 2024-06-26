@@ -12,7 +12,7 @@ import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import IconButton from '@mui/material/IconButton';
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import BottomBanner from './components/BottomBanner';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
@@ -24,6 +24,7 @@ import BackToMainButton from './components/BackToMainButton';
 import ReactAudioPlayer from 'react-audio-player';
 import { ImageLinkPaths } from './components/ImageLinkPaths';
 import useThinPlate from './services/useThinPlate';
+import { ArrowLeft, ArrowRight } from '@mui/icons-material';
 
 const ResponsiveContainer = styled.div`
   display: flex;
@@ -72,7 +73,7 @@ function App() {
 
   // Pagination:
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 14;
+  const itemsPerPage = 12;
   const currentItem = currentPage * itemsPerPage - itemsPerPage;
   const totalPages = Math.ceil(
     photoData.filter((p) => p.year === selectedYear).length / itemsPerPage
@@ -211,6 +212,10 @@ function App() {
               alignItems: 'center',
             }}
           >
+            <div className='m-2'>
+              <Typography variant="body2">Page: {currentPage}/{totalPages}</Typography>
+              
+            </div>
             <div
               className="photo_container m-3"
               style={{ color: textStyle.color }}
@@ -223,23 +228,28 @@ function App() {
                     <PhotoSet {...photo} />
                   </div>
                 ))
-                .slice(currentItem, currentItem + 14)}
+                .slice(currentItem, currentItem + 12)}
             </div>
             <div className="m-3">
-              <button
-                className="btn btn-primary"
+              <Button
+                variant="contained"
+                size="small"
                 disabled={currentPage === 1 ? true : false}
                 onClick={() => setCurrentPage(currentPage - 1)}
+                startIcon={<ArrowLeft />}
               >
                 Prev
-              </button>
-              <button
-                className="btn btn-primary ms-3"
+              </Button>
+              <Button
+                className="ms-3"
+                variant="contained"
+                size="small"
                 disabled={currentPage === totalPages ? true : false}
                 onClick={() => setCurrentPage(currentPage + 1)}
+                endIcon={<ArrowRight />}
               >
                 Next
-              </button>
+              </Button>
             </div>
           </div>
         ) : (
