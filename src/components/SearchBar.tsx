@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import ScreenSearchDesktopIcon from '@mui/icons-material/ScreenSearchDesktop';
 import { photoData } from '../components/photoData';
-import { TextField } from '@mui/material';
+import { Alert, TextField } from '@mui/material';
 import styled from 'styled-components';
 
 const SearchIcon = styled(ScreenSearchDesktopIcon)`
@@ -90,7 +90,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
       {isExpanded && (
         <div className="input-group animate__animated animate__fadeInUp">
           <TextField
-            className="form-control m-2 mt-3"
+            className="form-control mt-3"
             label="Advanced Search for Grad"
             variant="outlined"
             size="small"
@@ -133,13 +133,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
         </div>
       )}
       {warning && (
-        <div
-          className="alert alert-danger m-1"
-          style={{ padding: '0.5rem', fontSize: '0.9rem' }}
-          role="alert"
-        >
-          {warning}
-        </div>
+        <Alert severity="error" sx={{width: "280px"}}>{warning}</Alert>
       )}
     </div>
   );
