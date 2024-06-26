@@ -6,7 +6,7 @@ const Banner = styled.div`
   background-repeat: no-repeat;
   background-position: center top;
   min-width: 100%;
-  height: 13rem;
+  height: 20vh;
 `;
 
 const BottomBanner = () => {
