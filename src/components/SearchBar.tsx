@@ -35,7 +35,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
     setTimeout(() => {
       setIsExpanded(false);
       setWarning('');
-    }, 60000);
+    }, 20000);
   };
 
   const searchPhoto = () => {
@@ -46,7 +46,7 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
     const inputValue = inputRef.current.value.toLowerCase();
 
     if (inputValue === '') {
-      setWarning('Name cannot be blank!');
+      setWarning('The name cannot be blank!');
     } else if (
       photosToBeDisplayed.filter(
         (photo) =>
@@ -133,9 +133,13 @@ const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
         </div>
       )}
       {warning && (
-        <p className="m-2 mb-0 mt-0" style={{ color: 'red' }}>
+        <div
+          className="alert alert-danger m-1"
+          style={{ padding: '0.5rem', fontSize: '0.9rem' }}
+          role="alert"
+        >
           {warning}
-        </p>
+        </div>
       )}
     </div>
   );

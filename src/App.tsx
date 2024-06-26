@@ -195,7 +195,7 @@ function App() {
                 </button>
               ) : (
                 <button
-                  className="btn btn-outline-danger m-2"
+                  className="btn btn-danger ms-2"
                   onClick={() => setSearchResult(undefined)}
                 >
                   Back
@@ -225,7 +225,7 @@ function App() {
                 ))
                 .slice(currentItem, currentItem + 14)}
             </div>
-            <div>
+            <div className="m-3">
               <button
                 className="btn btn-primary"
                 disabled={currentPage === 1 ? true : false}
@@ -248,6 +248,7 @@ function App() {
             onSelectYear={(year) => {
               setSelectedYear(year);
               setAtMainScreen(false);
+              setCurrentPage(1);
             }}
           ></MainPageYearSelection>
         )}
@@ -283,6 +284,7 @@ function App() {
                 setAtMainScreen(true);
                 setSearchResult(undefined);
                 setSelectedYear(undefined);
+                setCurrentPage(1);
               }}
             />
           )}
