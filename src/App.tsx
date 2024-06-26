@@ -70,6 +70,14 @@ function App() {
     1930, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947,
   ];
 
+  // Pagination:
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 14;
+  const currentItem = currentPage * itemsPerPage - itemsPerPage;
+  const totalPages = Math.ceil(
+    photoData.filter((p) => p.year === selectedYear).length / itemsPerPage
+  );
+
   return (
     <>
       <ReactAudioPlayer
@@ -197,16 +205,42 @@ function App() {
           </div>
         ) : !isAtMainScreen ? (
           <div
-            className="photo_container m-3"
-            style={{ color: textStyle.color }}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
           >
-            {photosToBeDisplayed
-              .filter((photo) => photo.year === selectedYear)
-              .map((photo) => (
-                <div key={photo.id}>
-                  <PhotoSet {...photo} />
-                </div>
-              ))}
+            <div
+              className="photo_container m-3"
+              style={{ color: textStyle.color }}
+            >
+              {/* TODO: Pagination */}
+              {photosToBeDisplayed
+                .filter((photo) => photo.year === selectedYear)
+                .map((photo) => (
+                  <div key={photo.id}>
+                    <PhotoSet {...photo} />
+                  </div>
+                ))
+                .slice(currentItem, currentItem + 14)}
+            </div>
+            <div>
+              <button
+                className="btn btn-primary"
+                disabled={currentPage === 1 ? true : false}
+                onClick={() => setCurrentPage(currentPage - 1)}
+              >
+                Prev
+              </button>
+              <button
+                className="btn btn-primary ms-3"
+                disabled={currentPage === totalPages ? true : false}
+                onClick={() => setCurrentPage(currentPage + 1)}
+              >
+                Next
+              </button>
+            </div>
           </div>
         ) : (
           <MainPageYearSelection
