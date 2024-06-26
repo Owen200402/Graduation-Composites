@@ -189,7 +189,7 @@ function App() {
             <div style={{ display: 'flex', justifyContent: 'left' }}>
               {selectedYear ? (
                 <button
-                  className="btn btn-outline-danger m-2"
+                  className="btn btn-danger m-2"
                   onClick={() => setSearchResult(undefined)}
                 >
                   Back to Your Search: {selectedYear}
