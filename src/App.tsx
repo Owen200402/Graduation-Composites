@@ -166,7 +166,14 @@ function App() {
         </div>
 
         {searchResult ? (
-          <div style={{ color: textStyle.color }}>
+          <div
+            style={{
+              color: textStyle.color,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
             <Typography
               variant="h5"
               className="p-2 m-2"
@@ -175,36 +182,39 @@ function App() {
               Search results for {searchedInput}:
             </Typography>
             <div className="photo_container">
-              {searchResult.map((photo) => (
-                <div key={photo.id}>
-                  <SearchResultList {...photo} />
-                </div>
-              ))}
+              {searchResult
+                .map((photo) => (
+                  <div key={photo.id}>
+                    <SearchResultList {...photo} />
+                  </div>
+                ))
+                .slice(currentItem, currentItem + 12)}
             </div>
+            <PhotoPagination
+              currentPage={currentPage}
+              totalPages={Math.ceil(searchResult.length / itemsPerPage)}
+              onNext={() => setCurrentPage(currentPage + 1)}
+              onPrev={() => setCurrentPage(currentPage - 1)}
+            ></PhotoPagination>
             <div style={{ display: 'flex', justifyContent: 'left' }}>
-              {selectedYear ? (
+              {selectedYear && (
                 <Button
                   variant="outlined"
                   color="error"
                   size="small"
                   startIcon={<ArrowLeft />}
-                  onClick={() => setSearchResult(undefined)}
-                  className="ms-2"
-                  style={{ transform: 'translate(100px, 0px)' }}
+                  onClick={() => {
+                    setSearchResult(undefined);
+                    setCurrentPage(1);
+                  }}
+                  className="m-2"
+                  style={{
+                    position: 'absolute',
+                    left: '0%',
+                    transform: 'translate(100px, -30px)',
+                  }}
                 >
                   Back to Your Search: {selectedYear}
-                </Button>
-              ) : (
-                <Button
-                  variant="outlined"
-                  color="error"
-                  size="small"
-                  startIcon={<ArrowLeft />}
-                  onClick={() => setSearchResult(undefined)}
-                  className="ms-2"
-                  style={{ transform: 'translate(100px, 0px)' }}
-                >
-                  Back
                 </Button>
               )}
             </div>
@@ -226,7 +236,6 @@ function App() {
               className="photo_container m-3"
               style={{ color: textStyle.color }}
             >
-              {/* TODO: Pagination */}
               {photosToBeDisplayed
                 .filter((photo) => photo.year === selectedYear)
                 .map((photo) => (
@@ -237,9 +246,7 @@ function App() {
                 .slice(currentItem, currentItem + 12)}
             </div>
             <PhotoPagination
-              selectedYear={selectedYear}
               currentPage={currentPage}
-              itemsPerPage={itemsPerPage}
               totalPages={totalPages}
               onNext={() => setCurrentPage(currentPage + 1)}
               onPrev={() => setCurrentPage(currentPage - 1)}
@@ -261,6 +268,7 @@ function App() {
             to_show={(PhotoSet, input) => {
               setSearchResult(PhotoSet);
               setSearchedInput(input);
+              setCurrentPage(1)
             }}
             first_names={photos.map((p) => p.first_name)}
             last_names={photos.map((p) => p.last_name)}

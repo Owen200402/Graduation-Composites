@@ -1,3 +1,5 @@
 import { photoData } from './photoData';
 
-export const ImageLinkPaths = ["https://people.ece.ubc.ca/~haileynadine/assets/Thomas_Hadwin_1930.jpg"]
+export const ImageLinkPaths = photoData
+  .filter((p) => p.year === 1938)
+  .map((p) => p.path);
