@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import ImageModal from './ImageModal';
 import { Typography } from '@mui/material';
-import LoadingSkeleton from './LoadingSkeleton';
-
+import ResultLoadingSkeleton from './ResultLoadingSkeleton';
 
 const Image = styled.img`
   width: 190px;
@@ -32,7 +31,8 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
 
   const imageRef = useRef<HTMLImageElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
-
+  const yearRef = useRef<HTMLTextAreaElement>(null);
+  const nameRef = useRef<HTMLTextAreaElement>(null);
 
   function enlargeImage(imagePath: string) {
     setSelectedImage(imagePath);
@@ -46,7 +46,7 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
 
   return (
     <div>
-      {!isLoaded && <LoadingSkeleton></LoadingSkeleton>}
+      {!isLoaded && <ResultLoadingSkeleton></ResultLoadingSkeleton>}
       <div
         style={{
           display: 'flex',
@@ -55,24 +55,31 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
           alignItems: 'center',
         }}
       >
-        <Typography variant="h5"><i>{year}</i></Typography>
+        <Typography variant="h5" style={{ display: 'none' }} ref={yearRef}>
+          <i>{year}</i>
+        </Typography>
         <Image
           src={path}
           alt={`${first_name} ${last_name}`}
-          style={{ cursor: 'pointer', marginTop: "0px", display: 'none' }}
+          style={{ cursor: 'pointer', marginTop: '0px', display: 'none' }}
           ref={imageRef}
           onClick={() => enlargeImage(path)}
           onLoad={() => {
             setLoaded(true);
             if (imageRef.current) imageRef.current.style.display = 'block';
             if (textRef.current) textRef.current.style.display = 'block';
+            if (yearRef.current) yearRef.current.style.display = 'block';
+            if (nameRef.current) nameRef.current.style.display = 'block';
           }}
           onError={() => {
             setLoaded(false);
           }}
         />
 
-        <Typography component="p" style={{ textAlign: 'center' }}>
+        <Typography
+          style={{ textAlign: 'center', display: 'none' }}
+          ref={nameRef}
+        >
           {first_name} {last_name}
         </Typography>
 
