@@ -188,19 +188,29 @@ function App() {
             </div>
             <div style={{ display: 'flex', justifyContent: 'left' }}>
               {selectedYear ? (
-                <button
-                  className="btn btn-danger m-2"
+                <Button
+                  variant="outlined"
+                  color="error"
+                  size="small"
+                  startIcon={<ArrowLeft />}
                   onClick={() => setSearchResult(undefined)}
+                  className='ms-2'
+                  style={{ transform: 'translate(100px, 0px)' }}
                 >
                   Back to Your Search: {selectedYear}
-                </button>
+                </Button>
               ) : (
-                <button
-                  className="btn btn-danger ms-2"
+                <Button
+                  variant="outlined"
+                  color="error"
+                  size="small"
+                  startIcon={<ArrowLeft />}
                   onClick={() => setSearchResult(undefined)}
+                  className='ms-2'
+                  style={{ transform: 'translate(100px, 0px)' }}
                 >
                   Back
-                </button>
+                </Button>
               )}
             </div>
           </div>
@@ -212,9 +222,10 @@ function App() {
               alignItems: 'center',
             }}
           >
-            <div className='m-2'>
-              <Typography variant="body2">Page: {currentPage}/{totalPages}</Typography>
-              
+            <div className="m-2">
+              <Typography variant="body2">
+                Page: {currentPage}/{totalPages}
+              </Typography>
             </div>
             <div
               className="photo_container m-3"
@@ -285,7 +296,7 @@ function App() {
             color: textStyle.color,
             position: 'absolute',
             left: '0%',
-            transform: 'translate(0px, -30px)',
+            transform: 'translate(100px, -70px)',
           }}
         >
           {(!isAtMainScreen || searchResult) && (
