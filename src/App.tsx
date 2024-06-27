@@ -25,6 +25,7 @@ import ReactAudioPlayer from 'react-audio-player';
 import { ImageLinkPaths } from './components/ImageLinkPaths';
 import useThinPlate from './services/useThinPlate';
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
+import PhotoPagination from './components/PhotoPagination';
 
 const ResponsiveContainer = styled.div`
   display: flex;
@@ -194,7 +195,7 @@ function App() {
                   size="small"
                   startIcon={<ArrowLeft />}
                   onClick={() => setSearchResult(undefined)}
-                  className='ms-2'
+                  className="ms-2"
                   style={{ transform: 'translate(100px, 0px)' }}
                 >
                   Back to Your Search: {selectedYear}
@@ -206,7 +207,7 @@ function App() {
                   size="small"
                   startIcon={<ArrowLeft />}
                   onClick={() => setSearchResult(undefined)}
-                  className='ms-2'
+                  className="ms-2"
                   style={{ transform: 'translate(100px, 0px)' }}
                 >
                   Back
@@ -241,27 +242,14 @@ function App() {
                 ))
                 .slice(currentItem, currentItem + 12)}
             </div>
-            <div className="m-3">
-              <Button
-                variant="contained"
-                size="small"
-                disabled={currentPage === 1 ? true : false}
-                onClick={() => setCurrentPage(currentPage - 1)}
-                startIcon={<ArrowLeft />}
-              >
-                Prev
-              </Button>
-              <Button
-                className="ms-3"
-                variant="contained"
-                size="small"
-                disabled={currentPage === totalPages ? true : false}
-                onClick={() => setCurrentPage(currentPage + 1)}
-                endIcon={<ArrowRight />}
-              >
-                Next
-              </Button>
-            </div>
+            <PhotoPagination
+              selectedYear={selectedYear}
+              currentPage={currentPage}
+              itemsPerPage={itemsPerPage}
+              totalPages={totalPages}
+              onNext={() => setCurrentPage(currentPage + 1)}
+              onPrev={() => setCurrentPage(currentPage - 1)}
+            ></PhotoPagination>
           </div>
         ) : (
           <MainPageYearSelection
