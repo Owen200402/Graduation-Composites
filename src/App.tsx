@@ -22,10 +22,9 @@ import { styled } from 'styled-components';
 import MainPageYearSelection from './components/MainPageYearSelection';
 import BackToMainButton from './components/BackToMainButton';
 import ReactAudioPlayer from 'react-audio-player';
-import { ImageLinkPaths } from './components/ImageLinkPaths';
-import useThinPlate from './services/useThinPlate';
-import { ArrowLeft, ArrowRight } from '@mui/icons-material';
+import { ArrowLeft } from '@mui/icons-material';
 import PhotoPagination from './components/PhotoPagination';
+import AIPrediction from './components/AIPrediction';
 
 const ResponsiveContainer = styled.div`
   display: flex;
@@ -47,27 +46,22 @@ function App() {
     path: string;
   }
 
+  // States
   const [photos, setPhotos] = useState(photoData);
   const photosToBeDisplayed = photos;
-
   const [selectedYear, setSelectedYear] = useState<number | undefined>();
-
   const [searchResult, setSearchResult] = useState<Photo[]>();
   const [searchedInput, setSearchedInput] = useState('');
-
   const [isAtMainScreen, setAtMainScreen] = useState(true);
 
-  const [AIVisibility, setAIVisibility] = useState(false);
-
-  const { outputs, errors } = useThinPlate({ imageUrls: ImageLinkPaths });
-
+  // style const:
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
-
   const textStyle = {
     color: theme.palette.mode === 'dark' ? 'white' : 'black',
   };
 
+  // const:
   const years = [
     1930, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947,
   ];
@@ -300,42 +294,12 @@ function App() {
         </div>
 
         <BottomBanner></BottomBanner>
-        <button
-          onClick={() => setAIVisibility(true)}
-          className="btn btn-primary"
-          style={{ marginBottom: '2rem' }}
-        >
-          Thin Plate AI
-        </button>
-        {AIVisibility && (
-          <div>
-            <h2 style={{ textAlign: 'center' }}>
-              Thin Plate Spline Motion Model (under development)
-            </h2>
-            {errors.length >= 1 && <p>Error: {errors}</p>}
-            {outputs && (
-              <div>
-                {outputs.map((output, index) => (
-                  <div key={index}>
-                    <h4>Result {index + 1}</h4>
-                    <pre>{JSON.stringify(output, null, 2)}</pre>
-                    {ImageLinkPaths.length === index + 1 && (
-                      <h4 style={{ color: 'green', marginBottom: '3rem' }}>
-                        Done!
-                      </h4>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
+        <AIPrediction></AIPrediction>
       </div>
     </>
   );
 }
 
-// The app that has the color theme =
 export default function MyApp() {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
 
