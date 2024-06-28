@@ -78,7 +78,6 @@ function App() {
     <div className="zoom-container">
       <ReactAudioPlayer
         src="assets/videos/Midnight-the-Stars-and-You.mp3"
-        autoPlay
         controls
         style={{
           position: 'fixed',
