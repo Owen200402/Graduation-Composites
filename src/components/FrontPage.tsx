@@ -18,7 +18,7 @@ const Front = styled.div`
   animation: background-enter 2s ease-in-out;
 
   @media (min-width: 3000px) {
-    height: 60vh; 
+    height: 55vh; 
   }
 `;
 
