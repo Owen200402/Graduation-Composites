@@ -9,6 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import DescriptionIcon from '@mui/icons-material/Description';
+import { useMediaQuery } from '@mui/material';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -20,6 +21,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 }));
 
 const CompositeDialog = () => {
+  const is4KScreen = useMediaQuery('(min-width:3000px)');
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -45,7 +47,7 @@ const CompositeDialog = () => {
         <div style={{ display: 'flex', justifyContent: "center", alignItems: "center"}}>
           <Typography
             variant="body2"
-            sx={{ color: '#023266', textAlign: 'center', mt: 1 }}
+            sx={{ color: '#023266', textAlign: 'center', mt: is4KScreen ? 0 : 1}}
           >
             About
           </Typography>
