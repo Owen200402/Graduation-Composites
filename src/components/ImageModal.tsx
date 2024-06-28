@@ -1,6 +1,6 @@
 // A child component of PhotoList
 
-import { Typography } from '@mui/material';
+import { Typography, useMediaQuery } from '@mui/material';
 import styled from 'styled-components';
 
 const Modal = styled.div`
@@ -47,6 +47,8 @@ const ImageModal = ({
 }: Props) => {
   if (!isOpen) return null;
 
+  const is4KScreen = useMediaQuery('(min-width:3000px)');
+
   return (
     <>
       <Overlay>
@@ -56,7 +58,7 @@ const ImageModal = ({
             alt="Enlarged"
             style={{
               maxWidth: '100%',
-              maxHeight: '80vh',
+              maxHeight: is4KScreen ? "30vh" : "80vh",
               paddingBottom: '5px',
             }}
           />

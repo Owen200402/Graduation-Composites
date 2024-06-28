@@ -16,11 +16,6 @@ const Image = styled.img`
     height: auto;
   }
 
-  @media (min-width: 3000px) {
-    width: 450px;
-    height: 450px;
-    margin: 1.2rem;
-  }
 `;
 
 interface Props {
@@ -40,7 +35,6 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
   const yearRef = useRef<HTMLTextAreaElement>(null);
   const nameRef = useRef<HTMLTextAreaElement>(null);
 
-  const isLargeScreen = useMediaQuery('(min-width:3000px)');
 
   function enlargeImage(imagePath: string) {
     setSelectedImage(imagePath);
@@ -87,7 +81,7 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
         <Typography
           style={{ textAlign: 'center', display: 'none' }}
           ref={nameRef}
-          variant={isLargeScreen ? "h4" : "h6"}
+          variant={"h6"}
         >
           {first_name} {last_name}
         </Typography>

@@ -5,6 +5,17 @@ body {
   overflow-x: hidden;
 }
 
+.zoom-container {
+  transform-origin: top left;
+}
+
+
+@media (min-width: 3000px) {
+  .zoom-container {
+    zoom: 2.2;
+  }
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -43,6 +54,12 @@ body::-webkit-scrollbar {
   padding-left: 10rem;
   padding-right: 10rem;
   min-height: 55vh;
+}
+
+@media (min-width: 3000px) {
+  .photo_container {
+    min-height: 24.8vh;
+  }
 }
 
 .photo {

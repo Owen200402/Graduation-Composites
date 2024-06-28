@@ -75,7 +75,7 @@ function App() {
   );
 
   return (
-    <>
+    <div className="zoom-container">
       <ReactAudioPlayer
         src="assets/videos/Midnight-the-Stars-and-You.mp3"
         autoPlay
@@ -107,7 +107,7 @@ function App() {
         }}
       >
         <UBCLogo />
-        {theme.palette.mode === 'light' ? (
+        {/* {theme.palette.mode === 'light' ? (
           <WbSunnyIcon
             sx={{
               fontSize: 55,
@@ -129,7 +129,7 @@ function App() {
             }}
             className="weather-position animate__animated animate__fadeInUp"
           ></NightsStayIcon>
-        )}
+        )} */}
 
         <div className="setCenterAlignment">
           <ResponsiveContainer className="noDisplay">
@@ -304,7 +304,7 @@ function App() {
         <BottomBanner></BottomBanner>
         <AIPrediction></AIPrediction>
       </div>
-    </>
+    </div>
   );
 }
 
