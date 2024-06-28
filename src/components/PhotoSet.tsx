@@ -59,12 +59,13 @@ const PhotoSet = ({ id, first_name, last_name, year, path }: Props) => {
           src={path}
           ref={imageRef}
           alt={`${first_name} ${last_name}`}
-          style={{ cursor: 'pointer', display: 'none' }}
+          style={{ cursor: 'pointer', display: 'none', overflow: "hidden" }}
           onClick={() => enlargeImage(path)}
           onLoad={() => {
-            setLoaded(true);
             if (imageRef.current) imageRef.current.style.display = 'block';
             if (textRef.current) textRef.current.style.display = 'block';
+            setLoaded(true);
+
           }}
           onError={() => {
             setLoaded(false);
