@@ -52,7 +52,7 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
           }}
           onClick={() => onSelectYear(year)}
         >
-          <CardMedia sx={{ height: 120 }}>
+          <CardMedia sx={{ height: 140 }}>
             {!loadedArray[index] && (
               <Skeleton variant="rectangular" width="100%" height="100%" />
             )}
@@ -73,22 +73,24 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
           <CardContent
             sx={{
               background: theme.palette.mode === 'dark' ? '#2f324a' : 'white',
+              
             }}
           >
             <Typography gutterBottom variant="h5">
               {year}
             </Typography>
-            <Typography variant="body2" color="text.secondary" marginLeft={0.5}>
+            <Typography variant="body2" color="text.secondary" marginLeft={0.5} marginTop="1rem">
+              MacLeod Bdg.,
               {year >= 2020
-                ? 'Location: Floor 4'
+                ? ' 4th Floor'
                 : year >= 2000 && year < 2020
-                  ? 'Location: Floor 3'
+                  ? '3rd Floor'
                   : year >= 1970 && year < 1999
-                    ? 'Location: Floor 2'
-                    : 'Location: Floor 1'}
-                    <br></br>
-              Building: UBC MacLeod <br></br>
-              Number of Graduates: {photoData.filter(photo => photo.year === year).length}
+                    ? '2nd Floor'
+                    : '1st Floor'}
+              <br></br>
+              Number of Graduates:{' '}
+              {photoData.filter((photo) => photo.year === year).length}
             </Typography>
           </CardContent>
           <CardActions

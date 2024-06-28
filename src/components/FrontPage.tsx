@@ -1,7 +1,6 @@
 import { Button, Typography } from '@mui/material';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
-import { GiClick } from 'react-icons/gi';
 import GaugeWithText from './GaugeWithText';
 
 const Front = styled.div`
