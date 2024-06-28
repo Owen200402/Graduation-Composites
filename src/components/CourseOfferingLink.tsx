@@ -1,7 +1,8 @@
-import { Link, Typography } from '@mui/material';
+import { Link, Typography, useMediaQuery } from '@mui/material';
 import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
 
 const CourseOfferingLink = () => {
+  const is4KScreen = useMediaQuery('(min-width:3000px)');
   return (
     <div style={{display: "flex", flexDirection: "row"}}>
       <Link
@@ -28,7 +29,7 @@ const CourseOfferingLink = () => {
       >
         <Typography
           variant="body2"
-          sx={{ color: '#18184d', textAlign: 'center'}}
+          sx={{ color: '#18184d', textAlign: 'center', mt: is4KScreen ? 0 : 1 }}
         >
           Courses
         </Typography>
