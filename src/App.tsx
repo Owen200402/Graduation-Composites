@@ -14,17 +14,15 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import IconButton from '@mui/material/IconButton';
 import { Button, Typography } from '@mui/material';
 import BottomBanner from './components/BottomBanner';
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
-import NightsStayIcon from '@mui/icons-material/NightsStay';
 import FrontPage from './components/FrontPage';
 import CourseOfferingLink from './components/CourseOfferingLink';
 import { styled } from 'styled-components';
-import MainPageYearSelection from './components/MainPageYearSelection';
 import BackToMainButton from './components/BackToMainButton';
 import ReactAudioPlayer from 'react-audio-player';
 import { ArrowLeft } from '@mui/icons-material';
 import PhotoPagination from './components/PhotoPagination';
 import AIPrediction from './components/AIPrediction';
+import MainPageYearSelection from './components/MainPageYearSelection';
 
 const ResponsiveContainer = styled.div`
   display: flex;
