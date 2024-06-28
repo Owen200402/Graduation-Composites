@@ -1,6 +1,7 @@
 // A child component of PhotoList
 
 import { Typography, useMediaQuery } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 import styled from 'styled-components';
 
 const Modal = styled.div`
@@ -76,16 +77,16 @@ const ImageModal = ({
           >
             Class of {year}
           </Typography>
-          <button
+          <CloseIcon
             onClick={onClose}
-            className="btn-close btn-close-white"
             style={{
               position: 'absolute',
               right: 10,
-              fontSize: '1.5rem',
-              color: 'white',
+              fontSize: '3rem',
+              color: "white",
+              cursor: "pointer"
             }}
-          ></button>
+          ></CloseIcon>
         </Modal>
       </Overlay>
     </>
