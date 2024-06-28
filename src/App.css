@@ -12,7 +12,7 @@ body {
 
 @media (min-width: 3000px) {
   .zoom-container {
-    zoom: 2.2;
+    zoom: 2;
   }
 }
 
