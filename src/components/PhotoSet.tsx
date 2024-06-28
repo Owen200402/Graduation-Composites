@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import ImageModal from './ImageModal';
-import { Typography } from '@mui/material';
+import { Typography, useMediaQuery } from '@mui/material';
 import LoadingSkeleton from './LoadingSkeleton';
 
 const Image = styled.img`
@@ -14,6 +14,12 @@ const Image = styled.img`
   @media (max-width: 768px) {
     width: 80%;
     height: auto;
+  }
+
+  @media (min-width: 3000px) {
+    width: 450px;
+    height: 450px;
+    margin: 1.2rem;
   }
 `;
 
@@ -32,6 +38,8 @@ const PhotoSet = ({ id, first_name, last_name, year, path }: Props) => {
 
   const imageRef = useRef<HTMLImageElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+
+  const isLargeScreen = useMediaQuery('(min-width:3000px)');
 
   function enlargeImage(imagePath: string) {
     setSelectedImage(imagePath);
@@ -71,7 +79,7 @@ const PhotoSet = ({ id, first_name, last_name, year, path }: Props) => {
         />
 
         <Typography
-          component="p"
+          variant={isLargeScreen ? "h4" : "h6"}
           ref={textRef}
           style={{ textAlign: 'center', display: 'none' }}
         >
