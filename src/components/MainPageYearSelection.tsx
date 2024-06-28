@@ -79,7 +79,7 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
             <Typography gutterBottom variant="h5">
               {year}
             </Typography>
-            <Typography variant="body2" color="text.secondary" marginLeft={0.5} marginTop="1rem">
+            <Typography variant="body2" color="text.secondary" marginLeft={0.5} marginTop="0.5rem">
               MacLeod Bdg.,
               {year >= 2020
                 ? ' 4th Floor'
