@@ -1,5 +1,5 @@
-import { Button } from '@mui/material';
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
+import { Button } from '@mui/material';
 
 interface Props {
   currentPage: number;

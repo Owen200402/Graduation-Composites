@@ -8,7 +8,7 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { photoData } from './photoData';
 
 interface Props {

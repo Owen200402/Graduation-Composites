@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { Typography } from '@mui/material';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import ImageModal from './ImageModal';
-import { Typography, useMediaQuery } from '@mui/material';
 import ResultLoadingSkeleton from './ResultLoadingSkeleton';
 
 const Image = styled.img`

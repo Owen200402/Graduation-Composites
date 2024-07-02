@@ -1,5 +1,5 @@
 import { ArrowLeft } from '@mui/icons-material';
-import { Button, Typography } from '@mui/material';
+import { Button } from '@mui/material';
 
 interface Props {
   onClickBackToMain: () => void;
