@@ -1,28 +1,29 @@
-import * as React from 'react';
-import { useState, useMemo, useContext } from 'react';
-import './App.css';
-import PhotoSet from './components/PhotoSet';
-import { photoData } from './components/photoData';
-import Heading from './components/Heading';
-import UBCLogo from './components/TopBanner';
-import SearchBar from './components/SearchBar';
-import SearchResultList from './components/SearchResultList';
-import CompositeDialog from './components/CompositeDialog';
-import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
+import { ArrowLeft } from '@mui/icons-material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import IconButton from '@mui/material/IconButton';
 import { Button, Typography } from '@mui/material';
-import BottomBanner from './components/BottomBanner';
-import FrontPage from './components/FrontPage';
-import CourseOfferingLink from './components/CourseOfferingLink';
+import IconButton from '@mui/material/IconButton';
+import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
+import * as React from 'react';
+import { useContext, useMemo, useState } from 'react';
 import { styled } from 'styled-components';
-import BackToMainButton from './components/BackToMainButton';
-import ReactAudioPlayer from 'react-audio-player';
-import { ArrowLeft } from '@mui/icons-material';
-import PhotoPagination from './components/PhotoPagination';
+import './App.css';
 import AIPrediction from './components/AIPrediction';
+import BackToMainButton from './components/BackToMainButton';
+import BottomBanner from './components/BottomBanner';
+import CompositeDialog from './components/CompositeDialog';
+import CourseOfferingLink from './components/CourseOfferingLink';
+import FrontPage from './components/FrontPage';
+import Heading from './components/Heading';
 import MainPageYearSelection from './components/MainPageYearSelection';
+import PhotoPagination from './components/PhotoPagination';
+import PhotoSet from './components/PhotoSet';
+import SearchBar from './components/SearchBar';
+import SearchResultList from './components/SearchResultList';
+import SideAudio from './components/SideAudio';
+import UBCLogo from './components/TopBanner';
+import { photoData } from './components/photoData';
+import { CssVarsProvider, extendTheme } from '@mui/joy';
 
 const ResponsiveContainer = styled.div`
   display: flex;
@@ -61,7 +62,7 @@ function App() {
 
   // const:
   const years = [
-    1930, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947
+    1930, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947,
   ];
 
   // Pagination:
@@ -74,16 +75,6 @@ function App() {
 
   return (
     <div className="zoom-container">
-      <ReactAudioPlayer
-        src="assets/videos/Midnight-the-Stars-and-You.mp3"
-        controls
-        style={{
-          position: 'fixed',
-          bottom: '0',
-          width: '18%',
-          height: '20px',
-        }}
-      ></ReactAudioPlayer>
       {/* Front Page */}
       <FrontPage
         title="Graduation Composites"
@@ -100,9 +91,13 @@ function App() {
               ? 'linear-gradient(to top, rgb(9, 32, 63) 0%, rgb(83, 120, 149) 100%)'
               : 'linear-gradient(to bottom, #e6f7ff, #ffffff)',
           color: theme.palette.mode === 'dark' ? 'white' : 'black',
+          position: 'relative',
           minHeight: '100vh',
         }}
       >
+        <CssVarsProvider>
+          <SideAudio />
+        </CssVarsProvider>
         <UBCLogo />
 
         <div className="setCenterAlignment">
@@ -227,7 +222,13 @@ function App() {
             ></PhotoPagination>
           </div>
         ) : (
-          <div style={{display: "flex", flexDirection:"column", alignItems:"center"}}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
             <MainPageYearSelection
               years={years.slice(currentItem, currentItem + 12)}
               onSelectYear={(year) => {
