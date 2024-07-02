@@ -61,7 +61,7 @@ function App() {
 
   // const:
   const years = [
-    1930, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947,
+    1930, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947
   ];
 
   // Pagination:
@@ -104,29 +104,6 @@ function App() {
         }}
       >
         <UBCLogo />
-        {/* {theme.palette.mode === 'light' ? (
-          <WbSunnyIcon
-            sx={{
-              fontSize: 55,
-              color: '#e65015',
-              '@media (max-width: 768px)': {
-                display: 'none',
-              },
-            }}
-            className="weather-position animate__animated animate__fadeInDown"
-          ></WbSunnyIcon>
-        ) : (
-          <NightsStayIcon
-            sx={{
-              fontSize: 55,
-              color: '#040cdb',
-              '@media (max-width: 768px)': {
-                display: 'none',
-              },
-            }}
-            className="weather-position animate__animated animate__fadeInUp"
-          ></NightsStayIcon>
-        )} */}
 
         <div className="setCenterAlignment">
           <ResponsiveContainer className="noDisplay">
@@ -250,14 +227,22 @@ function App() {
             ></PhotoPagination>
           </div>
         ) : (
-          <MainPageYearSelection
-            years={years}
-            onSelectYear={(year) => {
-              setSelectedYear(year);
-              setAtMainScreen(false);
-              setCurrentPage(1);
-            }}
-          ></MainPageYearSelection>
+          <div style={{display: "flex", flexDirection:"column", alignItems:"center"}}>
+            <MainPageYearSelection
+              years={years.slice(currentItem, currentItem + 12)}
+              onSelectYear={(year) => {
+                setSelectedYear(year);
+                setAtMainScreen(false);
+                setCurrentPage(1);
+              }}
+            ></MainPageYearSelection>
+            <PhotoPagination
+              currentPage={currentPage}
+              totalPages={years.length / itemsPerPage}
+              onNext={() => setCurrentPage(currentPage + 1)}
+              onPrev={() => setCurrentPage(currentPage - 1)}
+            ></PhotoPagination>
+          </div>
         )}
 
         <div className="container-flex" style={{ color: textStyle.color }}>
@@ -265,7 +250,7 @@ function App() {
             to_show={(PhotoSet, input) => {
               setSearchResult(PhotoSet);
               setSearchedInput(input);
-              setCurrentPage(1)
+              setCurrentPage(1);
             }}
             first_names={photos.map((p) => p.first_name)}
             last_names={photos.map((p) => p.last_name)}
