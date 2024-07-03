@@ -83,8 +83,8 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
             <Typography
               variant="body2"
               color="text.secondary"
-              marginLeft={0.5}
-              marginTop="0.5rem"
+              marginLeft={1}
+              marginTop="1rem"
             >
               MacLeod Bdg.,
               {year >= 2020

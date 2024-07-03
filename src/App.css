@@ -171,6 +171,5 @@ body::-webkit-scrollbar {
   --animate-duration: 2s;
 }
 
-.custom-audio-player .rhap_container {
-  font-size: 0.75rem; /* Adjust the font size for smaller icons */
-}
+
+

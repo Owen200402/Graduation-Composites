@@ -10,7 +10,7 @@ interface Props {
 
 const PhotoPagination = ({ currentPage, totalPages, onNext, onPrev }: Props) => {
   return (
-    <div className="m-3">
+    <div className="m-2">
       <Button
         variant="contained"
         size="small"

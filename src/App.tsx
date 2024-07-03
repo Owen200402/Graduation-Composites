@@ -202,7 +202,7 @@ function App() {
               </Typography>
             </div>
             <div
-              className="photo_container m-3"
+              className="photo_container m-4"
               style={{ color: textStyle.color }}
             >
               {photosToBeDisplayed
