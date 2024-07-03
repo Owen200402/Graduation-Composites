@@ -56,7 +56,7 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
         }}
       >
         {isLoaded && (
-          <Typography variant="h5" style={{ display: 'none' }} ref={yearRef}>
+          <Typography variant="h5" style={{ display: isLoaded ? 'block' : 'none', }} ref={yearRef}>
             <i>{year}</i>
           </Typography>
         )}
