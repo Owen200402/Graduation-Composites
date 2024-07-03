@@ -15,7 +15,6 @@ const Image = styled.img`
     width: 80%;
     height: auto;
   }
-
 `;
 
 interface Props {
@@ -34,7 +33,6 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
   const textRef = useRef<HTMLDivElement>(null);
   const yearRef = useRef<HTMLTextAreaElement>(null);
   const nameRef = useRef<HTMLTextAreaElement>(null);
-
 
   function enlargeImage(imagePath: string) {
     setSelectedImage(imagePath);
@@ -57,13 +55,19 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
           alignItems: 'center',
         }}
       >
-        <Typography variant="h5" style={{ display: 'none' }} ref={yearRef}>
-          <i>{year}</i>
-        </Typography>
+        {isLoaded && (
+          <Typography variant="h5" style={{ display: 'none' }} ref={yearRef}>
+            <i>{year}</i>
+          </Typography>
+        )}
         <Image
           src={path}
           alt={`${first_name} ${last_name}`}
-          style={{ cursor: 'pointer', marginTop: '0px', display: 'none' }}
+          style={{
+            cursor: 'pointer',
+            marginTop: '0px',
+            display: isLoaded ? 'block' : 'none',
+          }}
           ref={imageRef}
           onClick={() => enlargeImage(path)}
           onLoad={() => {
@@ -78,13 +82,15 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
           }}
         />
 
-        <Typography
-          style={{ textAlign: 'center', display: 'none' }}
-          ref={nameRef}
-          variant={"h6"}
-        >
-          {first_name} {last_name}
-        </Typography>
+        {isLoaded && (
+          <Typography
+            style={{ textAlign: 'center', display: 'none' }}
+            ref={nameRef}
+            variant={'h6'}
+          >
+            {first_name} {last_name}
+          </Typography>
+        )}
 
         <ImageModal
           isOpen={modelOpened}
