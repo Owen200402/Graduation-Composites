@@ -107,14 +107,14 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
 
       <Front>
         <div>
-          <Typography variant="h4" sx={{ color: 'white', marginTop: '4rem' }}>
+          <Typography variant="h4" sx={{ color: 'white', marginTop: '4rem', fontFamily: "Comic Sans MS, Comic Sans, cursive" }}>
             {title}
           </Typography>
         </div>
-        <div style={{ maxWidth: '380px', height: "25px", marginTop: '0.5rem' }}>
+        <div style={{ maxWidth: '390px', height: "25px", marginTop: '0.5rem' }}>
           <Typography
-            variant="body2"
-            sx={{ color: '#97D4E9', fontSize: '12px' }}
+            variant="body1"
+            sx={{ color: '#97D4E9', fontSize: '12.5px' }}
           >
             {displayedSubtitle}
           </Typography>

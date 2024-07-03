@@ -13,7 +13,7 @@ const Heading = ({ year }: Props) => {
     return (
       <Typography
         variant={isSmallScreen ? 'h6' : is4KScreen ? "h3" : 'h4'}
-        sx={{ textAlign: 'center', whiteSpace: 'nowrap' }}
+        sx={{ textAlign: 'center', whiteSpace: 'nowrap', fontFamily: "Chalkduster, fantasy" }}
       >
         ECE Graduation Composites
       </Typography>
@@ -22,9 +22,9 @@ const Heading = ({ year }: Props) => {
   return (
     <Typography
       variant={isSmallScreen ? 'h6' : 'h4'}
-      sx={{ textAlign: 'center', whiteSpace: 'nowrap' }}
+      sx={{ textAlign: 'center', whiteSpace: 'nowrap', fontFamily:"Chalkduster, fantasy" }}
     >
-      Electrical Engineering Class of {year}
+      Class of {year}
     </Typography>
   );
 };
