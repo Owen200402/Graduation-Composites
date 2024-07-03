@@ -11,8 +11,7 @@ const LoadingSkeleton = () => {
           <Skeleton
             variant="text"
             width={190}
-            sx={{ margin: '1rem' }}
-
+            sx={{ margin: '0.5rem' }}
           />
     </div>
 }

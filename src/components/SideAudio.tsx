@@ -32,6 +32,7 @@ const SideAudio = ({ year }: Props) => {
           position: 'absolute',
           top: is4kScreen ? '18%' : '30%',
           animation: 'fadeInLeft 1s ease-in-out;',
+          backgroundColor: "#FAFAFA"
         }}
       >
         <FaMusic style={{position: "absolute", right: 0, top: 0, fontSize: "22px", color: "#f5770a"}} />
