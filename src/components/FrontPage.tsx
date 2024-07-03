@@ -89,11 +89,17 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
     return () => clearInterval(interval);
   }, []);
 
-  const scrollDown = () => {
-    document
-      .getElementById('main')
-      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
+const scrollDown = () => {
+  const mainElement = document.getElementById('main');
+  if (mainElement) {
+    window.scrollTo({
+      top: mainElement.offsetTop,
+      behavior: 'smooth'
+    });
+  }
+};
+
+  
   return (
     <div id="front-page">
       <Slogan>
