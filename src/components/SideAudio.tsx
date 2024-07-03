@@ -12,7 +12,14 @@ const SideAudio = () => {
   const is4kScreen = useMediaQuery('(min-width:2000px)');
 
   return isScreenLarge ? (
-    <Card sx={{ width: 210, position: 'absolute', top: is4kScreen? "18%": "30%" }}>
+    <Card
+      sx={{
+        width: 210,
+        position: 'absolute',
+        top: is4kScreen ? '18%' : '30%',
+        animation: 'fadeInLeft 1s ease-in-out;',
+      }}
+    >
       <div>
         <Typography level="title-lg">Play Music of 1950s</Typography>
         <Typography level="body-sm">Type: Jazz</Typography>
@@ -29,7 +36,7 @@ const SideAudio = () => {
           className="custom-audio-player"
           style={{
             width: 'auto',
-            zoom: 0.8
+            zoom: 0.8,
           }}
         ></AudioPlayer>
       </CardContent>
