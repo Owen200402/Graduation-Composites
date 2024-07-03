@@ -9,6 +9,7 @@ interface Props {
 }
 
 const PhotoPagination = ({ currentPage, totalPages, onNext, onPrev }: Props) => {
+  console.log(totalPages);
   return (
     <div className="m-2">
       <Button

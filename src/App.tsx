@@ -63,6 +63,7 @@ function App() {
   // const:
   const years = [
     1930, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947,
+    1957, 1958, 1959, 1960, 1966, 1967, 1968, 1969,
   ];
 
   // Pagination:
@@ -239,7 +240,7 @@ function App() {
             ></MainPageYearSelection>
             <PhotoPagination
               currentPage={currentPage}
-              totalPages={years.length / itemsPerPage}
+              totalPages={Math.ceil(years.length / itemsPerPage)}
               onNext={() => setCurrentPage(currentPage + 1)}
               onPrev={() => setCurrentPage(currentPage - 1)}
             ></PhotoPagination>
