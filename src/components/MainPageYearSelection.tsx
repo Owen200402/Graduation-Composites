@@ -9,7 +9,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { useRef, useState } from 'react';
-import { photoData } from './photoData';
+import { photoData } from '../data/photoData';
 
 interface Props {
   years: number[];

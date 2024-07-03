@@ -22,7 +22,7 @@ import SearchBar from './components/SearchBar';
 import SearchResultList from './components/SearchResultList';
 import SideAudio from './components/SideAudio';
 import UBCLogo from './components/TopBanner';
-import { photoData } from './components/photoData';
+import { photoData } from './data/photoData';
 import { CssVarsProvider, extendTheme } from '@mui/joy';
 
 const ResponsiveContainer = styled.div`

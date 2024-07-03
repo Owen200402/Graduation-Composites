@@ -2,7 +2,7 @@ import ScreenSearchDesktopIcon from '@mui/icons-material/ScreenSearchDesktop';
 import { Alert, TextField } from '@mui/material';
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
-import { photoData } from '../components/photoData';
+import { photoData } from '../data/photoData';
 
 const SearchIcon = styled(ScreenSearchDesktopIcon)`
   animation: zoomInAndOut 2s infinite;
