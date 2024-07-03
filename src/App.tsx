@@ -96,7 +96,7 @@ function App() {
         }}
       >
         <CssVarsProvider>
-          <SideAudio />
+          <SideAudio year={selectedYear} />
         </CssVarsProvider>
         <UBCLogo />
 

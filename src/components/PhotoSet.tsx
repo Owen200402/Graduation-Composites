@@ -33,7 +33,6 @@ const PhotoSet = ({ id, first_name, last_name, year, path }: Props) => {
   const imageRef = useRef<HTMLImageElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 
-
   function enlargeImage(imagePath: string) {
     setSelectedImage(imagePath);
     setModelOpened(true);
@@ -46,7 +45,7 @@ const PhotoSet = ({ id, first_name, last_name, year, path }: Props) => {
 
   return (
     <div>
-      {!isLoaded && <LoadingSkeleton></LoadingSkeleton>}
+      {!isLoaded && <LoadingSkeleton />}
       <div
         style={{
           display: 'flex',
@@ -59,28 +58,25 @@ const PhotoSet = ({ id, first_name, last_name, year, path }: Props) => {
           src={path}
           ref={imageRef}
           alt={`${first_name} ${last_name}`}
-          style={{ cursor: 'pointer', display: 'none', overflow: "hidden" }}
+          style={{ cursor: 'pointer', display: isLoaded ? 'block' : 'none' }}
           onClick={() => enlargeImage(path)}
           onLoad={() => {
-            if (imageRef.current) imageRef.current.style.display = 'block';
-            if (textRef.current) textRef.current.style.display = 'block';
             setLoaded(true);
-
           }}
           onError={() => {
             setLoaded(false);
           }}
         />
-
-        <Typography
-          variant={"h6"}
-          ref={textRef}
-          style={{ textAlign: 'center', display: 'none' }}
-        >
-          {first_name} {last_name}
-        </Typography>
+        {isLoaded && (
+          <Typography
+            variant="h6"
+            ref={textRef}
+            style={{ textAlign: 'center' }}
+          >
+            {first_name} {last_name}
+          </Typography>
+        )}
       </div>
-
       <ImageModal
         isOpen={modelOpened}
         onClose={closeModel}
@@ -88,7 +84,7 @@ const PhotoSet = ({ id, first_name, last_name, year, path }: Props) => {
         first_name={first_name}
         last_name={last_name}
         year={year}
-      ></ImageModal>
+      />
     </div>
   );
 };

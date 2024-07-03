@@ -25,18 +25,11 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
   );
 
   const handleImageLoad = (index: number) => {
-    const imageRef = imageRefs.current[index];
-    
-
     setLoadedArray((prevLoadedArray) => {
       const newLoadedArray = [...prevLoadedArray];
       newLoadedArray[index] = true;
       return newLoadedArray;
     });
-
-    if (imageRef) {
-      imageRef.style.display = 'block';
-    }
   };
 
   return (
@@ -55,22 +48,22 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
           onClick={() => onSelectYear(year)}
         >
           <CardMedia sx={{ height: 140 }}>
-              {!loadedArray[index] && (
-                <Skeleton variant="rectangular" width="100%" height="100%" />
-              )}
-              <img
-                src={`assets/displayedOnCover/ECE${year}.webp`}
-                alt={`graduation class of ${year}`}
-                ref={(el) => (imageRefs.current[index] = el)}
-                onLoad={() => handleImageLoad(index)}
-                style={{
-                  height: '100%',
-                  width: '100%',
-                  objectFit: 'cover',
-                  display: 'none',
-                  overflow: 'auto',
-                }}
-              />
+            {!loadedArray[index] && (
+              <Skeleton variant="rectangular" width="100%" height="100%" />
+            )}
+            <img
+              src={`assets/displayedOnCover/ECE${year}.webp`}
+              alt={`graduation class of ${year}`}
+              ref={(el) => (imageRefs.current[index] = el)}
+              onLoad={() => handleImageLoad(index)}
+              style={{
+                height: '100%',
+                width: '100%',
+                objectFit: 'cover',
+                display: loadedArray[index] ? 'block' : 'none',
+                overflow: 'auto',
+              }}
+            />
           </CardMedia>
           <CardContent
             sx={{

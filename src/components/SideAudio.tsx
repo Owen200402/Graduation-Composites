@@ -7,28 +7,35 @@ import ReactAudioPlayer from 'react-audio-player';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
-const SideAudio = () => {
+interface Props {
+  year: number | undefined;
+}
+
+const SideAudio = ({ year }: Props) => {
+  if (year === undefined) {
+    return <div></div>;
+  }
+
   const isScreenLarge = useMediaQuery('(min-width:1024px)');
   const is4kScreen = useMediaQuery('(min-width:2000px)');
+  const decade = Math.floor(year / 10) * 10;
+  console.log(decade);
 
   return isScreenLarge ? (
     <Card
       sx={{
-        width: 210,
+        width: 190,
         position: 'absolute',
         top: is4kScreen ? '18%' : '30%',
         animation: 'fadeInLeft 1s ease-in-out;',
       }}
     >
       <div>
-        <Typography level="title-lg">Play Music of 1950s</Typography>
+        <Typography level="title-lg">Play {decade}'s Music</Typography>
         <Typography level="body-sm">Type: Jazz</Typography>
       </div>
-      <AspectRatio minHeight="120px" maxHeight="210px">
-        <img
-          src="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286"
-          srcSet="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286&dpr=2 2x"
-        />
+      <AspectRatio minHeight="160px" maxHeight="210px">
+        <img src={`assets/displayOnAudioPlayer/${decade}.webp`} />
       </AspectRatio>
       <CardContent orientation="horizontal">
         <AudioPlayer
@@ -36,7 +43,7 @@ const SideAudio = () => {
           className="custom-audio-player"
           style={{
             width: 'auto',
-            zoom: 0.8,
+            zoom: 0.7,
           }}
         ></AudioPlayer>
       </CardContent>
