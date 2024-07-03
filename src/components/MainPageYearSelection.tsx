@@ -76,8 +76,8 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
             <Typography
               variant="body2"
               color="text.secondary"
-              marginLeft={1}
               marginTop="1rem"
+              marginLeft="0.2rem"
             >
               MacLeod Bdg.,
               {year >= 2020
@@ -96,7 +96,9 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
             sx={{
               paddingTop: '0px',
               background: theme.palette.mode === 'dark' ? '#2f324a' : 'white',
+              marginLeft: "0.4rem"
             }}
+
           >
             <Button size="small" onClick={() => onSelectYear(year)}>
               Learn More
