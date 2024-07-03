@@ -71,10 +71,6 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
           ref={imageRef}
           onClick={() => enlargeImage(path)}
           onLoad={() => {
-            if (imageRef.current) imageRef.current.style.display = 'block';
-            if (textRef.current) textRef.current.style.display = 'block';
-            if (yearRef.current) yearRef.current.style.display = 'block';
-            if (nameRef.current) nameRef.current.style.display = 'block';
             setLoaded(true);
           }}
           onError={() => {
