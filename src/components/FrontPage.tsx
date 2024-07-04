@@ -71,7 +71,7 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
       if (index >= subtitle.length) {
         clearInterval(interval);
       }
-    }, 50);
+    }, 70);
     return () => clearInterval(interval);
   }, []);
 
@@ -124,10 +124,10 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
             {title}
           </Typography>
         </div>
-        <div style={{ maxWidth: '390px', height: '25px', marginTop: '0.5rem' }}>
+        <div style={{ maxWidth: '400px', height: '25px', marginTop: '0.5rem' }}>
           <Typography
             variant="body1"
-            sx={{ color: '#97D4E9', fontSize: '12.5px' }}
+            sx={{ color: '#97D4E9', fontSize: '13px', fontFamily: "Bradley Hand, cursive" }}
           >
             {displayedSubtitle}
           </Typography>
@@ -152,23 +152,23 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
             <GaugeWithText
               text="Experience Satisfaction"
               percentage={95}
-              arcColor="#52b202"
-              textColor="#52b202"
-              numberColor="#52b202"
+              arcColor="#8fce00"
+              textColor="#8fce00"
+              numberColor="#8fce00"
             ></GaugeWithText>
             <GaugeWithText
               text="Touch-Screen Support"
               percentage={100}
-              arcColor="#2480ad"
-              textColor="#2480ad"
-              numberColor="#2480ad"
+              arcColor="#34cfeb"
+              textColor="#34cfeb"
+              numberColor="#34cfeb"
             ></GaugeWithText>
             <GaugeWithText
               text="Grad Photo Coverage"
               percentage={96}
-              arcColor="#DBAC34"
-              textColor="#DBAC34"
-              numberColor="#DBAC34"
+              arcColor="#ff6700"
+              textColor="#ff6700"
+              numberColor="#ff6700"
             ></GaugeWithText>
           </div>
 
@@ -176,7 +176,7 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
             <Button
               color="secondary"
               variant="outlined"
-              sx={{ animation: 'fadeIn 4s ease-in' }}
+              sx={{ animation: 'fadeIn 6s ease-in-out' }}
               size="small"
               onClick={scrollDown}
             >
