@@ -1,4 +1,4 @@
-import { Button, Typography } from '@mui/material';
+import { Button, Typography, useMediaQuery } from '@mui/material';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import GaugeWithText from './GaugeWithText';
@@ -18,7 +18,7 @@ const Front = styled.div`
   animation: background-enter 2s ease-in-out;
 
   @media (min-width: 3000px) {
-    height: 50vh; 
+    height: 50vh;
   }
 `;
 
@@ -56,6 +56,7 @@ interface Props {
 }
 
 const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
+  const is4KScreen = useMediaQuery('(min-width:3000px)');
   const [displayedSubtitle, setDisplayedSubtitle] = useState('');
   const [displayedSlogan, setDisplayedSlogan] = useState('');
 
@@ -89,17 +90,16 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
     return () => clearInterval(interval);
   }, []);
 
-const scrollDown = () => {
-  const mainElement = document.getElementById('main');
-  if (mainElement) {
-    window.scrollTo({
-      top: mainElement.offsetTop,
-      behavior: 'smooth'
-    });
-  }
-};
+  const scrollDown = () => {
+    const mainElement = document.getElementById('main');
+    if (mainElement) {
+      window.scrollTo({
+        top: is4KScreen ? mainElement.offsetTop * 2 : mainElement.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
 
-  
   return (
     <div id="front-page">
       <Slogan>
@@ -113,11 +113,18 @@ const scrollDown = () => {
 
       <Front>
         <div>
-          <Typography variant="h4" sx={{ color: 'white', marginTop: '4rem', fontFamily: "Comic Sans MS, Comic Sans, cursive" }}>
+          <Typography
+            variant="h4"
+            sx={{
+              color: 'white',
+              marginTop: '4rem',
+              fontFamily: 'Comic Sans MS, Comic Sans, cursive',
+            }}
+          >
             {title}
           </Typography>
         </div>
-        <div style={{ maxWidth: '390px', height: "25px", marginTop: '0.5rem' }}>
+        <div style={{ maxWidth: '390px', height: '25px', marginTop: '0.5rem' }}>
           <Typography
             variant="body1"
             sx={{ color: '#97D4E9', fontSize: '12.5px' }}
