@@ -67,7 +67,7 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
           </CardMedia>
           <CardContent
             sx={{
-              background: theme.palette.mode === 'dark' ? '#2f324a' : 'white',
+              background: theme.palette.mode === 'dark' ? '#3e4057' : 'white',
             }}
           >
             <Typography gutterBottom variant="h5">
@@ -77,7 +77,6 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
               variant="body2"
               color="text.secondary"
               marginTop="1rem"
-              marginLeft="0.2rem"
             >
               MacLeod Bdg.,
               {year >= 2020
@@ -95,8 +94,7 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
           <CardActions
             sx={{
               paddingTop: '0px',
-              background: theme.palette.mode === 'dark' ? '#2f324a' : 'white',
-              marginLeft: "0.4rem"
+              background: theme.palette.mode === 'dark' ? '#3e4057' : 'white',
             }}
 
           >

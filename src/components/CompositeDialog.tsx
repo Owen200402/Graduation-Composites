@@ -1,6 +1,6 @@
 import CloseIcon from '@mui/icons-material/Close';
 import DescriptionIcon from '@mui/icons-material/Description';
-import { useMediaQuery } from '@mui/material';
+import { useMediaQuery, useTheme } from '@mui/material';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -21,6 +21,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 }));
 
 const CompositeDialog = () => {
+  const theme = useTheme();
   const is4KScreen = useMediaQuery('(min-width:3000px)');
   const [open, setOpen] = React.useState(false);
 
@@ -41,13 +42,23 @@ const CompositeDialog = () => {
             fontSize: 35,
             pl: 1,
             mt: 1.2,
-            color: '#0055B7',
+            color: theme.palette.mode === 'dark' ? '#f1f2f3' : '#0055b7',
           }}
         ></DescriptionIcon>
-        <div style={{ display: 'flex', justifyContent: "center", alignItems: "center"}}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           <Typography
             variant="body2"
-            sx={{ color: '#023266', textAlign: 'center', mt: is4KScreen ? 0 : 1}}
+            sx={{
+              color: theme.palette.mode === 'dark' ? '#f1f2f3' : '#023266',
+              textAlign: 'center',
+              mt: is4KScreen ? 0 : 1,
+            }}
           >
             About
           </Typography>

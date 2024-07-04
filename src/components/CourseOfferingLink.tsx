@@ -1,10 +1,11 @@
-import { Link, Typography, useMediaQuery } from '@mui/material';
+import { Link, Typography, useMediaQuery, useTheme } from '@mui/material';
 import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
 
 const CourseOfferingLink = () => {
+  const theme = useTheme();
   const is4KScreen = useMediaQuery('(min-width:3000px)');
   return (
-    <div style={{display: "flex", flexDirection: "row"}}>
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
       <Link
         href="https://course-navigator.vercel.app/"
         target="_blank"
@@ -16,7 +17,7 @@ const CourseOfferingLink = () => {
             fontSize: 35,
             pl: 1,
             mt: 1.2,
-            color: '#18184d',
+            color: theme.palette.mode === 'dark' ? '#f1f2f3' : '#18184d',
           }}
         />
       </Link>
@@ -29,7 +30,11 @@ const CourseOfferingLink = () => {
       >
         <Typography
           variant="body2"
-          sx={{ color: '#18184d', textAlign: 'center', mt: is4KScreen ? 0 : 1 }}
+          sx={{
+            color: theme.palette.mode === 'dark' ? '#f1f2f3' : '#18184d',
+            textAlign: 'center',
+            mt: is4KScreen ? 0 : 1,
+          }}
         >
           Courses
         </Typography>
