@@ -70,7 +70,7 @@ function App() {
   // Pagination:
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
-  const currentItem = currentPage * itemsPerPage - itemsPerPage;
+  let currentItem = currentPage * itemsPerPage - itemsPerPage;
   const totalPages = Math.ceil(
     photoData.filter((p) => p.year === selectedYear).length / itemsPerPage
   );
@@ -164,7 +164,9 @@ function App() {
             <PhotoPagination
               currentPage={currentPage}
               totalPages={Math.ceil(searchResult.length / itemsPerPage)}
-              onNext={() => setCurrentPage(currentPage + 1)}
+              onNext={() => {
+                setCurrentPage(currentPage + 1);
+              }}
               onPrev={() => setCurrentPage(currentPage - 1)}
             ></PhotoPagination>
             <div style={{ display: 'flex', justifyContent: 'left' }}>
@@ -242,7 +244,9 @@ function App() {
             <PhotoPagination
               currentPage={currentPage}
               totalPages={Math.ceil(years.length / itemsPerPage)}
-              onNext={() => setCurrentPage(currentPage + 1)}
+              onNext={() => {
+                setCurrentPage(currentPage + 1);
+              }}
               onPrev={() => setCurrentPage(currentPage - 1)}
             ></PhotoPagination>
           </div>
