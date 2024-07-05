@@ -9,7 +9,6 @@ const Image = styled.img`
   height: 190px;
   object-fit: cover;
   margin: 1rem;
-  box-shadow: 0 3px 6px rgba(110, 77, 11, 0.7);
 
   @media (max-width: 768px) {
     width: 80%;
@@ -66,6 +65,7 @@ const PhotoSet = ({ id, first_name, last_name, year, path }: Props) => {
           onError={() => {
             setLoaded(false);
           }}
+          className='photo'
         />
         {isLoaded && (
           <Typography

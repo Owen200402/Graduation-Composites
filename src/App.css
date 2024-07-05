@@ -9,6 +9,10 @@ body {
   transform-origin: top left;
 }
 
+.photo {
+  border: 10px solid transparent;
+  border-image:  linear-gradient(#392001, #4f350285) 30;
+}
 
 @media (min-width: 3000px) {
   .zoom-container {
@@ -170,8 +174,6 @@ body::-webkit-scrollbar {
 .animate__animated.animate__fadeIn {
   --animate-duration: 2s;
 }
-
-
 
 @keyframes fadeInLeft {
   from {

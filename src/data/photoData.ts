@@ -8625,7 +8625,7 @@ export const photoData = [
     first_name: 'H.W.D.',
     last_name: 'Armstrong',
     year: 1949,
-    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1949/H.W.D._Armstrong_1949.jpg',
+    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1949/H.W.D._Armstrong_1948.jpg',
   },
   {
     id: 1234,
@@ -8636,10 +8636,10 @@ export const photoData = [
   },
   {
     id: 1235,
-    first_name: 'J.C.',
+    first_name: 'G.L.',
     last_name: 'Morrill',
     year: 1949,
-    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1949/J.C._Morrill_1949.jpg',
+    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1949/G.L._Morrill_1949.jpg',
   },
   {
     id: 1236,
@@ -8681,7 +8681,7 @@ export const photoData = [
     first_name: 'J.R.',
     last_name: 'Brassington',
     year: 1949,
-    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1949/J.R._Brassington_1949.jpg',
+    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1949/J.R._Brassington_1948.jpg',
   },
   {
     id: 1242,
