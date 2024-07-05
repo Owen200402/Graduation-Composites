@@ -28,19 +28,28 @@ const PhotoSet = ({ id, first_name, last_name, year, path }: Props) => {
   const [selectedImage, setSelectedImage] = useState('');
   const [modelOpened, setModelOpened] = useState(false);
   const [isLoaded, setLoaded] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const imageRef = useRef<HTMLImageElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 
-  function enlargeImage(imagePath: string) {
+  const enlargeImage = (imagePath: string) => {
     setSelectedImage(imagePath);
     setModelOpened(true);
   }
 
-  function closeModel() {
+  const closeModel = () => {
     setModelOpened(false);
     setSelectedImage('');
   }
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
 
   return (
     <div>
@@ -57,7 +66,14 @@ const PhotoSet = ({ id, first_name, last_name, year, path }: Props) => {
           src={path}
           ref={imageRef}
           alt={`${first_name} ${last_name}`}
-          style={{ cursor: 'pointer', display: isLoaded ? 'block' : 'none' }}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          style={{
+            cursor: 'pointer',
+            display: isLoaded ? 'block' : 'none',
+            transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+            transition: 'transform 0.3s ease',
+          }}
           onClick={() => enlargeImage(path)}
           onLoad={() => {
             setLoaded(true);
@@ -65,7 +81,7 @@ const PhotoSet = ({ id, first_name, last_name, year, path }: Props) => {
           onError={() => {
             setLoaded(false);
           }}
-          className='photo'
+          className="photo"
         />
         {isLoaded && (
           <Typography

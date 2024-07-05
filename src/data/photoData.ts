@@ -495,7 +495,7 @@ export const photoData = [
     first_name: 'D.',
     last_name: 'Cosar',
     year: 1940,
-    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1940/D.Cosar_1940.jpg',
+    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1940/D._Cosar_1940.jpg',
   },
   {
     id: 72,
