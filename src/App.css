@@ -10,8 +10,8 @@ body {
 }
 
 .photo {
-  border: 10px solid transparent;
-  border-image:  linear-gradient(#392001, #4f350285) 30;
+  border: 8px solid transparent;
+  border-image:  linear-gradient(#392001, #3c280085) 30;
 }
 
 @media (min-width: 3000px) {
