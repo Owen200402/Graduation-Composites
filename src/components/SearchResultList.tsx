@@ -56,7 +56,11 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
         }}
       >
         {isLoaded && (
-          <Typography variant="h5" style={{ display: isLoaded ? 'block' : 'none', }} ref={yearRef}>
+          <Typography
+            variant="h5"
+            style={{ display: isLoaded ? 'block' : 'none' }}
+            ref={yearRef}
+          >
             <i>{year}</i>
           </Typography>
         )}
@@ -80,7 +84,11 @@ const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
 
         {isLoaded && (
           <Typography
-            style={{ textAlign: 'center', display: 'none' }}
+            style={{
+              textAlign: 'center',
+              display: isLoaded ? 'block' : 'none',
+              fontSize: "18px"
+            }}
             ref={nameRef}
             variant={'h6'}
           >
