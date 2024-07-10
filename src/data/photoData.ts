@@ -1232,7 +1232,7 @@ export const photoData = [
     first_name: 'Rod',
     last_name: 'James',
     year: 1947,
-    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1947/Rod._James_1947.jpg',
+    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1947/Rod_James_1947.jpg',
   },
   {
     id: 178,
@@ -1821,7 +1821,7 @@ export const photoData = [
     first_name: 'A.',
     last_name: 'Arisunandar',
     year: 1958,
-    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1958/A._Arisunandar_1958.png',
+    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1958/A._Arismunandar_1958.png',
   },
   {
     id: 262,
@@ -1870,7 +1870,7 @@ export const photoData = [
     first_name: 'D.F.',
     last_name: 'Clish',
     year: 1958,
-    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1958/D.F._Clish_1958.png',
+    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1958/D.F._Clisch_1958.png',
   },
   {
     id: 269,
@@ -2556,7 +2556,7 @@ export const photoData = [
     first_name: 'A.F.',
     last_name: 'Johannes',
     year: 1960,
-    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1960/A.F.Johannes_1960.png',
+    path: 'https://people.ece.ubc.ca/~haileynadine/assets/1960/A.F._Johannes_1960.png',
   },
   {
     id: 367,
