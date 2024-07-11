@@ -23,7 +23,7 @@ import SearchResultList from './components/SearchResultList';
 import SideAudio from './components/SideAudio';
 import UBCLogo from './components/TopBanner';
 import { photoData } from './data/photoData';
-import { CssVarsProvider, extendTheme } from '@mui/joy';
+import { CssVarsProvider } from '@mui/joy';
 
 const ResponsiveContainer = styled.div`
   display: flex;
@@ -43,12 +43,15 @@ function App() {
     last_name: string;
     year: number;
     path: string;
+    video?: string;
   }
 
   // States
   const [photos, setPhotos] = useState(photoData);
   const photosToBeDisplayed = photos;
   const [selectedYear, setSelectedYear] = useState<number | undefined>();
+  const [type, setType] = useState<string>("Genre");
+
   const [searchResult, setSearchResult] = useState<Photo[]>();
   const [searchedInput, setSearchedInput] = useState('');
   const [isAtMainScreen, setAtMainScreen] = useState(true);
@@ -98,7 +101,9 @@ function App() {
         }}
       >
         <CssVarsProvider>
-          <SideAudio year={selectedYear} />
+          <SideAudio year={selectedYear} type={type} onClickSelect={(event) => {
+            setType(event.currentTarget.innerText);
+          }} />
         </CssVarsProvider>
         <UBCLogo />
 
