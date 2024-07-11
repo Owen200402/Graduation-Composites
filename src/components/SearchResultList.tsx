@@ -22,6 +22,7 @@ interface Props {
   path: string;
   first_name: string;
   last_name: string;
+  video?: string;
 }
 
 const SearchResultList = ({ year, path, first_name, last_name }: Props) => {

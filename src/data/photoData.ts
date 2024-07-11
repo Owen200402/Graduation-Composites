@@ -2399,6 +2399,7 @@ export const photoData = [
   },
   {
     id: 344,
+    
     first_name: 'K.M.',
     last_name: 'Spencer',
     year: 1959,

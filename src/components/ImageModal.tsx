@@ -36,6 +36,7 @@ interface Props {
   first_name: string;
   last_name: string;
   year: number;
+  video?: string;
 }
 
 const ImageModal = ({

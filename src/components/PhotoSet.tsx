@@ -22,6 +22,7 @@ interface Props {
   last_name: string;
   year: number;
   path: string;
+  video?: string;
 }
 
 const PhotoSet = ({ id, first_name, last_name, year, path }: Props) => {

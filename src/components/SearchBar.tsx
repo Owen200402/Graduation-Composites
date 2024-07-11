@@ -14,6 +14,7 @@ interface PhotoList {
   last_name: string;
   year: number;
   path: string;
+  video?: string;
 }
 
 interface Props {
