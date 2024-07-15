@@ -51,7 +51,6 @@ const useThinPlate = ({ imageUrls }: Props) => {
             'yoyo-nb/thin-plate-spline-motion-model:382ceb8a9439737020bad407dec813e150388873760ad4a5a83a2ad01b039977',
             { input }
           );
-          console.log(input.driving_video);
           newOutputs.push({ result, imageUrl });
           setOutputs(newOutputs);
         } catch (err: any) {

@@ -50,7 +50,7 @@ function App() {
   const [photos, setPhotos] = useState(photoData);
   const photosToBeDisplayed = photos;
   const [selectedYear, setSelectedYear] = useState<number | undefined>();
-  const [type, setType] = useState<string>("Genre");
+  const [type, setType] = useState<string>('Genre');
 
   const [searchResult, setSearchResult] = useState<Photo[]>();
   const [searchedInput, setSearchedInput] = useState('');
@@ -101,9 +101,13 @@ function App() {
         }}
       >
         <CssVarsProvider>
-          <SideAudio year={selectedYear} type={type} onClickSelect={(event) => {
-            setType(event.currentTarget.innerText);
-          }} />
+          <SideAudio
+            year={selectedYear}
+            type={type}
+            onClickSelect={(event) => {
+              setType(event.currentTarget.innerText);
+            }}
+          />
         </CssVarsProvider>
         <UBCLogo />
 
@@ -296,7 +300,7 @@ function App() {
         </div>
 
         <BottomBanner></BottomBanner>
-        <AIPrediction></AIPrediction>
+        {/* <AIPrediction></AIPrediction> */}
       </div>
     </div>
   );

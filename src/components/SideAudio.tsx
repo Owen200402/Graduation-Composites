@@ -24,7 +24,6 @@ const SideAudio = ({ year, type, onClickSelect }: Props) => {
   const isScreenLarge = useMediaQuery('(min-width:1024px)');
   const is4kScreen = useMediaQuery('(min-width:2000px)');
   const decade = Math.floor(year / 10) * 10;
-  console.log(decade);
 
   return isScreenLarge ? (
     <div>
@@ -74,7 +73,11 @@ const SideAudio = ({ year, type, onClickSelect }: Props) => {
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" onClick={onClickSelect} style={{paddingRight: "60px"}}>
+                <a
+                  className="dropdown-item"
+                  onClick={onClickSelect}
+                  style={{ paddingRight: '60px' }}
+                >
                   Jazz
                 </a>
               </li>
