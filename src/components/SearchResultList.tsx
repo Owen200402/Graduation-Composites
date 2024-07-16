@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import ImageModal from './ImageModal';
 import ResultLoadingSkeleton from './ResultLoadingSkeleton';
+import { Photo } from './PhotoSet';
 
 const Image = styled.img`
   width: 190px;
@@ -17,15 +18,7 @@ const Image = styled.img`
   }
 `;
 
-interface Props {
-  year: number;
-  path: string;
-  first_name: string;
-  last_name: string;
-  video?: string;
-}
-
-const SearchResultList = ({ year, path, first_name, last_name }: Props) => {
+const SearchResultList = ({ year, path, first_name, last_name }: Photo) => {
   const [selectedImage, setSelectedImage] = useState('');
   const [modelOpened, setModelOpened] = useState(false);
   const [isLoaded, setLoaded] = useState(false);

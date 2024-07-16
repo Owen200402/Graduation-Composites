@@ -3,28 +3,18 @@ import { Alert, TextField } from '@mui/material';
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { photoData } from '../data/photoData';
+import { Photo } from './PhotoSet';
 
 const SearchIcon = styled(ScreenSearchDesktopIcon)`
   animation: zoomInAndOut 2s infinite;
 `;
 
-interface PhotoList {
-  id: number;
-  first_name: string;
-  last_name: string;
-  year: number;
-  path: string;
-  video?: string;
-}
-
 interface Props {
-  first_names: string[];
-  last_names: string[];
-  to_show: (photolist: PhotoList[], input: string) => void;
+  to_show: (photolist: Photo[], input: string) => void;
   themeColor: string;
 }
 
-const SearchBar = ({ first_names, last_names, themeColor, to_show }: Props) => {
+const SearchBar = ({ themeColor, to_show }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const [warning, setWarning] = useState('');

@@ -17,7 +17,7 @@ import FrontPage from './components/FrontPage';
 import Heading from './components/Heading';
 import MainPageYearSelection from './components/MainPageYearSelection';
 import PhotoPagination from './components/PhotoPagination';
-import PhotoSet from './components/PhotoSet';
+import PhotoSet, { Photo } from './components/PhotoSet';
 import SearchBar from './components/SearchBar';
 import SearchResultList from './components/SearchResultList';
 import SideAudio from './components/SideAudio';
@@ -37,15 +37,6 @@ const ResponsiveContainer = styled.div`
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 function App() {
-  interface Photo {
-    id: number;
-    first_name: string;
-    last_name: string;
-    year: number;
-    path: string;
-    video?: string;
-  }
-
   // States
   const [photos, setPhotos] = useState(photoData);
   const photosToBeDisplayed = photos;
@@ -269,8 +260,6 @@ function App() {
               setSearchedInput(input);
               setCurrentPage(1);
             }}
-            first_names={photos.map((p) => p.first_name)}
-            last_names={photos.map((p) => p.last_name)}
             themeColor={theme.palette.mode}
           />
         </div>

@@ -16,16 +16,15 @@ const Image = styled.img`
   }
 `;
 
-interface Props {
+export interface Photo {
   id: number;
   first_name: string;
   last_name: string;
   year: number;
   path: string;
-  video?: string;
 }
 
-const PhotoSet = ({ id, first_name, last_name, year, path }: Props) => {
+const PhotoSet = ({ id, first_name, last_name, year, path }: Photo) => {
   const [selectedImage, setSelectedImage] = useState('');
   const [modelOpened, setModelOpened] = useState(false);
   const [isLoaded, setLoaded] = useState(false);
