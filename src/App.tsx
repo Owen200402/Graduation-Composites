@@ -244,6 +244,7 @@ function App() {
                 setSelectedYear(year);
                 setAtMainScreen(false);
                 setCurrentPage(1);
+                setType("Genre");
               }}
             ></MainPageYearSelection>
             <PhotoPagination
@@ -290,6 +291,8 @@ function App() {
                 setSearchResult(undefined);
                 setSelectedYear(undefined);
                 setCurrentPage(1);
+                setType("Genre");
+
               }}
             />
           )}

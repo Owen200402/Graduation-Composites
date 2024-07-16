@@ -59,27 +59,47 @@ const SideAudio = ({ year, type, onClickSelect }: Props) => {
             </button>
             <ul className="dropdown-menu">
               <li>
-                <a className="dropdown-item" onClick={onClickSelect}>
+                <a
+                  className="dropdown-item"
+                  onClick={onClickSelect}
+                  style={{ cursor: 'pointer' }}
+                >
                   Classical
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" onClick={onClickSelect}>
+                <a
+                  className="dropdown-item"
+                  onClick={onClickSelect}
+                  style={{ cursor: 'pointer' }}
+                >
                   Groovy
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" onClick={onClickSelect}>
+                <a
+                  className="dropdown-item"
+                  onClick={onClickSelect}
+                  style={{ cursor: 'pointer' }}
+                >
                   Dance
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" onClick={onClickSelect} style={{paddingRight: "60px"}}>
+                <a
+                  className="dropdown-item"
+                  onClick={onClickSelect}
+                  style={{ paddingRight: '60px', cursor: 'pointer' }}
+                >
                   Jazz
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" onClick={onClickSelect}>
+                <a
+                  className="dropdown-item"
+                  onClick={onClickSelect}
+                  style={{ cursor: 'pointer' }}
+                >
                   Rock
                 </a>
               </li>
@@ -91,7 +111,7 @@ const SideAudio = ({ year, type, onClickSelect }: Props) => {
         </AspectRatio>
         <CardContent orientation="horizontal">
           <AudioPlayer
-            src="assets/videos/Midnight-the-Stars-and-You.mp3" // Make it more dynamic for every decade (5 * 10 = 50)
+            src="assets/videos/Midnight-the-Stars-and-You.mp3" // Make it more dynamic for every decade (5 * 10 = 50) // naming for videos: 1930Rock so I can use ${decade}${type} for accessing it
             className="custom-audio-player"
             style={{
               width: 'auto',
