@@ -24,7 +24,7 @@ export interface Photo {
   path: string;
 }
 
-const PhotoSet = ({ id, first_name, last_name, year, path }: Photo) => {
+const PhotoSet = ({ first_name, last_name, year, path }: Photo) => {
   const [selectedImage, setSelectedImage] = useState('');
   const [modelOpened, setModelOpened] = useState(false);
   const [isLoaded, setLoaded] = useState(false);

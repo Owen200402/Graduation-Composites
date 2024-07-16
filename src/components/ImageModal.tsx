@@ -49,12 +49,13 @@ const ImageModal = ({
   if (!isOpen) return null;
 
   const is4KScreen = useMediaQuery('(min-width:3000px)');
+  const videoUrl = imageUrl.slice(0, -3) + 'mp4';
 
   return (
     <>
       <Overlay>
         <Modal>
-          <img
+          {/* <img
             src={imageUrl}
             alt="Enlarged"
             style={{
@@ -62,7 +63,10 @@ const ImageModal = ({
               maxHeight: is4KScreen ? "30vh" : "80vh",
               paddingBottom: '5px',
             }}
-          />
+          /> */}
+          <video width="640" height="400" controls style={{margin: "1rem"}}>
+            <source src={videoUrl} type="video/mp4" />
+          </video>
           <Typography
             variant="h4"
             style={{ color: '#FFD700' }}
@@ -83,8 +87,8 @@ const ImageModal = ({
               position: 'absolute',
               right: 10,
               fontSize: '3rem',
-              color: "white",
-              cursor: "pointer"
+              color: 'white',
+              cursor: 'pointer',
             }}
           ></CloseIcon>
         </Modal>
