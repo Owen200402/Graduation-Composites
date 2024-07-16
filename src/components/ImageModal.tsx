@@ -78,7 +78,7 @@ const ImageModal = ({
               controls
               onError={handleError}
               style={{ margin: '1rem' }}
-            >
+            > 
               <source src={videoUrl} type="video/mp4" />
             </video>
           )}

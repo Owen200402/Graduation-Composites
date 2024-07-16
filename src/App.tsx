@@ -88,7 +88,7 @@ function App() {
               : 'linear-gradient(to bottom, #e6f7ff, #ffffff)',
           color: theme.palette.mode === 'dark' ? 'white' : 'black',
           position: 'relative',
-          minHeight: '100vh',
+          maxHeight: '100vh',
         }}
       >
         <CssVarsProvider>
