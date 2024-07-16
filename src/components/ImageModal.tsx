@@ -3,6 +3,7 @@
 import { Typography, useMediaQuery } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import styled from 'styled-components';
+import { useState } from 'react';
 
 const Modal = styled.div`
   position: fixed;
@@ -50,23 +51,37 @@ const ImageModal = ({
 
   const is4KScreen = useMediaQuery('(min-width:3000px)');
   const videoUrl = imageUrl.slice(0, -3) + 'mp4';
+  const [hasError, setHasError] = useState(false);
+
+  const handleError = () => {
+    setHasError(true);
+  };
 
   return (
     <>
       <Overlay>
         <Modal>
-          {/* <img
-            src={imageUrl}
-            alt="Enlarged"
-            style={{
-              maxWidth: '100%',
-              maxHeight: is4KScreen ? "30vh" : "80vh",
-              paddingBottom: '5px',
-            }}
-          /> */}
-          <video width="640" height="400" controls style={{margin: "1rem"}}>
-            <source src={videoUrl} type="video/mp4" />
-          </video>
+          {hasError ? (
+            <img
+              src={imageUrl}
+              alt="Enlarged"
+              style={{
+                maxWidth: '100%',
+                maxHeight: is4KScreen ? '30vh' : '80vh',
+                paddingBottom: '5px',
+              }}
+            />
+          ) : (
+            <video
+              width="640"
+              height="400"
+              controls
+              onError={handleError}
+              style={{ margin: '1rem' }}
+            >
+              <source src={videoUrl} type="video/mp4" />
+            </video>
+          )}
           <Typography
             variant="h4"
             style={{ color: '#FFD700' }}
@@ -79,7 +94,7 @@ const ImageModal = ({
             style={{ color: '#696969' }}
             className="animate__animated animate__fadeIn"
           >
-            Class of {year}
+            ECE Class of {year}
           </Typography>
           <CloseIcon
             onClick={onClose}
