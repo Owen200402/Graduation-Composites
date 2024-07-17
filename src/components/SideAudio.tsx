@@ -31,7 +31,7 @@ const SideAudio = ({ year, type, onClickSelect }: Props) => {
         sx={{
           width: 190,
           position: 'absolute',
-          top: "50%",
+          top: "25%",
           animation: 'fadeInLeft 1s ease-in-out;',
           backgroundColor: '#FAFAFA',
         }}
