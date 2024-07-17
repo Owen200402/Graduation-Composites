@@ -73,8 +73,8 @@ const ImageModal = ({
             />
           ) : (
             <video
-              width="640"
-              height="400"
+              width="550px"
+              height="550px"
               controls
               onError={handleError}
               style={{ margin: '1rem' }}
