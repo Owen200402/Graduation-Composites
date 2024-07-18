@@ -1,29 +1,26 @@
-import { ArrowLeft } from '@mui/icons-material';
+
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import { Button, Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
 import * as React from 'react';
 import { useContext, useMemo, useState } from 'react';
 import { styled } from 'styled-components';
 import './App.css';
-import AIPrediction from './components/AIPrediction';
 import BackToMainButton from './components/BackToMainButton';
 import BottomBanner from './components/BottomBanner';
 import CompositeDialog from './components/CompositeDialog';
 import CourseOfferingLink from './components/CourseOfferingLink';
 import FrontPage from './components/FrontPage';
 import Heading from './components/Heading';
-import MainPageYearSelection from './components/MainPageYearSelection';
-import PhotoPagination from './components/PhotoPagination';
+
 import PhotoSet, { Photo } from './components/PhotoSet';
 import SearchBar from './components/SearchBar';
-import SearchResultList from './components/SearchResultList';
 import SideAudio from './components/SideAudio';
 import UBCLogo from './components/TopBanner';
 import { photoData } from './data/photoData';
 import { CssVarsProvider } from '@mui/joy';
+import MainDisplay from './components/MainDisplay';
 
 const ResponsiveContainer = styled.div`
   display: flex;
@@ -33,7 +30,7 @@ const ResponsiveContainer = styled.div`
     display: none;
   }
 `;
-
+// Context (for creating a method context)
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 function App() {
@@ -54,14 +51,7 @@ function App() {
     color: theme.palette.mode === 'dark' ? 'white' : 'black',
   };
 
-  // const:
-  const years = [
-    1930, 1937, 1938, 1939, 1940, 1941, 1942, 1943, 1944, 1945, 1946, 1947,
-    1948, 1949, 1950, 1951, 1952, 1953, 1954, 1955, 1957, 1958, 1959, 1960,
-    1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969,
-  ];
-
-  // Pagination:
+  // Pagination Variables:
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
   let currentItem = currentPage * itemsPerPage - itemsPerPage;
@@ -78,6 +68,7 @@ function App() {
         slogan="Tuum Est. It's Yours."
         subHeading="Welcome to School of Engineering"
       ></FrontPage>
+
       {/* Content Page */}
       <div
         id="main"
@@ -136,7 +127,7 @@ function App() {
           </div>
         </div>
 
-        {searchResult ? (
+        {/* {searchResult ? (
           <div
             style={{
               color: textStyle.color,
@@ -251,7 +242,29 @@ function App() {
               onPrev={() => setCurrentPage(currentPage - 1)}
             ></PhotoPagination>
           </div>
-        )}
+        )} */}
+        
+        <MainDisplay
+          isAtMainScreen={isAtMainScreen}
+          searchResult={searchResult}
+          searchedInput={searchedInput}
+          photosToBeDisplayed={photosToBeDisplayed}
+          selectedYear={selectedYear}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          itemsPerPage={itemsPerPage}
+          onSearchBack={() => {
+            setSearchResult(undefined);
+            setCurrentPage(1);
+          }}
+          onYearSelect={(year) => {
+            setSelectedYear(year);
+            setAtMainScreen(false);
+            setCurrentPage(1);
+            setType('Genre');
+          }}
+          onPageChange={(page) => setCurrentPage(page)}
+        />
 
         <div className="container-flex" style={{ color: textStyle.color }}>
           <SearchBar
