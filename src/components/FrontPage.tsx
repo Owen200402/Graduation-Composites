@@ -1,7 +1,8 @@
-import { Button, Typography, useMediaQuery } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import GaugeWithText from './GaugeWithText';
+import TVScreenCheck from '../services/TVScreenCheck';
 
 const Front = styled.div`
   background-image: url('images/front-page.webp');
@@ -56,7 +57,7 @@ interface Props {
 }
 
 const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
-  const is4KScreen = useMediaQuery('(min-width:3000px)');
+  const is4KScreen = TVScreenCheck();
   const [displayedSubtitle, setDisplayedSubtitle] = useState('');
   const [displayedSlogan, setDisplayedSlogan] = useState('');
 

@@ -5,8 +5,6 @@ import { ArrowLeft } from "@mui/icons-material";
 import { Button, Typography, useTheme } from "@mui/material";
 import PhotoSet, { Photo } from "./PhotoSet";
 import years from "../data/years";
-import { useContext } from "react";
-import React from "react";
 
 interface Props {
   isAtMainScreen: boolean;
@@ -35,9 +33,7 @@ const MainDisplay = ({
   onYearSelect,
   onPageChange,
 }: Props) => {
-  const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
   const theme = useTheme();
-  const colorMode = useContext(ColorModeContext);
   const textStyle = {
     color: theme.palette.mode === "dark" ? "white" : "black",
   };

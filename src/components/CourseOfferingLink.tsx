@@ -1,9 +1,10 @@
-import { Link, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Link, Typography, useTheme } from '@mui/material';
 import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
+import TVScreenCheck from '../services/TVScreenCheck';
 
 const CourseOfferingLink = () => {
   const theme = useTheme();
-  const is4KScreen = useMediaQuery('(min-width:3000px)');
+  const is4KScreen = TVScreenCheck();
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       <Link

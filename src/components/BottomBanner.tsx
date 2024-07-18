@@ -1,3 +1,4 @@
+import { useTheme } from '@mui/material';
 import styled from 'styled-components';
 
 const Banner = styled.div`
@@ -10,6 +11,7 @@ const Banner = styled.div`
 `;
 
 const BottomBanner = () => {
+  const theme = useTheme();
   return <Banner></Banner>;
 };
 

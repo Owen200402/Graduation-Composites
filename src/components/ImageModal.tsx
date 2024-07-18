@@ -1,9 +1,10 @@
 // A child component of PhotoList
 
-import { Typography, useMediaQuery } from '@mui/material';
+import { Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import styled from 'styled-components';
 import { useState } from 'react';
+import TVScreenCheck from '../services/TVScreenCheck';
 
 const Modal = styled.div`
   position: fixed;
@@ -49,7 +50,7 @@ const ImageModal = ({
 }: Props) => {
   if (!isOpen) return null;
 
-  const is4KScreen = useMediaQuery('(min-width:3000px)');
+  const is4KScreen = TVScreenCheck();
   const videoUrl = imageUrl.slice(0, -3) + 'mp4';
   const [hasError, setHasError] = useState(false);
 

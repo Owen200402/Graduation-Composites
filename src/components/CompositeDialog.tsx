@@ -1,6 +1,6 @@
 import CloseIcon from '@mui/icons-material/Close';
 import DescriptionIcon from '@mui/icons-material/Description';
-import { useMediaQuery, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -10,6 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
+import TVScreenCheck from '../services/TVScreenCheck';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -22,7 +23,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 
 const CompositeDialog = () => {
   const theme = useTheme();
-  const is4KScreen = useMediaQuery('(min-width:3000px)');
+  const is4KScreen = TVScreenCheck();
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {

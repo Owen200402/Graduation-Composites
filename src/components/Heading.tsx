@@ -1,4 +1,5 @@
 import { Typography, useMediaQuery, useTheme } from '@mui/material';
+import TVScreenCheck from '../services/TVScreenCheck';
 
 interface Props {
   year?: number;
@@ -7,7 +8,7 @@ interface Props {
 const Heading = ({ year }: Props) => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
-  const is4KScreen = useMediaQuery('(min-width:3000px)');
+  const is4KScreen = TVScreenCheck();
 
   if (!year) {
     return (

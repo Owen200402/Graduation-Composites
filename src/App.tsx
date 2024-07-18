@@ -1,26 +1,26 @@
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import IconButton from "@mui/material/IconButton";
+import { ThemeProvider, createTheme, useTheme } from "@mui/material/styles";
+import * as React from "react";
+import { useContext, useState } from "react";
+import { styled } from "styled-components";
+import "./App.css";
+import BackToMainButton from "./components/BackToMainButton";
+import BottomBanner from "./components/BottomBanner";
+import CompositeDialog from "./components/CompositeDialog";
+import CourseOfferingLink from "./components/CourseOfferingLink";
+import FrontPage from "./components/FrontPage";
+import Heading from "./components/Heading";
 
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import IconButton from '@mui/material/IconButton';
-import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
-import * as React from 'react';
-import { useContext, useMemo, useState } from 'react';
-import { styled } from 'styled-components';
-import './App.css';
-import BackToMainButton from './components/BackToMainButton';
-import BottomBanner from './components/BottomBanner';
-import CompositeDialog from './components/CompositeDialog';
-import CourseOfferingLink from './components/CourseOfferingLink';
-import FrontPage from './components/FrontPage';
-import Heading from './components/Heading';
-
-import PhotoSet, { Photo } from './components/PhotoSet';
-import SearchBar from './components/SearchBar';
-import SideAudio from './components/SideAudio';
-import UBCLogo from './components/TopBanner';
-import { photoData } from './data/photoData';
-import { CssVarsProvider } from '@mui/joy';
-import MainDisplay from './components/MainDisplay';
+import { Photo } from "./components/PhotoSet";
+import SearchBar from "./components/SearchBar";
+import SideAudio from "./components/SideAudio";
+import UBCLogo from "./components/TopBanner";
+import { photoData } from "./data/photoData";
+import { CssVarsProvider } from "@mui/joy";
+import MainDisplay from "./components/MainDisplay";
+import TVScreenCheck from "./services/checkTVScreen";
 
 const ResponsiveContainer = styled.div`
   display: flex;
@@ -30,7 +30,7 @@ const ResponsiveContainer = styled.div`
     display: none;
   }
 `;
-// Context (for creating a method context)
+// Context (for creating an object with method context)
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 function App() {
@@ -38,26 +38,27 @@ function App() {
   const [photos, setPhotos] = useState(photoData);
   const photosToBeDisplayed = photos;
   const [selectedYear, setSelectedYear] = useState<number | undefined>();
-  const [type, setType] = useState<string>('Genre');
+  const [type, setType] = useState<string>("Genre");
 
   const [searchResult, setSearchResult] = useState<Photo[]>();
-  const [searchedInput, setSearchedInput] = useState('');
+  const [searchedInput, setSearchedInput] = useState("");
   const [isAtMainScreen, setAtMainScreen] = useState(true);
 
   // style const:
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
   const textStyle = {
-    color: theme.palette.mode === 'dark' ? 'white' : 'black',
+    color: theme.palette.mode === "dark" ? "white" : "black",
   };
 
   // Pagination Variables:
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
-  let currentItem = currentPage * itemsPerPage - itemsPerPage;
   const totalPages = Math.ceil(
     photoData.filter((p) => p.year === selectedYear).length / itemsPerPage
   );
+
+  const is4KScreen = TVScreenCheck();
 
   return (
     <div className="zoom-container">
@@ -74,12 +75,12 @@ function App() {
         id="main"
         style={{
           background:
-            theme.palette.mode === 'dark'
-              ? 'linear-gradient(to top, rgb(9, 32, 63) 0%, rgb(83, 120, 149) 100%)'
-              : 'linear-gradient(to bottom, #e6f7ff, #ffffff)',
-          color: theme.palette.mode === 'dark' ? 'white' : 'black',
-          position: 'relative',
-          maxHeight: '100vh',
+            theme.palette.mode === "dark"
+              ? "linear-gradient(to top, rgb(9, 32, 63) 0%, rgb(83, 120, 149) 100%)"
+              : "linear-gradient(to bottom, #e6f7ff, #ffffff)",
+          color: theme.palette.mode === "dark" ? "white" : "black",
+          position: "relative",
+          maxHeight: is4KScreen ? "100vh" : "200vh"
         }}
       >
         <CssVarsProvider>
@@ -105,20 +106,20 @@ function App() {
               !searchResult && <Heading year={selectedYear}></Heading>
             )}
           </div>
-          <div className="noDisplay" style={{ whiteSpace: 'nowrap' }}>
+          <div className="noDisplay" style={{ whiteSpace: "nowrap" }}>
             {theme.palette.mode} mode
             <IconButton
               sx={{
                 ml: 0,
                 mr: 1,
-                '@media (max-width: 768px)': {
-                  display: 'none',
+                "@media (max-width: 768px)": {
+                  display: "none",
                 },
               }}
               onClick={colorMode.toggleColorMode}
               color="inherit"
             >
-              {theme.palette.mode === 'dark' ? (
+              {theme.palette.mode === "dark" ? (
                 <Brightness7Icon />
               ) : (
                 <Brightness4Icon />
@@ -144,7 +145,7 @@ function App() {
             setSelectedYear(year);
             setAtMainScreen(false);
             setCurrentPage(1);
-            setType('Genre');
+            setType("Genre");
           }}
           onPageChange={(page) => setCurrentPage(page)}
         />
@@ -168,9 +169,9 @@ function App() {
           className="m-2"
           style={{
             color: textStyle.color,
-            position: 'absolute',
-            left: '0%',
-            transform: 'translate(100px, -70px)',
+            position: "absolute",
+            left: "0%",
+            transform: "translate(100px, -70px)",
           }}
         >
           {(!isAtMainScreen || searchResult) && (
@@ -181,7 +182,6 @@ function App() {
                 setSelectedYear(undefined);
                 setCurrentPage(1);
                 setType("Genre");
-
               }}
             />
           )}
@@ -195,26 +195,18 @@ function App() {
 }
 
 export default function MyApp() {
-  const [mode, setMode] = useState<'light' | 'dark'>('light');
+  const [mode, setMode] = useState<"light" | "dark">("light");
 
-  const colorMode = useMemo(
-    () => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-      },
-    }),
-    []
-  );
+  const colorMode = {
+    toggleColorMode: () =>
+      setMode((prevMode) => (prevMode === "light" ? "dark" : "light")),
+  };
 
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
-    [mode]
-  );
+  const theme = createTheme({
+    palette: {
+      mode,
+    },
+  });
 
   return (
     <ColorModeContext.Provider value={colorMode}>
