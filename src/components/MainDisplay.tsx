@@ -104,11 +104,7 @@ const MainDisplay = ({
             alignItems: "center",
           }}
         >
-          <div className="m-2">
-            <Typography variant="body2">
-              Page: {currentPage}/{totalPages}
-            </Typography>
-          </div>
+          
           <div
             className="photo_container m-4"
             style={{ color: textStyle.color }}
@@ -121,6 +117,11 @@ const MainDisplay = ({
                 </div>
               ))
               .slice(currentItem, currentItem + 12)}
+          </div>
+          <div className="m-2">
+            <Typography variant="body2">
+              Page: {currentPage}/{totalPages}
+            </Typography>
           </div>
           <PhotoPagination
             currentPage={currentPage}
