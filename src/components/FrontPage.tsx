@@ -2,7 +2,7 @@ import { Button, Typography } from '@mui/material';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import GaugeWithText from './GaugeWithText';
-import TVScreenCheck from '../services/TVScreenCheck';
+import TVScreenCheck from '../services/checkTVScreen';
 
 const Front = styled.div`
   background-image: url('images/front-page.webp');

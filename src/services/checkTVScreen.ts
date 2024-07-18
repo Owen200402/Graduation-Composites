@@ -1,7 +1,7 @@
 import { useMediaQuery } from "@mui/material";
 
-const TVScreenCheck = () => {
+const checkTVScreen = () => {
     return useMediaQuery('(min-width:3000px)');
 }
 
-export default TVScreenCheck;
+export default checkTVScreen;

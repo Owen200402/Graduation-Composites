@@ -4,7 +4,7 @@ import { Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import styled from 'styled-components';
 import { useState } from 'react';
-import TVScreenCheck from '../services/TVScreenCheck';
+import TVScreenCheck from '../services/checkTVScreen';
 
 const Modal = styled.div`
   position: fixed;

@@ -1,5 +1,5 @@
 import { Typography, useMediaQuery, useTheme } from '@mui/material';
-import TVScreenCheck from '../services/TVScreenCheck';
+import TVScreenCheck from '../services/checkTVScreen';
 
 interface Props {
   year?: number;

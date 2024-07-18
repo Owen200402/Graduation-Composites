@@ -1,6 +1,6 @@
 import { Link, Typography, useTheme } from '@mui/material';
 import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
-import TVScreenCheck from '../services/TVScreenCheck';
+import TVScreenCheck from '../services/checkTVScreen';
 
 const CourseOfferingLink = () => {
   const theme = useTheme();
