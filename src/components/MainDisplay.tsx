@@ -5,13 +5,10 @@ import { ArrowLeft } from "@mui/icons-material";
 import { Button, Typography, useTheme } from "@mui/material";
 import PhotoSet, { Photo } from "./PhotoSet";
 import years from "../data/years";
+import useNavigationStore from "../stores/navigationStore";
 
 interface Props {
-  isAtMainScreen: boolean;
-  searchResult: Photo[] | undefined;
-  searchedInput: string;
   photosToBeDisplayed: Photo[];
-  selectedYear: number | undefined;
   currentPage: number;
   totalPages: number;
   itemsPerPage: number;
@@ -21,11 +18,7 @@ interface Props {
 }
 
 const MainDisplay = ({
-  isAtMainScreen,
-  searchResult,
-  searchedInput,
   photosToBeDisplayed,
-  selectedYear,
   currentPage,
   totalPages,
   itemsPerPage,
@@ -33,6 +26,7 @@ const MainDisplay = ({
   onYearSelect,
   onPageChange,
 }: Props) => {
+  const { selectedYear, searchResult, searchedInput, isAtMainScreen } = useNavigationStore();
   const theme = useTheme();
   const textStyle = {
     color: theme.palette.mode === "dark" ? "white" : "black",
@@ -104,7 +98,6 @@ const MainDisplay = ({
             alignItems: "center",
           }}
         >
-          
           <div
             className="photo_container m-4"
             style={{ color: textStyle.color }}

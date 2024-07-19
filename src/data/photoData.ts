@@ -5751,7 +5751,7 @@ export const photoData = [
     year: 1963,
     path: 'https://people.ece.ubc.ca/~haileynadine/assets/1963/A.Y._Wong_1963.png',
   },
-  {
+  { 
     id: 822,
     first_name: 'A.',
     last_name: 'DePaoli',

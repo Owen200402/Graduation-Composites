@@ -7,23 +7,27 @@ import ReactAudioPlayer from 'react-audio-player';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import { FaMusic } from 'react-icons/fa6';
+import useAudioStore from '../stores/audioStore';
+import useNavigationStore from '../stores/navigationStore';
 
 interface Props {
-  year: number | undefined;
-  type: string;
   onClickSelect: (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => void;
 }
 
-const SideAudio = ({ year, type, onClickSelect }: Props) => {
-  if (year === undefined) {
-    return <div></div>;
-  }
-
-  const isScreenLarge = useMediaQuery('(min-width:1024px)');
-  const is4kScreen = useMediaQuery('(min-width:2000px)');
-  const decade = Math.floor(year / 10) * 10;
+const SideAudio = ({ onClickSelect }: Props) => {
+   // All hooks must be called unconditionally at the top level
+   const { selectedYear } = useNavigationStore();
+   const { type } = useAudioStore();
+   const isScreenLarge = useMediaQuery('(min-width:1024px)');
+   const is4kScreen = useMediaQuery('(min-width:2000px)');
+   const decade = selectedYear !== undefined ? Math.floor(selectedYear / 10) * 10 : null;
+ 
+   // Conditional rendering based on selectedYear
+   if (selectedYear === undefined) {
+     return <div></div>;
+   }
 
   return isScreenLarge ? (
     <div>
@@ -31,7 +35,7 @@ const SideAudio = ({ year, type, onClickSelect }: Props) => {
         sx={{
           width: 190,
           position: 'absolute',
-          top: "25%",
+          top: "20%",
           animation: 'fadeInLeft 1s ease-in-out;',
           backgroundColor: '#FAFAFA',
         }}

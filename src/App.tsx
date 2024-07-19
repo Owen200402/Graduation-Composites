@@ -12,8 +12,6 @@ import CompositeDialog from "./components/CompositeDialog";
 import CourseOfferingLink from "./components/CourseOfferingLink";
 import FrontPage from "./components/FrontPage";
 import Heading from "./components/Heading";
-
-import { Photo } from "./components/PhotoSet";
 import SearchBar from "./components/SearchBar";
 import SideAudio from "./components/SideAudio";
 import UBCLogo from "./components/TopBanner";
@@ -21,6 +19,8 @@ import { photoData } from "./data/photoData";
 import { CssVarsProvider } from "@mui/joy";
 import MainDisplay from "./components/MainDisplay";
 import TVScreenCheck from "./services/checkTVScreen";
+import useAudioStore from "./stores/audioStore";
+import useNavigationStore from "./stores/navigationStore";
 
 const ResponsiveContainer = styled.div`
   display: flex;
@@ -34,17 +34,20 @@ const ResponsiveContainer = styled.div`
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 function App() {
-  // States
-  const [photos, setPhotos] = useState(photoData);
+  const photos = photoData;
+  const { setType } = useAudioStore();
+
+  const {
+    selectedYear,
+    searchResult,
+    isAtMainScreen,
+    setSelectedYear,
+    setSearchResult,
+    setSearchedInput,
+    setIsAtMainScreen,
+  } = useNavigationStore();
+
   const photosToBeDisplayed = photos;
-  const [selectedYear, setSelectedYear] = useState<number | undefined>();
-  const [type, setType] = useState<string>("Genre");
-
-  const [searchResult, setSearchResult] = useState<Photo[]>();
-  const [searchedInput, setSearchedInput] = useState("");
-  const [isAtMainScreen, setAtMainScreen] = useState(true);
-
-  // style const:
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
   const textStyle = {
@@ -80,13 +83,11 @@ function App() {
               : "linear-gradient(to bottom, #e6f7ff, #ffffff)",
           color: theme.palette.mode === "dark" ? "white" : "black",
           position: "relative",
-          maxHeight: is4KScreen ? "100vh" : "200vh"
+          maxHeight: is4KScreen ? "100vh" : "200vh",
         }}
       >
         <CssVarsProvider>
           <SideAudio
-            year={selectedYear}
-            type={type}
             onClickSelect={(event) => {
               setType(event.currentTarget.innerText);
             }}
@@ -103,7 +104,7 @@ function App() {
             {isAtMainScreen ? (
               <Heading></Heading>
             ) : (
-              !searchResult && <Heading year={selectedYear}></Heading>
+              !searchResult && <Heading></Heading>
             )}
           </div>
           <div className="noDisplay" style={{ whiteSpace: "nowrap" }}>
@@ -129,11 +130,7 @@ function App() {
         </div>
 
         <MainDisplay
-          isAtMainScreen={isAtMainScreen}
-          searchResult={searchResult}
-          searchedInput={searchedInput}
           photosToBeDisplayed={photosToBeDisplayed}
-          selectedYear={selectedYear}
           currentPage={currentPage}
           totalPages={totalPages}
           itemsPerPage={itemsPerPage}
@@ -143,7 +140,7 @@ function App() {
           }}
           onYearSelect={(year) => {
             setSelectedYear(year);
-            setAtMainScreen(false);
+            setIsAtMainScreen(false);
             setCurrentPage(1);
             setType("Genre");
           }}
@@ -177,7 +174,7 @@ function App() {
           {(!isAtMainScreen || searchResult) && (
             <BackToMainButton
               onClickBackToMain={() => {
-                setAtMainScreen(true);
+                setIsAtMainScreen(true);
                 setSearchResult(undefined);
                 setSelectedYear(undefined);
                 setCurrentPage(1);
