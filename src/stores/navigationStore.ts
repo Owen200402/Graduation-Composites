@@ -16,7 +16,7 @@ const useNavigationStore = create<NavigationStore>((set) => ({
   selectedYear: undefined,
   searchResult: undefined,
   searchedInput: "",
-  isAtMainScreen: false,
+  isAtMainScreen: true,
   setSelectedYear: (year) => set(() => ({ selectedYear: year })),
   setSearchResult: (result) => set(() => ({ searchResult: result })),
   setSearchedInput: (input) => set(() => ({ searchedInput: input })),
