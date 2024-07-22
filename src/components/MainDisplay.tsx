@@ -6,27 +6,24 @@ import { Button, Typography, useTheme } from "@mui/material";
 import PhotoSet, { Photo } from "./PhotoSet";
 import years from "../data/years";
 import useNavigationStore from "../stores/navigationStore";
+import usePaginationStore from "../stores/paginationStore";
+import { photoData } from "../data/photoData";
 
 interface Props {
-  photosToBeDisplayed: Photo[];
-  currentPage: number;
-  totalPages: number;
-  itemsPerPage: number;
   onSearchBack: () => void;
   onYearSelect: (year: number) => void;
   onPageChange: (page: number) => void;
 }
 
 const MainDisplay = ({
-  photosToBeDisplayed,
-  currentPage,
-  totalPages,
-  itemsPerPage,
   onSearchBack,
   onYearSelect,
   onPageChange,
 }: Props) => {
   const { selectedYear, searchResult, searchedInput, isAtMainScreen } = useNavigationStore();
+  const {currentPage, itemsPerPage, totalPages} = usePaginationStore();
+  const photosToBeDisplayed = photoData;
+
   const theme = useTheme();
   const textStyle = {
     color: theme.palette.mode === "dark" ? "white" : "black",
@@ -113,12 +110,12 @@ const MainDisplay = ({
           </div>
           <div className="m-2">
             <Typography variant="body2">
-              Page: {currentPage}/{totalPages}
+              Page: {currentPage}/{totalPages(selectedYear)}
             </Typography>
           </div>
           <PhotoPagination
             currentPage={currentPage}
-            totalPages={totalPages}
+            totalPages={totalPages(selectedYear)}
             onNext={() => onPageChange(currentPage + 1)}
             onPrev={() => onPageChange(currentPage - 1)}
           ></PhotoPagination>

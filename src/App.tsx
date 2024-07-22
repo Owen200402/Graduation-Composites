@@ -15,12 +15,12 @@ import Heading from "./components/Heading";
 import SearchBar from "./components/SearchBar";
 import SideAudio from "./components/SideAudio";
 import UBCLogo from "./components/TopBanner";
-import { photoData } from "./data/photoData";
 import { CssVarsProvider } from "@mui/joy";
 import MainDisplay from "./components/MainDisplay";
 import TVScreenCheck from "./services/checkTVScreen";
 import useAudioStore from "./stores/audioStore";
 import useNavigationStore from "./stores/navigationStore";
+import usePaginationStore from "./stores/paginationStore";
 
 const ResponsiveContainer = styled.div`
   display: flex;
@@ -34,11 +34,9 @@ const ResponsiveContainer = styled.div`
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 function App() {
-  const photos = photoData;
   const { setType } = useAudioStore();
 
   const {
-    selectedYear,
     searchResult,
     isAtMainScreen,
     setSelectedYear,
@@ -47,19 +45,13 @@ function App() {
     setIsAtMainScreen,
   } = useNavigationStore();
 
-  const photosToBeDisplayed = photos;
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
   const textStyle = {
     color: theme.palette.mode === "dark" ? "white" : "black",
   };
 
-  // Pagination Variables:
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12;
-  const totalPages = Math.ceil(
-    photoData.filter((p) => p.year === selectedYear).length / itemsPerPage
-  );
+  const { setCurrentPage } = usePaginationStore();
 
   const is4KScreen = TVScreenCheck();
 
@@ -130,10 +122,6 @@ function App() {
         </div>
 
         <MainDisplay
-          photosToBeDisplayed={photosToBeDisplayed}
-          currentPage={currentPage}
-          totalPages={totalPages}
-          itemsPerPage={itemsPerPage}
           onSearchBack={() => {
             setSearchResult(undefined);
             setCurrentPage(1);
