@@ -59,13 +59,13 @@ const ImageModal = ({
       <Overlay>
         <Modal>
           {isImage ? (
-            <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <div style={{display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "1rem"}}>
               <img
                 src={imageUrl}
                 alt="Enlarged"
                 style={{
                   maxWidth: "100%",
-                  maxHeight: is4KScreen ? "30vh" : "80vh",
+                  maxHeight: is4KScreen ? "27vh" : "70vh",
                   paddingBottom: "3px",
                 }}
               />
@@ -77,7 +77,7 @@ const ImageModal = ({
               </button>
             </div>
           ) : (
-            <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <div style={{display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "1rem"}}>
               <video
                 width="520px"
                 height="520px"
