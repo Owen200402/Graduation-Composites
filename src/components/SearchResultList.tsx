@@ -1,9 +1,9 @@
-import { Typography } from '@mui/material';
-import { useRef, useState } from 'react';
-import styled from 'styled-components';
-import ImageModal from './ImageModal';
-import ResultLoadingSkeleton from './ResultLoadingSkeleton';
-import { Photo } from './PhotoSet';
+import { Typography } from "@mui/material";
+import { useRef, useState } from "react";
+import styled from "styled-components";
+import ImageModal from "./ImageModal";
+import ResultLoadingSkeleton from "./ResultLoadingSkeleton";
+import { Photo } from "./PhotoSet";
 
 const Image = styled.img`
   width: 190px;
@@ -19,12 +19,12 @@ const Image = styled.img`
 `;
 
 const SearchResultList = ({ year, path, first_name, last_name }: Photo) => {
-  const [selectedImage, setSelectedImage] = useState('');
+  const [selectedImage, setSelectedImage] = useState("");
   const [modelOpened, setModelOpened] = useState(false);
   const [isLoaded, setLoaded] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const imageRef = useRef<HTMLImageElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
   const yearRef = useRef<HTMLTextAreaElement>(null);
   const nameRef = useRef<HTMLTextAreaElement>(null);
 
@@ -35,24 +35,32 @@ const SearchResultList = ({ year, path, first_name, last_name }: Photo) => {
 
   function closeModel() {
     setModelOpened(false);
-    setSelectedImage('');
+    setSelectedImage("");
   }
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
 
   return (
     <div>
       {!isLoaded && <ResultLoadingSkeleton></ResultLoadingSkeleton>}
       <div
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         {isLoaded && (
           <Typography
             variant="h5"
-            style={{ display: isLoaded ? 'block' : 'none' }}
+            style={{ display: isLoaded ? "block" : "none" }}
             ref={yearRef}
           >
             <i>{year}</i>
@@ -61,10 +69,14 @@ const SearchResultList = ({ year, path, first_name, last_name }: Photo) => {
         <Image
           src={path}
           alt={`${first_name} ${last_name}`}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           style={{
-            cursor: 'pointer',
-            marginTop: '0px',
-            display: isLoaded ? 'block' : 'none',
+            cursor: "pointer",
+            marginTop: "0px",
+            display: isLoaded ? "block" : "none",
+            transform: isHovered ? "scale(1.1)" : "scale(1)",
+            transition: "transform 0.3s ease",
           }}
           ref={imageRef}
           onClick={() => enlargeImage(path)}
@@ -74,17 +86,18 @@ const SearchResultList = ({ year, path, first_name, last_name }: Photo) => {
           onError={() => {
             setLoaded(false);
           }}
+          className="photo"
         />
 
         {isLoaded && (
           <Typography
             style={{
-              textAlign: 'center',
-              display: isLoaded ? 'block' : 'none',
-              fontSize: "18px"
+              textAlign: "center",
+              display: isLoaded ? "block" : "none",
+              fontSize: "18px",
             }}
             ref={nameRef}
-            variant={'h6'}
+            variant={"h6"}
           >
             {first_name} {last_name}
           </Typography>

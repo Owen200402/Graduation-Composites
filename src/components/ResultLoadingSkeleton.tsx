@@ -1,16 +1,16 @@
-import { Skeleton } from '@mui/material';
+import { Skeleton } from "@mui/material";
 
 const ResultLoadingSkeleton = () => {
   return (
     <div>
-      <Skeleton variant="text" width={190} />
+      <Skeleton variant="text" width={190} sx={{ marginLeft: "0.85rem" }} />
       <Skeleton
         variant="rectangular"
         width={190}
         height={190}
-        style={{marginBottom: "0.9rem", marginTop: "0.9rem"}}
+        sx={{ margin: "0.85rem" }}
       />
-      <Skeleton variant="text" width={190} />
+      <Skeleton variant="text" width={190} sx={{ margin: "0.85rem" }} />
     </div>
   );
 };
