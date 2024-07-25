@@ -97,6 +97,7 @@ const ImageModal = ({
                 height="520px"
                 controls
                 style={{ margin: "3px" }}
+                preload="auto"
               >
                 <source src={videoUrl} type="video/mp4" />
               </video>
