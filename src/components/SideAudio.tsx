@@ -20,7 +20,6 @@ const SideAudio = ({ onClickSelect }: Props) => {
    const { selectedYear } = useNavigationStore();
    const { type } = useAudioStore();
    const isScreenLarge = useMediaQuery('(min-width:1024px)');
-   const is4kScreen = useMediaQuery('(min-width:2000px)');
    const decade = selectedYear !== undefined ? Math.floor(selectedYear / 10) * 10 : null;
  
    if (selectedYear === undefined) {
@@ -99,7 +98,7 @@ const SideAudio = ({ onClickSelect }: Props) => {
         </AspectRatio>
         <CardContent orientation="horizontal">
           <AudioPlayer
-            src="assets/videos/Midnight-the-Stars-and-You.mp3" // Make it more dynamic for every decade (5 * 10 = 50) // naming for videos: 1930Rock so I can use ${decade}${type} for accessing it
+            src={`assets/audios/${decade}${type}.mp3`} // Make it more dynamic for every decade (5 * 10 = 50) // naming for audios example: 1930Dance so I can use ${decade}${type} for accessing it
             className="custom-audio-player"
             style={{
               width: 'auto',
