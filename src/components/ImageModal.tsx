@@ -59,7 +59,14 @@ const ImageModal = ({
       <Overlay>
         <Modal>
           {isImage ? (
-            <div style={{display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "1rem"}}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                marginBottom: "1rem",
+              }}
+            >
               <img
                 src={imageUrl}
                 alt="Enlarged"
@@ -77,7 +84,14 @@ const ImageModal = ({
               </button>
             </div>
           ) : (
-            <div style={{display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "1rem"}}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                marginBottom: "1rem",
+              }}
+            >
               <video
                 width="520px"
                 height="520px"
@@ -109,7 +123,10 @@ const ImageModal = ({
             ECE Class of {year}
           </Typography>
           <CloseIcon
-            onClick={onClose}
+            onClick={() => {
+              onClose();
+              setIsImage(true);
+            }}
             style={{
               position: "absolute",
               right: 10,
