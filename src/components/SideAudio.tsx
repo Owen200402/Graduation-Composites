@@ -98,7 +98,7 @@ const SideAudio = ({ onClickSelect }: Props) => {
         </AspectRatio>
         <CardContent orientation="horizontal">
           <AudioPlayer
-            src={`assets/audios/${decade}${type}.mp3`} // Make it more dynamic for every decade (5 * 10 = 50) // naming for audios example: 1930Dance so I can use ${decade}${type} for accessing it
+            src={`assets/audios/${decade}${type}.mp3`} 
             className="custom-audio-player"
             style={{
               width: 'auto',
@@ -110,7 +110,7 @@ const SideAudio = ({ onClickSelect }: Props) => {
     </div>
   ) : (
     <ReactAudioPlayer
-      src="assets/videos/Midnight-the-Stars-and-You.mp3"
+      src={`assets/audios/${decade}${type}.mp3`}
       controls
       style={{
         position: 'fixed',
