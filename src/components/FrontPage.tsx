@@ -125,7 +125,7 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
             {title}
           </Typography>
         </div>
-        <div style={{ maxWidth: '400px', height: '25px', marginTop: '0.5rem' }}>
+        <div style={{ maxWidth: '400px', height: '25px', marginTop: '0.5rem', marginBottom: "0.5rem" }}>
           <Typography
             variant="body1"
             sx={{ color: '#97D4E9', fontSize: '13px', fontFamily: "Bradley Hand, cursive" }}
