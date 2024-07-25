@@ -1,10 +1,10 @@
 // A child component of PhotoList
 
-import { Typography } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import styled from 'styled-components';
-import { useState } from 'react';
-import TVScreenCheck from '../services/checkTVScreen';
+import { Typography } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import styled from "styled-components";
+import { useState } from "react";
+import TVScreenCheck from "../services/checkTVScreen";
 
 const Modal = styled.div`
   position: fixed;
@@ -51,48 +51,59 @@ const ImageModal = ({
   if (!isOpen) return null;
 
   const is4KScreen = TVScreenCheck();
-  const videoUrl = imageUrl.slice(0, -3) + 'mp4';
-  const [hasError, setHasError] = useState(false);
-
-  const handleError = () => {
-    setHasError(true);
-  };
+  const videoUrl = imageUrl.slice(0, -3) + "mp4";
+  const [isImage, setIsImage] = useState(true);
 
   return (
     <>
       <Overlay>
         <Modal>
-          {hasError ? (
-            <img
-              src={imageUrl}
-              alt="Enlarged"
-              style={{
-                maxWidth: '100%',
-                maxHeight: is4KScreen ? '30vh' : '80vh',
-                paddingBottom: '5px',
-              }}
-            />
+          {isImage ? (
+            <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+              <img
+                src={imageUrl}
+                alt="Enlarged"
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: is4KScreen ? "30vh" : "80vh",
+                  paddingBottom: "3px",
+                }}
+              />
+              <button
+                className="btn btn-outline-info btn-sm animate__animated animate__fadeIn"
+                onClick={() => setIsImage(!isImage)}
+              >
+                Animate
+              </button>
+            </div>
           ) : (
-            <video
-              width="550px"
-              height="550px"
-              controls
-              onError={handleError}
-              style={{ margin: '1rem' }}
-            > 
-              <source src={videoUrl} type="video/mp4" />
-            </video>
+            <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+              <video
+                width="520px"
+                height="520px"
+                controls
+                style={{ margin: "3px" }}
+              >
+                <source src={videoUrl} type="video/mp4" />
+              </video>
+              <button
+                className="btn btn-outline-info btn-sm animate__animated animate__fadeIn "
+                onClick={() => setIsImage(!isImage)}
+              >
+                Static Image
+              </button>
+            </div>
           )}
           <Typography
             variant="h4"
-            style={{ color: '#FFD700' }}
+            style={{ color: "#FFD700" }}
             className="animate__animated animate__fadeInUp"
           >
             {first_name} {last_name}
           </Typography>
           <Typography
             variant="h5"
-            style={{ color: '#696969' }}
+            style={{ color: "#696969" }}
             className="animate__animated animate__fadeIn"
           >
             ECE Class of {year}
@@ -100,11 +111,11 @@ const ImageModal = ({
           <CloseIcon
             onClick={onClose}
             style={{
-              position: 'absolute',
+              position: "absolute",
               right: 10,
-              fontSize: '3rem',
-              color: 'white',
-              cursor: 'pointer',
+              fontSize: "3rem",
+              color: "white",
+              cursor: "pointer",
             }}
           ></CloseIcon>
         </Modal>
