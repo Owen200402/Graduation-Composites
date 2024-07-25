@@ -17,14 +17,12 @@ interface Props {
 }
 
 const SideAudio = ({ onClickSelect }: Props) => {
-   // All hooks must be called unconditionally at the top level
    const { selectedYear } = useNavigationStore();
    const { type } = useAudioStore();
    const isScreenLarge = useMediaQuery('(min-width:1024px)');
    const is4kScreen = useMediaQuery('(min-width:2000px)');
    const decade = selectedYear !== undefined ? Math.floor(selectedYear / 10) * 10 : null;
  
-   // Conditional rendering based on selectedYear
    if (selectedYear === undefined) {
      return <div></div>;
    }
@@ -67,7 +65,7 @@ const SideAudio = ({ onClickSelect }: Props) => {
                   onClick={onClickSelect}
                   style={{ cursor: 'pointer' }}
                 >
-                  Classical
+                  Cinematic
                 </a>
               </li>
               <li>
@@ -76,7 +74,7 @@ const SideAudio = ({ onClickSelect }: Props) => {
                   onClick={onClickSelect}
                   style={{ cursor: 'pointer' }}
                 >
-                  Groovy
+                  Canadian
                 </a>
               </li>
               <li>
@@ -89,17 +87,8 @@ const SideAudio = ({ onClickSelect }: Props) => {
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" onClick={onClickSelect} style={{paddingRight: "60px"}}>
-                  Jazz
-                </a>
-              </li>
-              <li>
-                <a
-                  className="dropdown-item"
-                  onClick={onClickSelect}
-                  style={{ cursor: 'pointer' }}
-                >
-                  Rock
+                <a className="dropdown-item" onClick={onClickSelect} style={{cursor: "pointer"}}>
+                  Romantic
                 </a>
               </li>
             </ul>
