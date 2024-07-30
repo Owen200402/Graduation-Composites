@@ -109,7 +109,7 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
                       ? "2nd Floor"
                       : "1st Floor"}
                 <br></br>{" "}
-                Featured Years: {" "}
+                <b>Featured Years: {" "}</b>
                 {year} - {year + 1}
               </Typography>
               

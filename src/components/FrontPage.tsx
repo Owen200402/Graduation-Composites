@@ -151,14 +151,14 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
             }}
           >
             <GaugeWithText
-              text="Experience Satisfaction"
-              percentage={95}
+              text="Touch Screen Support"
+              percentage={100}
               arcColor="#8fce00"
               textColor="#8fce00"
               numberColor="#8fce00"
             ></GaugeWithText>
             <GaugeWithText
-              text="Touch-Screen Support"
+              text="AI Animation up to year 1969"
               percentage={100}
               arcColor="#34cfeb"
               textColor="#34cfeb"
@@ -166,7 +166,7 @@ const FrontPage = ({ title, subtitle, slogan, subHeading }: Props) => {
             ></GaugeWithText>
             <GaugeWithText
               text="Grad Photo Coverage"
-              percentage={96}
+              percentage={95}
               arcColor="#ff6700"
               textColor="#ff6700"
               numberColor="#ff6700"

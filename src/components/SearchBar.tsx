@@ -1,5 +1,5 @@
 import ScreenSearchDesktopIcon from '@mui/icons-material/ScreenSearchDesktop';
-import { Alert, TextField } from '@mui/material';
+import { Alert, Hidden, TextField } from '@mui/material';
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { photoData } from '../data/photoData';
@@ -86,13 +86,13 @@ const SearchBar = ({ themeColor, to_show }: Props) => {
             variant="outlined"
             size="small"
             sx={{
-              maxWidth: '60pch',
+              maxWidth: '60ch',
               '& input': {
                 color: themeColor === 'light' ? 'black' : 'white',
               },
               '& .MuiOutlinedInput-root': {
                 backgroundColor: themeColor === 'light' ? 'white' : '#807a7a',
-                borderRadius: '0px',
+                borderRadius: '0px'
               },
             }}
             inputRef={inputRef}
@@ -108,7 +108,7 @@ const SearchBar = ({ themeColor, to_show }: Props) => {
               },
             }}
           />
-          <div className="input-group-append m-2 mt-3">
+          <div className="input-group-append ms-2 mt-3">
             <button
               className={
                 themeColor === 'light'
