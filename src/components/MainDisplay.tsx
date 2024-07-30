@@ -15,13 +15,10 @@ interface Props {
   onPageChange: (page: number) => void;
 }
 
-const MainDisplay = ({
-  onSearchBack,
-  onYearSelect,
-  onPageChange,
-}: Props) => {
-  const { selectedYear, searchResult, searchedInput, isAtMainScreen } = useNavigationStore();
-  const {currentPage, itemsPerPage, totalPages} = usePaginationStore();
+const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
+  const { selectedYear, searchResult, searchedInput, isAtMainScreen } =
+    useNavigationStore();
+  const { currentPage, itemsPerPage, totalPages } = usePaginationStore();
   const photosToBeDisplayed = photoData;
 
   const theme = useTheme();
@@ -95,19 +92,29 @@ const MainDisplay = ({
             alignItems: "center",
           }}
         >
-          <div
-            className="photo_container m-4"
-            style={{ color: textStyle.color }}
-          >
-            {photosToBeDisplayed
-              .filter((photo) => photo.year === selectedYear)
-              .map((photo) => (
-                <div key={photo.id}>
-                  <PhotoSet {...photo} />
-                </div>
-              ))
-              .slice(currentItem, currentItem + 12)}
-          </div>
+          {selectedYear! < 1970 ? (
+            <div
+              className="photo_container m-4"
+              style={{ color: textStyle.color }}
+            >
+              {photosToBeDisplayed
+                .filter((photo) => photo.year === selectedYear)
+                .map((photo) => (
+                  <div key={photo.id}>
+                    <PhotoSet {...photo} />
+                  </div>
+                ))
+                .slice(currentItem, currentItem + 12)}
+            </div>
+          ) : (
+            <div>
+              <img
+                src={`assets/displayedOnCover/ECE${selectedYear}.webp`}
+                alt={`ECE${selectedYear}`}
+                width="1100px"
+              />
+            </div>
+          )}
           <div className="m-2">
             <Typography variant="body2">
               Page: {currentPage}/{totalPages(selectedYear)}
