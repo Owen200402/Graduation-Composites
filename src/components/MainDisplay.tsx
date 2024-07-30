@@ -115,17 +115,21 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
               />
             </div>
           )}
-          <div className="m-2">
-            <Typography variant="body2">
-              Page: {currentPage}/{totalPages(selectedYear)}
-            </Typography>
-          </div>
-          <PhotoPagination
-            currentPage={currentPage}
-            totalPages={totalPages(selectedYear)}
-            onNext={() => onPageChange(currentPage + 1)}
-            onPrev={() => onPageChange(currentPage - 1)}
-          ></PhotoPagination>
+          {selectedYear! < 1970 && (
+            <div className="m-2">
+              <Typography variant="body2">
+                Page: {currentPage}/{totalPages(selectedYear)}
+              </Typography>
+            </div>
+          )}
+          {selectedYear! < 1970 && (
+            <PhotoPagination
+              currentPage={currentPage}
+              totalPages={totalPages(selectedYear)}
+              onNext={() => onPageChange(currentPage + 1)}
+              onPrev={() => onPageChange(currentPage - 1)}
+            ></PhotoPagination>
+          )}
         </div>
       ) : (
         <div
