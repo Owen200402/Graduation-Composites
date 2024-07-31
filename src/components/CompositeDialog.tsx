@@ -103,8 +103,8 @@ const CompositeDialog = () => {
           <Typography variant="h6" gutterBottom>
             &nbsp;&nbsp;&nbsp;&nbsp;We use AI thin-plate model to animate photos
             from 1930 to 1969 given the permission of the department. We also
-            incorporated audios of the years from four big genres of which you
-            can choose to play while viewing the composites.
+            incorporated audios of the years from four genres of which you
+            can choose to play on the side while viewing the composites.
           </Typography>
           <Typography variant="h6" gutterBottom>
             &nbsp;&nbsp;&nbsp;&nbsp;All software used for this project is owned
