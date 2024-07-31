@@ -76,12 +76,14 @@ const ImageModal = ({
                   paddingBottom: "3px",
                 }}
               />
-              <button
-                className="btn btn-outline-info btn-sm animate__animated animate__fadeIn"
-                onClick={() => setIsImage(!isImage)}
-              >
-                Animate
-              </button>
+              {year < 1970 && (
+                <button
+                  className="btn btn-outline-info btn-sm animate__animated animate__fadeIn"
+                  onClick={() => setIsImage(!isImage)}
+                >
+                  Animate
+                </button>
+              )}
             </div>
           ) : (
             <div
