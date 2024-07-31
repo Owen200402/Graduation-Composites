@@ -62,7 +62,7 @@ function App() {
         title="Graduation Composites"
         subtitle="An AI supercharged photo composite featuring electrical engineering graduates from 1937 to 2022 at the University of British Columbia."
         slogan="Tuum Est. It's Yours."
-        subHeading="Welcome to School of Engineering"
+        subHeading="Welcome to Department of Electrical and Computer Engineering"
       ></FrontPage>
 
       {/* Content Page */}
