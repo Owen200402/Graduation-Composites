@@ -47,9 +47,24 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
           </Typography>
           <div className="photo_container">
             {searchResult
+              .filter((photo) => photo.path !== "")
               .map((photo) => (
                 <div key={photo.id}>
                   <SearchResultList {...photo} />
+                </div>
+              ))
+              .slice(currentItem, currentItem + 12)}
+            {searchResult
+              .filter((photo) => photo.path === "")
+              .map((photo) => (
+                <div key={photo.id}>
+                  <SearchResultList
+                    id={photo.id}
+                    year={photo.year}
+                    first_name={photo.first_name}
+                    last_name={photo.last_name}
+                    path={`assets/displayedOnCover/ECE${photo.year}.webp`}
+                  />
                 </div>
               ))
               .slice(currentItem, currentItem + 12)}
