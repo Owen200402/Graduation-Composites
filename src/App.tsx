@@ -9,7 +9,6 @@ import "./App.css";
 import BackToMainButton from "./components/BackToMainButton";
 import BottomBanner from "./components/BottomBanner";
 import CompositeDialog from "./components/CompositeDialog";
-import CourseOfferingLink from "./components/CourseOfferingLink";
 import FrontPage from "./components/FrontPage";
 import Heading from "./components/Heading";
 import SearchBar from "./components/SearchBar";
@@ -45,13 +44,14 @@ function App() {
     setIsAtMainScreen,
   } = useNavigationStore();
 
+
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
   const textStyle = {
     color: theme.palette.mode === "dark" ? "white" : "black",
   };
 
-  const { setCurrentPage } = usePaginationStore();
+  const { setCurrentPage, setCurrentMainPage, currentMainPage } = usePaginationStore();
 
   const is4KScreen = TVScreenCheck();
 
@@ -131,8 +131,10 @@ function App() {
             setIsAtMainScreen(false);
             setCurrentPage(1);
             setType("Genre");
+            console.log(currentMainPage);
+
           }}
-          onPageChange={(page) => setCurrentPage(page)}
+          onPageChange={(page) => {setCurrentPage(page), setCurrentMainPage(page)}}
         />
 
         <div className="container-flex" style={{ color: textStyle.color }}>

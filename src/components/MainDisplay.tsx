@@ -3,11 +3,12 @@ import PhotoPagination from "./PhotoPagination";
 import MainPageYearSelection from "./MainPageYearSelection";
 import { ArrowLeft } from "@mui/icons-material";
 import { Button, Typography, useTheme } from "@mui/material";
-import PhotoSet, { Photo } from "./PhotoSet";
+import PhotoSet from "./PhotoSet";
 import years from "../data/years";
 import useNavigationStore from "../stores/navigationStore";
 import usePaginationStore from "../stores/paginationStore";
 import { photoData } from "../data/photoData";
+import MainPagination from "./MainPagination";
 
 interface Props {
   onSearchBack: () => void;
@@ -18,7 +19,8 @@ interface Props {
 const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
   const { selectedYear, searchResult, searchedInput, isAtMainScreen } =
     useNavigationStore();
-  const { currentPage, itemsPerPage, totalPages } = usePaginationStore();
+  const { currentPage, itemsPerPage, totalPages, currentMainPage, setCurrentMainPage } = usePaginationStore();
+
   const photosToBeDisplayed = photoData;
 
   const theme = useTheme();
@@ -26,6 +28,7 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
     color: theme.palette.mode === "dark" ? "white" : "black",
   };
   const currentItem = currentPage * itemsPerPage - itemsPerPage;
+  const currentItemMainPage = currentMainPage * itemsPerPage - itemsPerPage;
 
   return (
     <>
@@ -155,17 +158,17 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
           }}
         >
           <MainPageYearSelection
-            years={years.slice(currentItem, currentItem + 12)}
+            years={years.slice(currentItemMainPage, currentItemMainPage + 12)}
             onSelectYear={onYearSelect}
           ></MainPageYearSelection>
-          <PhotoPagination
-            currentPage={currentPage}
+          <MainPagination
+            currentPage={currentMainPage}
             totalPages={Math.ceil(years.length / itemsPerPage)}
             onNext={() => {
-              onPageChange(currentPage + 1);
+              onPageChange(currentMainPage + 1);
             }}
-            onPrev={() => onPageChange(currentPage - 1)}
-          ></PhotoPagination>
+            onPrev={() => onPageChange(currentMainPage - 1)}
+          ></MainPagination>
         </div>
       )}
     </>

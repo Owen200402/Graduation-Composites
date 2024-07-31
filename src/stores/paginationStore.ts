@@ -6,18 +6,22 @@ interface PaginationStore {
   itemsPerPage: number;
   totalPages: (selectedYear: number | undefined) => number;
   setCurrentPage: (page: number) => void;
+  currentMainPage: number;
+  setCurrentMainPage: (page: number) => void;
 }
 
 const itemsPerPage = 12;
 
 const usePaginationStore = create<PaginationStore>((set) => ({
   currentPage: 1,
+  currentMainPage: 1,
   itemsPerPage: itemsPerPage,
   totalPages: (selectedYear) =>
     Math.ceil(
       photoData.filter((p) => p.year === selectedYear).length / itemsPerPage,
     ),
   setCurrentPage: (number) => set(() => ({ currentPage: number })),
+  setCurrentMainPage: (number) => set(() => ({ currentMainPage: number })),
 }));
 
 export default usePaginationStore;
