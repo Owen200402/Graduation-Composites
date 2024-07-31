@@ -72,7 +72,7 @@ const CompositeDialog = () => {
         aria-labelledby="customized-dialog-title"
         open={open}
       >
-        <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+        <DialogTitle sx={{ m: 0, p: 2, color: "#0055B7" }} id="customized-dialog-title">
           <Typography variant="h5">Graduation Composite</Typography>
         </DialogTitle>
         <IconButton
