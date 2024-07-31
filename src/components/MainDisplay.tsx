@@ -97,7 +97,7 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
                   transform: "translate(100px, -30px)",
                 }}
               >
-                Back to Your Search: {selectedYear}
+                Back to Search Result: {selectedYear}
               </Button>
             )}
           </div>
