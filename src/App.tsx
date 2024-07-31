@@ -90,7 +90,7 @@ function App() {
         <div className="setCenterAlignment">
           <ResponsiveContainer className="noDisplay">
             <CompositeDialog />
-            <CourseOfferingLink />
+            {/* <CourseOfferingLink /> */}
           </ResponsiveContainer>
           <div>
             {isAtMainScreen ? (
