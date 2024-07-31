@@ -107,7 +107,7 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
                 .slice(currentItem, currentItem + 12)}
             </div>
           ) : (
-            <div>
+            <div className="mt-2">
               <img
                 src={`assets/displayedOnCover/ECE${selectedYear}.webp`}
                 alt={`ECE${selectedYear}`}
