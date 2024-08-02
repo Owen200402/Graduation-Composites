@@ -9,6 +9,7 @@ import useNavigationStore from "../stores/navigationStore";
 import usePaginationStore from "../stores/paginationStore";
 import { photoData } from "../data/photoData";
 import MainPagination from "./MainPagination";
+import TVScreenCheck from "../services/checkTVScreen";
 
 interface Props {
   onSearchBack: () => void;
@@ -29,6 +30,8 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
   };
   const currentItem = currentPage * itemsPerPage - itemsPerPage;
   const currentItemMainPage = currentMainPage * itemsPerPage - itemsPerPage;
+
+  const is4KScreen = TVScreenCheck();
 
   return (
     <>
@@ -129,7 +132,7 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
               <img
                 src={`assets/displayedOnCover/ECE${selectedYear}.webp`}
                 alt={`ECE${selectedYear}`}
-                width="1100px"
+                width={is4KScreen? "1100px" : "900px"}
               />
             </div>
           )}
