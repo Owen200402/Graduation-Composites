@@ -111,7 +111,7 @@ const SideAudio = ({ onClickSelect }: Props) => {
               {currentSong.map((audio) => audio.title)}
             </Typography>
             <Typography component="p" textAlign="center" marginBottom={1} color="grey">
-              {currentSong.map((audio) => audio.singer)}
+              Singer: {currentSong.map((audio) => audio.singer)}
             </Typography>
             <AudioPlayer
               src={`assets/audios/${decade}${type}.mp3`}
