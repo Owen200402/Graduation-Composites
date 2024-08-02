@@ -107,7 +107,7 @@ const SideAudio = ({ onClickSelect }: Props) => {
         </AspectRatio>
         <CardContent orientation="horizontal">
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <Typography variant="subtitle1" textAlign="center" marginBottom={1} color="grey">
+            <Typography variant="subtitle1" textAlign="center" marginBottom={1} color="#545252">
               {currentSong.map((audio) => audio.title)}
             </Typography>
             <Typography component="p" textAlign="center" marginBottom={1} color="grey">
