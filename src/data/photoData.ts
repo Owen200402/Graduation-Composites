@@ -402,9 +402,9 @@ export const photoData = [
   {
     id: 58,
     first_name: "G.E.",
-    last_name: "McDowell",
+    last_name: "McDoweil",
     year: 1939,
-    path: "https://people.ece.ubc.ca/~eng-services/assets/1939/G.E.McDowell_1939.jpg",
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1939/G.E.McDoweil_1939.jpg",
   },
   {
     id: 59,
@@ -495,7 +495,7 @@ export const photoData = [
     first_name: "D.",
     last_name: "Cosar",
     year: 1940,
-    path: "https://people.ece.ubc.ca/~eng-services/assets/1940/J._Cosar_1940.jpg",
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1940/D.Cosar_1940.jpg",
   },
   {
     id: 72,

@@ -134,7 +134,7 @@ function App() {
             console.log(currentMainPage);
 
           }}
-          onPageChange={(page) => {setCurrentPage(page), setCurrentMainPage(page)}}
+          onPageChange={(pagePhoto, pageMain) => {setCurrentPage(pagePhoto), setCurrentMainPage(pageMain)}}
         />
 
         <div className="container-flex" style={{ color: textStyle.color }}>

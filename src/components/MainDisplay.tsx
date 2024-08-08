@@ -14,13 +14,14 @@ import TVScreenCheck from "../services/checkTVScreen";
 interface Props {
   onSearchBack: () => void;
   onYearSelect: (year: number) => void;
-  onPageChange: (page: number) => void;
+  onPageChange: (pagePhoto: number, pageMain: number) => void;
 }
 
 const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
   const { selectedYear, searchResult, searchedInput, isAtMainScreen } =
     useNavigationStore();
-  const { currentPage, itemsPerPage, totalPages, currentMainPage, setCurrentMainPage } = usePaginationStore();
+  const { currentPage, itemsPerPage, totalPages, currentMainPage } =
+    usePaginationStore();
 
   const photosToBeDisplayed = photoData;
 
@@ -79,9 +80,9 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
             currentPage={currentPage}
             totalPages={Math.ceil(searchResult.length / itemsPerPage)}
             onNext={() => {
-              onPageChange(currentPage + 1);
+              onPageChange(currentPage + 1, currentMainPage);
             }}
-            onPrev={() => onPageChange(currentPage - 1)}
+            onPrev={() => onPageChange(currentPage - 1, currentMainPage)}
           ></PhotoPagination>
           <div style={{ display: "flex", justifyContent: "left" }}>
             {selectedYear && (
@@ -132,7 +133,7 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
               <img
                 src={`assets/displayedOnCover/ECE${selectedYear}.webp`}
                 alt={`ECE${selectedYear}`}
-                width={is4KScreen? "1100px" : "900px"}
+                width={is4KScreen ? "1100px" : "900px"}
               />
             </div>
           )}
@@ -147,8 +148,8 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
             <PhotoPagination
               currentPage={currentPage}
               totalPages={totalPages(selectedYear)}
-              onNext={() => onPageChange(currentPage + 1)}
-              onPrev={() => onPageChange(currentPage - 1)}
+              onNext={() => onPageChange(currentPage + 1, currentMainPage)}
+              onPrev={() => onPageChange(currentPage - 1, currentMainPage)}
             ></PhotoPagination>
           )}
         </div>
@@ -168,9 +169,9 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
             currentPage={currentMainPage}
             totalPages={Math.ceil(years.length / itemsPerPage)}
             onNext={() => {
-              onPageChange(currentMainPage + 1);
+              onPageChange(currentPage, currentMainPage + 1);
             }}
-            onPrev={() => onPageChange(currentMainPage - 1)}
+            onPrev={() => onPageChange(currentPage, currentMainPage - 1)}
           ></MainPagination>
         </div>
       )}
