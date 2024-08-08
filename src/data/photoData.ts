@@ -1232,7 +1232,7 @@ export const photoData = [
     first_name: "Rod",
     last_name: "James",
     year: 1947,
-    path: "https://people.ece.ubc.ca/~eng-services/assets/1947/Rod_James_1947.jpg",
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1947/Rod._James_1947.jpg",
   },
   {
     id: 178,
