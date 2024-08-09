@@ -95,8 +95,8 @@ const ImageModal = ({
               }}
             >
               <video
-                width="520px"
-                height="520px"
+                width="500px"
+                height="500px"
                 controls
                 style={{ margin: "3px" }}
                 preload="auto"
