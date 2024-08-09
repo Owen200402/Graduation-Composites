@@ -76,7 +76,7 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
             <Typography gutterBottom variant="h5">
               {year}
             </Typography>
-            {year < 1970 ? (
+            {year <= 1960 ? (
               <Typography
                 variant="body2"
                 color="text.secondary"
@@ -108,11 +108,9 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
                     : year >= 1970 && year < 1999
                       ? "2nd Floor"
                       : "1st Floor"}
-                <br></br>{" "}
-                <b>Featured Years: {" "}</b>
+                <br></br> <b>Featured Years: </b>
                 {year} - {year + 1}
               </Typography>
-              
             )}
           </CardContent>
           <CardActions
