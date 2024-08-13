@@ -10,7 +10,7 @@ interface PaginationStore {
   setCurrentMainPage: (page: number) => void;
 }
 
-const itemsPerPage = 12;
+const itemsPerPage = 12; // Only place to change
 
 const usePaginationStore = create<PaginationStore>((set) => ({
   currentPage: 1,
