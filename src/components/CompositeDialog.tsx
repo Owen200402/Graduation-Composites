@@ -72,7 +72,10 @@ const CompositeDialog = () => {
         aria-labelledby="customized-dialog-title"
         open={open}
       >
-        <DialogTitle sx={{ m: 0, p: 2, color: "#0055B7" }} id="customized-dialog-title">
+        <DialogTitle
+          sx={{ m: 0, p: 2, color: "#0055B7" }}
+          id="customized-dialog-title"
+        >
           <Typography variant="h5">Graduation Composite</Typography>
         </DialogTitle>
         <IconButton
@@ -90,27 +93,31 @@ const CompositeDialog = () => {
         <DialogContent dividers>
           <Typography variant="h6" gutterBottom>
             &nbsp;&nbsp;&nbsp;&nbsp;The graduation composite features past
-            graduates from 1970 to 2020 in UBC's electrical and computer
-            engineering department.
+            graduates from 1970 to 2020 in UBC department of electrical and
+            computer engineering.
           </Typography>
           <Typography variant="h6" gutterBottom>
             &nbsp;&nbsp;&nbsp;&nbsp;This website (also used for digital signage
             project) showcases a collection of graduated student photos which is
-            filterable by years. As a user, you can also click on people's faces
-            to enlarge them, or search the their names in the search bar at the
-            bottom of the page.
+            filterable by years and searchable by names. As a user, you can also
+            click on people's faces to enlarge them, or search the their names
+            in the search bar at the bottom of the page.
           </Typography>
           <Typography variant="h6" gutterBottom>
-            &nbsp;&nbsp;&nbsp;&nbsp;We use AI thin-plate model to animate photos
-            from 1930 to 1969 given the permission of the department. We also
-            incorporated audios of the years from four genres of which you
-            can choose to play on the side while viewing the composites.
+            &nbsp;&nbsp;&nbsp;&nbsp;We use AI thin-plate motion model to animate
+            photos from 1930 to 1969 given the permission of the department. We
+            also incorporated audios of the years from four genres of which you
+            can choose to play on the side while viewing the composites.All
+            music used in this project is the property of its respective
+            copyright owners. This project does not claim any ownership of the
+            music and is using it solely for educational/non-commercial
+            purposes. No copyright infringement is intended.
           </Typography>
           <Typography variant="h6" gutterBottom>
             &nbsp;&nbsp;&nbsp;&nbsp;All software used for this project is owned
             by ECE, and the development of this website gives credit for Owen
-            Zheng, our 2024 summer Co-op student, who is currently studying BSc
-            Computer Science at the University of British Columbia.
+            Zheng, our 2024 Co-op student who is studying BSc Computer Science
+            at the University of British Columbia.
           </Typography>
         </DialogContent>
         <DialogActions>
