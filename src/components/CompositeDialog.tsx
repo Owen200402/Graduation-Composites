@@ -121,6 +121,10 @@ const CompositeDialog = () => {
             for educational and non-commercial purposes. Reproduction rights are
             covered under a [license to be specified].
           </Typography>
+          <Divider sx={{ bgcolor: "black" }} />
+          <Typography variant="h5" gutterBottom margin={0.2} color="green">
+            Credit: 
+          </Typography>
           <Typography variant="h6" gutterBottom>
             &nbsp;&nbsp;&nbsp;&nbsp;All software for this digital signage
             project is owned by UBC ECE. We would like to acknowledge Owen
