@@ -1,6 +1,6 @@
 import CloseIcon from "@mui/icons-material/Close";
 import DescriptionIcon from "@mui/icons-material/Description";
-import { useTheme } from "@mui/material";
+import { Divider, useTheme } from "@mui/material";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -91,33 +91,41 @@ const CompositeDialog = () => {
           <CloseIcon />
         </IconButton>
         <DialogContent dividers>
-          <Typography variant="h6" gutterBottom>
-            &nbsp;&nbsp;&nbsp;&nbsp;The graduation composite features past
-            graduates from 1970 to 2020 in UBC department of electrical and
-            computer engineering.
+        <Typography variant="h5" gutterBottom margin={0.2} color="secondary.dark">
+            Intro: 
           </Typography>
           <Typography variant="h6" gutterBottom>
-            &nbsp;&nbsp;&nbsp;&nbsp;This website (also used for digital signage
-            project) showcases a collection of graduated student photos which is
-            filterable by years and searchable by names. As a user, you can also
-            click on people's faces to enlarge them, or search the their names
-            in the search bar at the bottom of the page.
+            &nbsp;&nbsp;&nbsp;&nbsp;The Digital Graduation Composites Gallery
+            features alumni from 1930 to 2020 in the UBC Electrical and Computer
+            Engineering Department. You can filter cohort composites by year and
+            search by name. The original framed composites are displayed
+            throughout the MCLD building, at the specific floor indicated in
+            this gallery.
           </Typography>
           <Typography variant="h6" gutterBottom>
-            &nbsp;&nbsp;&nbsp;&nbsp;We use AI thin-plate motion model to animate
-            photos from 1930 to 1969 given the permission of the department. We
-            also incorporated audios of the years from four genres of which you
-            can choose to play on the side while viewing the composites.All
-            music used in this project is the property of its respective
-            copyright owners. This project does not claim any ownership of the
-            music and is using it solely for educational/non-commercial
-            purposes. No copyright infringement is intended.
+            &nbsp;&nbsp;&nbsp;&nbsp;For the years 1930 to 1969, individual
+            pictures can be enlarged and animated. The animations were created
+            using an AI thin-plate motion model.
           </Typography>
           <Typography variant="h6" gutterBottom>
-            &nbsp;&nbsp;&nbsp;&nbsp;All software used for this project is owned
-            by ECE, and the development of this website gives credit for Owen
-            Zheng, our 2024 Co-op student who is studying BSc Computer Science
-            at the University of British Columbia.
+            &nbsp;&nbsp;&nbsp;&nbsp;For all years you can choose from four music
+            genres to play in the background while viewing the composites.
+          </Typography>
+          <Divider sx={{ bgcolor: "black" }} />
+          <Typography variant="h5" gutterBottom margin={0.2} color="red">
+            Disclaimer: 
+          </Typography>
+          <Typography variant="h6" gutterBottom>
+            &nbsp;&nbsp;&nbsp;&nbsp;All music used in this project remains the
+            property of its respective copyright owners and is utilized solely
+            for educational and non-commercial purposes. Reproduction rights are
+            covered under a [license to be specified].
+          </Typography>
+          <Typography variant="h6" gutterBottom>
+            &nbsp;&nbsp;&nbsp;&nbsp;All software for this digital signage
+            project is owned by UBC ECE. We would like to acknowledge Owen
+            Zheng, our 2024 Co-op student from UBC Computer Science, for his
+            implementation of this project..
           </Typography>
         </DialogContent>
         <DialogActions>
