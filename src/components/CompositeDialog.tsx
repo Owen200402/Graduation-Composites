@@ -40,8 +40,8 @@ const CompositeDialog = () => {
           onClick={handleClickOpen}
           sx={{
             cursor: "pointer",
-            fontSize: 40,
-            pl: 1,
+            fontSize: is4KScreen ? 50 : 40,
+            pl: 1.2,
             mt: 1.2,
             color: theme.palette.mode === "dark" ? "#f1f2f3" : "#0055b7",
           }}
@@ -60,6 +60,7 @@ const CompositeDialog = () => {
               textAlign: "center",
               mt: is4KScreen ? 0 : 1,
               mr: 2,
+              fontSize: is4KScreen ? 20 : 15,
             }}
           >
             About
