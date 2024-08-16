@@ -129,7 +129,7 @@ const CompositeDialog = () => {
           </Typography>
           <Divider sx={{ bgcolor: "black" }} />
           <Typography variant="h5" gutterBottom margin={0.2} color="green">
-            Credit:
+            Credits:
           </Typography>
           <Typography variant="h6" gutterBottom>
             &nbsp;&nbsp;&nbsp;&nbsp;All software for this digital signage
