@@ -92,8 +92,13 @@ const CompositeDialog = () => {
           <CloseIcon />
         </IconButton>
         <DialogContent dividers>
-        <Typography variant="h5" gutterBottom margin={0.2} color="secondary.dark">
-            Intro: 
+          <Typography
+            variant="h5"
+            gutterBottom
+            margin={0.2}
+            color="secondary.dark"
+          >
+            Intro:
           </Typography>
           <Typography variant="h6" gutterBottom>
             &nbsp;&nbsp;&nbsp;&nbsp;The Digital Graduation Composites Gallery
@@ -114,7 +119,7 @@ const CompositeDialog = () => {
           </Typography>
           <Divider sx={{ bgcolor: "black" }} />
           <Typography variant="h5" gutterBottom margin={0.2} color="red">
-            Disclaimer: 
+            Disclaimer:
           </Typography>
           <Typography variant="h6" gutterBottom>
             &nbsp;&nbsp;&nbsp;&nbsp;All music used in this project remains the
@@ -124,13 +129,14 @@ const CompositeDialog = () => {
           </Typography>
           <Divider sx={{ bgcolor: "black" }} />
           <Typography variant="h5" gutterBottom margin={0.2} color="green">
-            Credit: 
+            Credit:
           </Typography>
           <Typography variant="h6" gutterBottom>
             &nbsp;&nbsp;&nbsp;&nbsp;All software for this digital signage
             project is owned by UBC ECE. We would like to acknowledge Owen
             Zheng, our 2024 Co-op student from UBC Computer Science, for his
-            implementation of this project..
+            implementation of this project, and Dang Khoa Nguyen, and Nadine
+            Sad-Ang for their contributions.
           </Typography>
         </DialogContent>
         <DialogActions>
