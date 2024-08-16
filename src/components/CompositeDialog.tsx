@@ -60,7 +60,7 @@ const CompositeDialog = () => {
               textAlign: "center",
               mt: 1,
               mr: 2,
-              fontSize: is4KScreen ? 20 : 15,
+              fontSize: is4KScreen ? 22 : 15,
             }}
           >
             About

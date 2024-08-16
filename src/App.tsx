@@ -99,7 +99,7 @@ function App() {
               !searchResult && <Heading></Heading>
             )}
           </div>
-          <div className="noDisplay" style={{ whiteSpace: "nowrap" }}>
+          <div className="noDisplay" style={{ whiteSpace: "nowrap", fontSize: is4KScreen ? 22 : 15 }}>
             {theme.palette.mode} mode
             <IconButton
               sx={{
