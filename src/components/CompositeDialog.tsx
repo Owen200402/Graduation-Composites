@@ -58,7 +58,7 @@ const CompositeDialog = () => {
             sx={{
               color: theme.palette.mode === "dark" ? "#f1f2f3" : "#023266",
               textAlign: "center",
-              mt: is4KScreen ? 0 : 1,
+              mt: 1,
               mr: 2,
               fontSize: is4KScreen ? 20 : 15,
             }}
