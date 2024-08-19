@@ -132,9 +132,9 @@ const ImageModal = ({
             }}
             style={{
               position: "absolute",
-              right: 10,
-              fontSize: "3rem",
-              color: "white",
+              right: 2,
+              fontSize: "2.5rem",
+              color: "#222222",
               cursor: "pointer",
             }}
           ></CloseIcon>
