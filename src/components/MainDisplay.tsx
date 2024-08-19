@@ -98,7 +98,7 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
                 style={{
                   position: "absolute",
                   left: "0%",
-                  transform: "translate(100px, -30px)",
+                  transform: "translate(100px, 0px)",
                 }}
               >
                 Back to Search Result: {selectedYear}

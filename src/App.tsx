@@ -44,14 +44,14 @@ function App() {
     setIsAtMainScreen,
   } = useNavigationStore();
 
-
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
   const textStyle = {
     color: theme.palette.mode === "dark" ? "white" : "black",
   };
 
-  const { setCurrentPage, setCurrentMainPage, currentMainPage } = usePaginationStore();
+  const { setCurrentPage, setCurrentMainPage, currentMainPage } =
+    usePaginationStore();
 
   const is4KScreen = TVScreenCheck();
 
@@ -87,38 +87,12 @@ function App() {
         </CssVarsProvider>
         <UBCLogo />
 
-        <div className="setCenterAlignment">
-          <ResponsiveContainer className="noDisplay">
-            <CompositeDialog />
-            {/* <CourseOfferingLink /> */}
-          </ResponsiveContainer>
-          <div>
-            {isAtMainScreen ? (
-              <Heading></Heading>
-            ) : (
-              !searchResult && <Heading></Heading>
-            )}
-          </div>
-          <div className="noDisplay" style={{ whiteSpace: "nowrap", fontSize: is4KScreen ? 22 : 15 }}>
-            {theme.palette.mode} mode
-            <IconButton
-              sx={{
-                ml: 0,
-                mr: 1,
-                "@media (max-width: 768px)": {
-                  display: "none",
-                },
-              }}
-              onClick={colorMode.toggleColorMode}
-              color="inherit"
-            >
-              {theme.palette.mode === "dark" ? (
-                <Brightness7Icon />
-              ) : (
-                <Brightness4Icon />
-              )}
-            </IconButton>
-          </div>
+        <div>
+          {isAtMainScreen ? (
+            <Heading></Heading>
+          ) : (
+            !searchResult && <Heading></Heading>
+          )}
         </div>
 
         <MainDisplay
@@ -132,21 +106,13 @@ function App() {
             setCurrentPage(1);
             setType("Genre");
             console.log(currentMainPage);
-
           }}
-          onPageChange={(pagePhoto, pageMain) => {setCurrentPage(pagePhoto), setCurrentMainPage(pageMain)}}
+          onPageChange={(pagePhoto, pageMain) => {
+            setCurrentPage(pagePhoto), setCurrentMainPage(pageMain);
+          }}
         />
 
-        <div className="container-flex" style={{ color: textStyle.color }}>
-          <SearchBar
-            to_show={(PhotoSet, input) => {
-              setSearchResult(PhotoSet);
-              setSearchedInput(input);
-              setCurrentPage(1);
-            }}
-            themeColor={theme.palette.mode}
-          />
-        </div>
+        
 
         <div className="copyright" style={{ color: textStyle.color }}>
           &copy; {new Date().getFullYear()} UBC Electrical and Computer
@@ -173,7 +139,49 @@ function App() {
             />
           )}
         </div>
+        <div className="setCenterAlignment">
+          <ResponsiveContainer className="noDisplay">
+            <CompositeDialog />
+          </ResponsiveContainer>
 
+          <div className="container-flex" style={{ color: textStyle.color }}>
+          <SearchBar
+            to_show={(PhotoSet, input) => {
+              setSearchResult(PhotoSet);
+              setSearchedInput(input);
+              setCurrentPage(1);
+            }}
+            themeColor={theme.palette.mode}
+          />
+        </div>
+
+
+          <div
+            className="noDisplay"
+            style={{ whiteSpace: "nowrap", fontSize: is4KScreen ? 22 : 15 }}
+          >
+            {theme.palette.mode} mode
+            <IconButton
+              sx={{
+                ml: 0,
+                mr: 1,
+                "@media (max-width: 768px)": {
+                  display: "none",
+                },
+              }}
+              onClick={colorMode.toggleColorMode}
+              color="inherit"
+            >
+              {theme.palette.mode === "dark" ? (
+                <Brightness7Icon />
+              ) : (
+                <Brightness4Icon />
+              )}
+            </IconButton>
+          </div>
+        </div>
+
+        
         <BottomBanner></BottomBanner>
         {/* <AIPrediction></AIPrediction> */}
       </div>
