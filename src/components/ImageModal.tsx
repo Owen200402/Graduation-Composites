@@ -71,8 +71,8 @@ const ImageModal = ({
                 src={imageUrl}
                 alt="Enlarged"
                 style={{
-                  maxWidth: "100%",
-                  maxHeight: is4KScreen ? "27vh" : "70vh",
+                  maxWidth: year < 1970 ? (is4KScreen ? "100%" : "100%") : "130%",
+                  maxHeight: year < 1970 ? (is4KScreen ? "30vh" : "70vh") : "100%",
                   paddingBottom: "3px",
                 }}
               />
@@ -132,7 +132,7 @@ const ImageModal = ({
             }}
             style={{
               position: "absolute",
-              right: 2,
+              right: year < 1970 ? (is4KScreen ? 2 : 2) : -130,
               fontSize: "2.5rem",
               color: "#222222",
               cursor: "pointer",
