@@ -1,3 +1,4 @@
+
 ## Graduation Composite Website ##
 
 - Displays graduation composites for the digital signage project. It is linked by OptiSigns Engage to have a more custom user interaction to the touch screen. 
@@ -15,3 +16,5 @@
 - Next, create new json objects in curly braces with distinct id (preferably increasing it by 1 as before).
 - Fill out first and last name and the image path (if there is no path for individual's images like 1970 photos and onwards, leave it blank).
   Now, the names should be visible to the search bar and people can start interact with it.
+
+#### Note the webpage follows HCI design for a 4k smart screen (3840 * 2160). Though we tried to accomodate on smaller screens, the user experience differs.
