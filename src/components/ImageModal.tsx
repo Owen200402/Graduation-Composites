@@ -100,7 +100,7 @@ const ImageModal = ({
                 width="490px"
                 height="490px"
                 controls
-                style={{ margin: "3px" }}
+                style={{ marginTop: "3px", marginBottom: "3px" }}
                 preload="auto"
               >
                 <source src={videoUrl} type="video/mp4" />
@@ -133,20 +133,10 @@ const ImageModal = ({
               setIsImage(true);
             }}
             style={{
-              position: "absolute",
-              right:
-                year < 1970
-                  ? is4KScreen
-                    ? isImage
-                      ? 220
-                      : 234
-                    : isImage
-                      ? 165
-                      : 234
-                  : is4KScreen
-                    ? 460
-                    : 340,
+              position: "fixed",
+              left: "50%",
               bottom: -25,
+              paddingRight: "20px",
               fontSize: "2.5rem",
               color: "red",
               cursor: "pointer",
