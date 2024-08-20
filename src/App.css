@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -11,7 +11,7 @@ body {
 
 .photo {
   border: 8px solid transparent;
-  border-image:  linear-gradient(#3c2102, #40350088) 30;
+  border-image: linear-gradient(#3c2102, #40350088) 30;
 }
 
 @media (min-width: 3000px) {
@@ -46,7 +46,7 @@ body::-webkit-scrollbar {
   text-align: center;
   font-size: 14px;
   margin-top: 0.3rem;
-  font-family: 'Great Vibes', cursive; /* Apply the fancy font */
+  font-family: "Great Vibes", cursive; /* Apply the fancy font */
 }
 
 .photo_container {

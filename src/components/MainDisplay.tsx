@@ -10,6 +10,7 @@ import usePaginationStore from "../stores/paginationStore";
 import { photoData } from "../data/photoData";
 import MainPagination from "./MainPagination";
 import TVScreenCheck from "../services/checkTVScreen";
+import { useState } from "react";
 
 interface Props {
   onSearchBack: () => void;
@@ -33,6 +34,8 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
   const currentItemMainPage = currentMainPage * itemsPerPage - itemsPerPage;
 
   const is4KScreen = TVScreenCheck();
+
+  const [isExpand, setIsExpand] = useState(false);
 
   return (
     <>
@@ -129,11 +132,25 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
                 .slice(currentItem, currentItem + 12)}
             </div>
           ) : (
-            <div className="mt-2">
+            <div
+              className="mt-2"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {is4KScreen && (
+                <Typography variant="caption">
+                  Click on the image to zoom in and out.
+                </Typography>
+              )}
               <img
                 src={`assets/displayedOnCover/ECE${selectedYear}.webp`}
                 alt={`ECE${selectedYear}`}
-                width={is4KScreen ? "1100px" : "900px"}
+                width={is4KScreen ? (isExpand ? "1400px" : "1000px") : "900px"}
+                onClick={() => setIsExpand(!isExpand)}
               />
             </div>
           )}
