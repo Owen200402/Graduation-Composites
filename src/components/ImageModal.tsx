@@ -135,7 +135,7 @@ const ImageModal = ({
             style={{
               position: "absolute",
               right:
-                year < 1970 ? (is4KScreen ? 220 : 170) : is4KScreen ? 460 : 340,
+                year < 1970 ? (is4KScreen ? 220 : 160) : is4KScreen ? 460 : 340,
               bottom: -25,
               fontSize: "2.5rem",
               color: "red",
