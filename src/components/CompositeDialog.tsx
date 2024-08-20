@@ -59,7 +59,7 @@ const CompositeDialog = () => {
               color: theme.palette.mode === "dark" ? "#f1f2f3" : "#023266",
               textAlign: "center",
               mt: 1,
-              mr: 2,
+              mr: 5,
               fontSize: is4KScreen ? 22 : 15,
             }}
           >
