@@ -143,7 +143,7 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
             >
               {is4KScreen && (
                 <Typography variant="caption">
-                  Tab on the image to zoom in and out.
+                  Tap on the image to zoom in and out.
                 </Typography>
               )}
               <img
