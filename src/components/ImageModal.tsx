@@ -97,8 +97,8 @@ const ImageModal = ({
               }}
             >
               <video
-                width="500px"
-                height="500px"
+                width="490px"
+                height="490px"
                 controls
                 style={{ margin: "3px" }}
                 preload="auto"
@@ -135,7 +135,17 @@ const ImageModal = ({
             style={{
               position: "absolute",
               right:
-                year < 1970 ? (is4KScreen ? 220 : 160) : is4KScreen ? 460 : 340,
+                year < 1970
+                  ? is4KScreen
+                    ? isImage
+                      ? 220
+                      : 234
+                    : isImage
+                      ? 165
+                      : 234
+                  : is4KScreen
+                    ? 460
+                    : 340,
               bottom: -25,
               fontSize: "2.5rem",
               color: "red",
