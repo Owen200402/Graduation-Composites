@@ -50309,6 +50309,4 @@ export const photoData = [
     year: 2021,
     path: ""
   },
-
-
 ];
