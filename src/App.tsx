@@ -112,8 +112,6 @@ function App() {
           }}
         />
 
-        
-
         <div className="copyright" style={{ color: textStyle.color }}>
           &copy; {new Date().getFullYear()} UBC Electrical and Computer
           Engineering. All rights reserved.
@@ -124,7 +122,7 @@ function App() {
             color: textStyle.color,
             position: "absolute",
             left: "0%",
-            transform: "translate(100px, -70px)",
+            transform: "translate(100px, -65px)",
           }}
         >
           {(!isAtMainScreen || searchResult) && (
@@ -145,16 +143,15 @@ function App() {
           </ResponsiveContainer>
 
           <div className="container-flex" style={{ color: textStyle.color }}>
-          <SearchBar
-            to_show={(PhotoSet, input) => {
-              setSearchResult(PhotoSet);
-              setSearchedInput(input);
-              setCurrentPage(1);
-            }}
-            themeColor={theme.palette.mode}
-          />
-        </div>
-
+            <SearchBar
+              to_show={(PhotoSet, input) => {
+                setSearchResult(PhotoSet);
+                setSearchedInput(input);
+                setCurrentPage(1);
+              }}
+              themeColor={theme.palette.mode}
+            />
+          </div>
 
           <div
             className="noDisplay"
@@ -181,7 +178,6 @@ function App() {
           </div>
         </div>
 
-        
         <BottomBanner></BottomBanner>
         {/* <AIPrediction></AIPrediction> */}
       </div>
