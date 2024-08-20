@@ -141,16 +141,16 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
                 alignItems: "center",
               }}
             >
-              {is4KScreen && (
+              {/* {is4KScreen && (
                 <Typography variant="caption">
                   Click on the image to zoom in and out.
                 </Typography>
-              )}
+              )} */}
               <img
                 src={`assets/displayedOnCover/ECE${selectedYear}.webp`}
                 alt={`ECE${selectedYear}`}
                 width={is4KScreen ? (isExpand ? "1400px" : "1000px") : "900px"}
-                onClick={() => setIsExpand(!isExpand)}
+                // onClick={() => setIsExpand(!isExpand)}
               />
             </div>
           )}
