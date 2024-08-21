@@ -120,10 +120,11 @@ const CompositeDialog = () => {
             Disclaimer:
           </Typography>
           <Typography variant="h6" gutterBottom>
-            &nbsp;&nbsp;&nbsp;&nbsp;All music used in this project remains the
-            property of its respective copyright owners and is utilized solely
-            for educational and non-commercial purposes. Reproduction rights are
-            covered under a [license to be specified].
+            &nbsp;&nbsp;&nbsp;&nbsp;All music featured in this project remains
+            the property of its respective copyright owners and is used
+            exclusively for non-commercial purposes. We have obtained licenses
+            from SOCAN and Re: Sound , permitting the use of this music on our
+            platform.
           </Typography>
           <Divider sx={{ bgcolor: "black" }} />
           <Typography variant="h5" gutterBottom margin={0.2} color="green">
