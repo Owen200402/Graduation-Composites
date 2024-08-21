@@ -87,7 +87,7 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
                   ? " 4th Floor"
                   : year >= 2000 && year < 2020
                     ? "3rd Floor"
-                    : year >= 1970 && year < 1999
+                    : year >= 1970 && year <= 1999
                       ? "2nd Floor"
                       : "1st Floor"}
                 <br></br>
@@ -105,7 +105,7 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
                   ? " 4th Floor"
                   : year >= 2000 && year < 2020
                     ? "3rd Floor"
-                    : year >= 1970 && year < 1999
+                    : year >= 1970 && year <= 1999
                       ? "2nd Floor"
                       : "1st Floor"}
                 <br></br> <b>Featured Years: </b>
