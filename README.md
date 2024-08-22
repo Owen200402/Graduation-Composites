@@ -3,22 +3,16 @@
 - Displays graduation composites for the digital signage project. It is linked by OptiSigns Engage to have a more custom user interaction to the touch screen.
 - View the pretrained, animated photos before 1970 as well as searching and filtering graduate's names.
 - Driven by AI Thin-Plate Model for years from 1930 to 1970, recognizing faces and animating photos in a subtle manner.
+- Technology used: HTML, CSS, TypeScript, React, MUI, Zustand for developing front-end app and pulling information from the backend, and Machine Learning library Thin-Plate motion modal for image animation with department's permission.
 
   ![IMG_7942](https://github.com/user-attachments/assets/d230af0d-6360-4e8c-b197-a12815074101)
 
 
-### How to add newer photo composites
-
-- Firstly, a webp image is needed for faster loading speed. After trial and error, the best way is to do screenshot on mac and convert it into webp with about 500kb sizes.
-- Rename each image you want to add to the workplace in a format as ECE<year_name> (eg. ECE1940).
-- Drop the photo into public/assets/displayedOnCover folder.
-  Now, the images will be available on the year-selection page as well as inside the composite page after clicking LEARN MORE button for these years.
-
-### How to add names to make them appear searchable
-
-- First, go to src/data folder and target photoData file. These are json objects used to map images and links required for the entire project as a mini perserved storage of the project.
-- Next, create new json objects in curly braces with distinct id (preferably increasing it by 1 as before).
-- Fill out first and last name and the image path (if there is no path for individual's images like 1970 photos and onwards, leave it blank).
-  Now, the names should be visible to the search bar and people can start interact with it.
-
-#### Note the webpage follows HCI design for 4k smart screens (3840 \* 2160). While it works smaller screens after our accomodation, the user experience might differ.
+### Intro:
+  The Digital Graduation Composites Gallery features alumni from 1930 to 2020 in the UBC Electrical and Computer Engineering Department. You can filter cohort composites by year and search by name. The original framed composites are displayed throughout the MCLD building, at the specific floor indicated in this gallery.
+  For the years 1930 to 1969, individual pictures can be enlarged and animated. The animations were created using an AI thin-plate motion model.
+  For all years you can choose from four music genres to play in the background while viewing the composites.
+### Disclaimer:
+  All music featured in this project remains the property of its respective copyright owners and is used exclusively for non-commercial purposes. We have obtained licenses from SOCAN and Re: Sound , permitting the use of this music on our platform.
+### Credits:
+  All software for this digital signage project is owned by UBC ECE. We would like to acknowledge Owen Zheng, our 2024 Co-op student from UBC Computer Science, for his implementation of this project, and Dang Khoa Nguyen, and Nadine Sad-Ang for their contributions.
