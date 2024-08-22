@@ -4,6 +4,9 @@
 - View the pretrained, animated photos before 1970 as well as searching and filtering graduate's names.
 - Driven by AI Thin-Plate Model for years from 1930 to 1970, recognizing faces and animating photos in a subtle manner.
 
+  ![IMG_7942](https://github.com/user-attachments/assets/d230af0d-6360-4e8c-b197-a12815074101)
+
+
 ### How to add newer photo composites
 
 - Firstly, a webp image is needed for faster loading speed. After trial and error, the best way is to do screenshot on mac and convert it into webp with about 500kb sizes.
