@@ -3,12 +3,14 @@
 - Displays graduation composites for the digital signage project. It is linked by OptiSigns Engage to have a more custom user interaction to the touch screen.
 - View the pretrained, animated photos before 1970 as well as searching and filtering graduate's names.
 - Driven by AI Thin-Plate Model for years from 1930 to 1970, recognizing faces and animating photos in a subtle manner.
-- Technology used: HTML, CSS, TypeScript, React, MUI, Zustand for developing front-end app and pulling information from the backend, and Machine Learning library Thin-Plate motion modal for image animation with department's permission.
+- Technology used: **HTML**, **CSS**, **TypeScript**, **React**, **MUI**, Zustand for developing front-end app and pulling information from the backend, and machine learning **Thin-Plate Motion modal** for image animation with department's permission.
+
+Image of the team upon Owen's completion of the digital signage project with two 75-inch touch smart TV shown behind us:
 
   ![IMG_7942](https://github.com/user-attachments/assets/d230af0d-6360-4e8c-b197-a12815074101)
 
 
-### Intro:
+### Introduction:
   The Digital Graduation Composites Gallery features alumni from 1930 to 2020 in the UBC Electrical and Computer Engineering Department. You can filter cohort composites by year and search by name. The original framed composites are displayed throughout the MCLD building, at the specific floor indicated in this gallery.
   For the years 1930 to 1969, individual pictures can be enlarged and animated. The animations were created using an AI thin-plate motion model.
   For all years you can choose from four music genres to play in the background while viewing the composites.
