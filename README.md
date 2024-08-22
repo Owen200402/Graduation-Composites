@@ -3,7 +3,7 @@
 - Displays graduation composites for the digital signage project. It is linked by OptiSigns Engage to have a more custom user interaction to the touch screen.
 - View the pretrained, animated photos before 1970 as well as searching and filtering graduate's names.
 - Driven by AI Thin-Plate Model for years from 1930 to 1970, recognizing faces and animating photos in a subtle manner.
-- Technology used: **HTML**, **CSS**, **TypeScript**, **React**, **MUI**, Zustand for developing front-end app and pulling information from the backend, and machine learning **Thin-Plate Motion modal** for image animation with department's permission.
+- Technology used: **HTML**, **CSS**, **TypeScript**, **React**, **Material UI**, **Zustand** for developing, maintaining frontend app and pulling information from the backend, and machine learning **Thin-Plate Motion modal** for image animation with department's permission.
 
 Image of the team upon Owen's completion of the digital signage project with two 75-inch touch smart TV shown behind us:
 
