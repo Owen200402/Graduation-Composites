@@ -25,6 +25,3 @@ dist-ssr
 .vercel
 src/config.ts
 .env.locals
-
-# assets
-public/assets/
