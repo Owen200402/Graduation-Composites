@@ -73,7 +73,7 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
                     year={photo.year}
                     first_name={photo.first_name}
                     last_name={photo.last_name}
-                    path={`assets/displayedOnCover/ECE${photo.year}.webp`}
+                    path={`https://people.ece.ubc.ca/~eng-services/images/ECE${photo.year}.webp`}
                   />
                 </div>
               ))
@@ -147,7 +147,7 @@ const MainDisplay = ({ onSearchBack, onYearSelect, onPageChange }: Props) => {
                 </Typography>
               )}
               <img
-                src={`assets/displayedOnCover/ECE${selectedYear}.webp`}
+                src={`https://people.ece.ubc.ca/~eng-services/images/ECE${selectedYear}.webp`}
                 alt={`ECE${selectedYear}`}
                 width={is4KScreen ? (isExpand ? "1400px" : "1000px") : "900px"}
                 onClick={() => setIsExpand(!isExpand)}

@@ -55,7 +55,7 @@ const MainPageYearSelection = ({ years, onSelectYear }: Props) => {
               sx={{ position: "absolute", top: 0, left: 0 }}
             />
             <img
-              src={`assets/displayedOnCover/ECE${year}.webp`}
+              src={`https://people.ece.ubc.ca/~eng-services/images/ECE${year}.webp`}
               alt={`graduation class of ${year}`}
               ref={(el) => (imageRefs.current[index] = el)}
               onLoad={() => handleImageLoad(index)}
