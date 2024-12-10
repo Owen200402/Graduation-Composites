@@ -50309,4 +50309,137 @@ export const photoData = [
     year: 2022,
     path: ""
   },
+  {
+    id: 7186,
+    first_name: "R.J.",
+    last_name: "Temoin",
+    year: 1939,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1939/R.J._Temoin_1939.png"
+  },
+  {
+    id: 7187,
+    first_name: "T.A.G.",
+    last_name: "Beeching",
+    year: 1939,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1939/T.A.G._Beeching_1939.png"
+  },
+  {
+    id: 7188,
+    first_name: "W.L.",
+    last_name: "Garvie",
+    year: 1939,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1939/W.L._Garvie_1939.png"
+  },
+  {
+    id: 7189,
+    first_name: "W.L.",
+    last_name: "Hetherington",
+    year: 1939,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1939/W.L._Hetherington_1939.png"
+  },
+  {
+    id: 7190,
+    first_name: "P.W.",
+    last_name: "Nasmyth",
+    year: 1941,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1941/P.W._Nasmyth_1941.png"
+  },
+  {
+    id: 7191,
+    first_name: "A.H.",
+    last_name: "Gardiner",
+    year: 1943,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1943/A.H._Gardiner_1943.png"
+  },
+  {
+    id: 7192,
+    first_name: "A.E.",
+    last_name: "Roos",
+    year: 1945,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1945/A.E._Roos_1945.png"
+  },
+  {
+    id: 7193,
+    first_name: "D.C.",
+    last_name: "Moore",
+    year: 1945,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1945/D.C._Moore_1945.png"
+  },
+  {
+    id: 7194,
+    first_name: "D.F.",
+    last_name: "Haney",
+    year: 1945,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1945/D.F._Haney_1945.png"
+  },
+  {
+    id: 7195,
+    first_name: "E.P.",
+    last_name: "LaBelle",
+    year: 1945,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1945/E.P._LaBelle_1945.png"
+  },
+  {
+    id: 7196,
+    first_name: "E.W.",
+    last_name: "Newbury",
+    year: 1945,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1945/E.W._Newbury_1945.png"
+  },
+  {
+    id: 7197,
+    first_name: "E.W.",
+    last_name: "Piercy",
+    year: 1945,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1945/E.W._Piercy_1945.png"
+  },
+  {
+    id: 7198,
+    first_name: "F.K.",
+    last_name: "Mohr",
+    year: 1945,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1945/F.K._Mohr_1945.png"
+  },
+  {
+    id: 7199,
+    first_name: "G.H.",
+    last_name: "LeBus",
+    year: 1945,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1945/G.H._LeBus_1945.png"
+  },
+  {
+    id: 7200,
+    first_name: "I.J.",
+    last_name: "Guichon",
+    year: 1945,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1945/I.J._Guichon_1945.png"
+  },
+  {
+    id: 7201,
+    first_name: "J.D.",
+    last_name: "Hetherington",
+    year: 1945,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1945/J.D._Hetherington_1945.png"
+  },
+  {
+    id: 7202,
+    first_name: "J.",
+    last_name: "Louie",
+    year: 1945,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1945/J._Louie_1945.png"
+  },
+  {
+    id: 7203,
+    first_name: "M.T.",
+    last_name: "Gardner",
+    year: 1945,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1945/M.T._Gardner_1945.png"
+  },
+  {
+    id: 7204,
+    first_name: "W.M.",
+    last_name: "Walker",
+    year: 1945,
+    path: "https://people.ece.ubc.ca/~eng-services/assets/1945/W.M._Walker_1945.png"
+  }
 ];
