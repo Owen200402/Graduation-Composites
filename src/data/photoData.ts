@@ -50441,25 +50441,26 @@ export const photoData = [
     last_name: "Walker",
     year: 1945,
     path: "https://people.ece.ubc.ca/~eng-services/assets/1945/W.M._Walker_1945.png"
-  }
+  },
   {
     id: 7205,
     first_name: "W.E.",
     last_name: "Hughes-Games",
     year: 1939,
     path: "https://people.ece.ubc.ca/~eng-services/assets/1939/W.E._Hughes-Games_1939.jpg"
-  }
+  },
   {
     id: 7206,
     first_name: "Bob",
     last_name: "Hill",
     year: 1947,
     path: "https://people.ece.ubc.ca/~eng-services/assets/1947/Bob_Hill_1947.jpg"
-  }
+  },
   {
     id: 7207,
     first_name: "Lawrence",
     last_name: "Gill",
     year: 1947,
     path: "https://people.ece.ubc.ca/~eng-services/assets/1947/Lawrence_Gill_1947.jpg"
+  },
 ];
